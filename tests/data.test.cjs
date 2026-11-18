@@ -43,3 +43,5 @@ test('La atribución y el contexto posdoctoral aparecen en la portada',()=>{
   assert.ok(html.includes('Futuros de las Ciencias Sociales'));
   assert.ok(html.includes('no constituye un proyecto institucional aprobado'));
 });
+test('Serie FIES 2023-2025 cotejada con dos boletines DANE',()=>{const expected={choco:18.9,guajira:50.1,bogota:21.2,vaupes:34.4};for(const v of all)assert.equal(v.metrics.food2023,expected[v.id]);});
+test('Tabla estática, metodología legible y enlace de publicar eliminado',()=>{const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');assert.ok(html.includes('<table class="fallback-table">'));assert.ok(html.includes('metodologia.html'));assert.ok(!html.includes('https://github.com/new'));assert.ok(fs.existsSync(path.join(__dirname,'..','metodologia.html')));});
