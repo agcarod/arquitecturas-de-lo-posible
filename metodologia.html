@@ -1,0 +1,222 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Trazabilidad, fuentes y límites del atlas de oportunidades territoriales"><title>Fuentes y método · Arquitecturas de lo posible</title><link rel="stylesheet" href="styles.css"><style>.method-document{max-width:970px;margin:3rem auto;padding:0 1.4rem 5rem;line-height:1.7;color:#183e3e}.method-document h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.2}.method-document h2{margin-top:2.8rem}.method-document table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%;font-size:.85rem}.method-document th,.method-document td{padding:.6rem;text-align:left;border:1px solid #cbdad6}.method-document th{background:#e8f1ed}.method-document a{color:#057267;text-decoration:underline}.method-document blockquote{border-left:3px solid teal;padding:1rem;background:#ecf3f1}.method-document p,.method-document li{font-size:1rem}.method-nav{padding:1.1rem 1.5rem;background:#113c3d;color:#f0f6ed}.method-nav a{color:#dcf8e8}</style></head><body><nav class="method-nav"><a href="index.html">← Volver al atlas interactivo</a> · <a href="data/indicadores_2025.csv">Descargar datos CSV</a> · <a href="https://github.com/agcarod/arquitecturas-de-lo-posible">Repositorio GitHub</a></nav><article class="method-document"><h1>Fuentes, definiciones y límites de inferencia</h1>
+<p><strong>Proyecto:</strong> ¿Cuántas puertas se abren donde creces?<br />
+<strong>Versión:</strong> 1.1 · 17 de noviembre de 2026<br />
+<strong>Unidad geográfica:</strong> cuatro departamentos/distrito seleccionados de Colombia<br />
+<strong>Período de indicadores:</strong> 2025, con comparación 2023–2025 para FIES.</p>
+<h2>1. Pregunta que orienta el prototipo</h2>
+<p>¿Cómo se distribuyen algunas condiciones materiales, educativas y digitales en territorios donde crecen niñas, niños y adolescentes, y qué nuevas preguntas científicas surgen de esas diferencias?</p>
+<p><strong>Importante:</strong> no se está comparando la cantidad total de oportunidades buenas y malas. Las dimensiones no son aditivas, no comparten denominador, pueden estar simultáneamente presentes y sus relaciones con trayectorias futuras todavía no se han evaluado. Las adversidades territoriales no determinan resultados individuales.</p>
+<h2>2. Ficha de variables y procedencia</h2>
+<table>
+<thead>
+<tr>
+  <th>Variable</th>
+  <th>Unidad/denominador</th>
+  <th>Período</th>
+  <th>Fuente y lugar preciso</th>
+  <th>Lectura correcta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Población de 0 a 11 años</td>
+  <td>Personas proyectadas</td>
+  <td>2025</td>
+  <td><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion">Proyecciones DANE</a>; compilaciones <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/choco">Chocó</a>, <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/la-guajira">La Guajira</a>, <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/bogota/bogota">Bogotá</a>, <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/vaupes">Vaupés</a></td>
+  <td>Recuentos estimados, no observaciones censales directas de 2025.</td>
+</tr>
+<tr>
+  <td>Población 12 a 17 años</td>
+  <td>Personas proyectadas</td>
+  <td>2025</td>
+  <td>Ídem</td>
+  <td>Recuentos estimados.</td>
+</tr>
+<tr>
+  <td>Población 0 a 17 años</td>
+  <td>Suma 0–11 + 12–17</td>
+  <td>2025</td>
+  <td>Elaboración a partir de las dos líneas anteriores</td>
+  <td>Población que habita un territorio, no población expuesta a una condición específica.</td>
+</tr>
+<tr>
+  <td>Internet del hogar</td>
+  <td>% de hogares con acceso a internet fijo o móvil</td>
+  <td>2025</td>
+  <td><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf">DANE ECV 2025</a>, pág. 12 (índice PDF 11), <strong>Gráfico 12</strong></td>
+  <td>Disponibilidad declarada en hogares; no uso o calidad de la conexión por parte de NNA.</td>
+</tr>
+<tr>
+  <td>Inseguridad alimentaria moderada o grave</td>
+  <td>% de hogares</td>
+  <td>2023, 2024, 2025</td>
+  <td><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf">DANE FIES 2025</a> y <a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf">FIES 2024</a>, pág. 6 (índice PDF 5), <strong>Gráfico 4</strong></td>
+  <td>Experiencia alimentaria del hogar en últimos 12 meses; no equivale a desnutrición clínica infantil.</td>
+</tr>
+<tr>
+  <td>Asistencia educativa 17–21</td>
+  <td>% de personas de <strong>17 a 21 años</strong> que asisten a educación formal</td>
+  <td>2025</td>
+  <td><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf">DANE ECV 2025</a>, pág. 19 (índice PDF 18), <strong>Gráfico 18</strong></td>
+  <td>Contexto de transición hacia la vida adulta; <strong>no aplica como tasa de asistencia de la población 0–17</strong>.</td>
+</tr>
+<tr>
+  <td>Victimización por conflicto</td>
+  <td>NO CARGADA</td>
+  <td>—</td>
+  <td><a href="https://datospaz.unidadvictimas.gov.co/registro-unico-de-victimas/">Unidad para las Víctimas, RUV</a></td>
+  <td>Se debe elegir unidad territorial, hecho victimizante, edad, período de ocurrencia/declaración y metodología antes de comparar.</td>
+</tr>
+</tbody>
+</table>
+<p>La población mostrada se obtuvo de una <strong>fuente secundaria</strong> que atribuye sus tablas a proyecciones DANE 2025. Antes de publicarla como serie demográfica de investigación definitiva debe cotejarse con el anexo oficial departamental por sexo y edad del DANE y documentarse la versión, ya que las proyecciones se actualizan. El <a href="https://portalsuin.icbf.gov.co/sites/suin/Pages/poblacion_ni%C3%B1os_ni%C3%B1as_Colombia.aspx">ICBF publica tableros y archivos por ciclo vital</a>.</p>
+<h2>3. Valores incorporados</h2>
+<table>
+<thead>
+<tr>
+  <th>Territorio</th>
+  <th style="text-align:right">0–11</th>
+  <th style="text-align:right">12–17</th>
+  <th style="text-align:right">0–17</th>
+  <th style="text-align:right">Internet 2025 %</th>
+  <th style="text-align:right">FIES 2023 %</th>
+  <th style="text-align:right">FIES 2024 %</th>
+  <th style="text-align:right">FIES 2025 %</th>
+  <th style="text-align:right">Asistencia 17–21 %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Chocó</td>
+  <td style="text-align:right">154.346</td>
+  <td style="text-align:right">76.907</td>
+  <td style="text-align:right">231.253</td>
+  <td style="text-align:right">36,4</td>
+  <td style="text-align:right">18,9</td>
+  <td style="text-align:right">36,3</td>
+  <td style="text-align:right">56,8</td>
+  <td style="text-align:right">45,6</td>
+</tr>
+<tr>
+  <td>La Guajira</td>
+  <td style="text-align:right">276.983</td>
+  <td style="text-align:right">140.148</td>
+  <td style="text-align:right">417.131</td>
+  <td style="text-align:right">52,6</td>
+  <td style="text-align:right">50,1</td>
+  <td style="text-align:right">52,4</td>
+  <td style="text-align:right">47,8</td>
+  <td style="text-align:right">47,9</td>
+</tr>
+<tr>
+  <td>Bogotá D. C.</td>
+  <td style="text-align:right">1.101.730</td>
+  <td style="text-align:right">640.095</td>
+  <td style="text-align:right">1.741.825</td>
+  <td style="text-align:right">82,9</td>
+  <td style="text-align:right">21,2</td>
+  <td style="text-align:right">13,9</td>
+  <td style="text-align:right">9,6</td>
+  <td style="text-align:right">60,7</td>
+</tr>
+<tr>
+  <td>Vaupés</td>
+  <td style="text-align:right">14.397</td>
+  <td style="text-align:right">7.600</td>
+  <td style="text-align:right">21.997</td>
+  <td style="text-align:right">18,6</td>
+  <td style="text-align:right">34,4</td>
+  <td style="text-align:right">46,1</td>
+  <td style="text-align:right">22,3</td>
+  <td style="text-align:right">39,6</td>
+</tr>
+</tbody>
+</table>
+<h3>Variación FIES 2024 a 2025</h3>
+<ul>
+<li>Chocó: <strong>+20,5 puntos porcentuales</strong>.</li>
+<li>La Guajira: <strong>−4,6 puntos porcentuales</strong>.</li>
+<li>Bogotá D. C.: <strong>−4,3 puntos porcentuales</strong>.</li>
+<li>Vaupés: <strong>−23,8 puntos porcentuales</strong>.</li>
+</ul>
+<p>Las cuatro variaciones están marcadas como estadísticamente significativas al nivel indicado por DANE en el Gráfico 4. La significancia del cambio entre años <strong>no</strong> implica que todas las comparaciones entre territorios sean estadísticamente significativas. Las fuentes y medidas de precisión originales son necesarias para inferencias adicionales.</p>
+<h2>4. Lo que no puede inferirse</h2>
+<ol>
+<li>Los datos son agregados. No puede afirmarse que una niña o niño que vive en cierto departamento experimente un indicador del hogar o una trayectoria educativa particular.</li>
+<li>Los porcentajes describen <strong>universos distintos</strong>. No puede estimarse la cantidad de personas que presentan ambas características sin microdatos apropiados, enlace de registros y supuestos explícitos.</li>
+<li>No es un índice compuesto ni una escala validada de «posibilidades»; no se clasifican territorios como buenos/malos.</li>
+<li>La comparación de 4 unidades territoriales no constituye un modelo multinivel estimable ni autoriza inferencia causal. El sitio prepara preguntas que requerirían diseños posteriores con tamaños de muestra, datos de precisión y estrategias de identificación adecuadas.</li>
+<li>La inseguridad alimentaria es una experiencia del hogar, <strong>no</strong> desnutrición clínica. No debe equipararse a tasas de desnutrición infantil del INS.</li>
+<li>Las variaciones temporales de FIES pueden verse afectadas por diseño, cambios materiales, composición y precisión. El sitio no adjudica mecanismos causales a las variaciones.</li>
+<li>El RUV registra victimización bajo reglas administrativas; no es una medida directa y completa de toda exposición a violencia, y el sitio deliberadamente no muestra cifras aún sin tabulación comparable.</li>
+<li>Los recuentos demográficos 2025 pueden diferir entre versiones de proyecciones; no mezclar bases con diferente corte y revisión.</li>
+</ol>
+<h2>5. Cómo se convertiría en investigación</h2>
+<p><strong>Fase A · Preparación territorial.</strong> Consolidar indicadores, calidad, cobertura, años y denominadores; integrar registros de violencia por grupo etario sin vulnerar confidencialidad.</p>
+<p><strong>Fase B · Preguntas rivales.</strong> Contrastar mecanismos individuales, relacionales e institucionales mediante preguntas claras y medidas diferenciadas de disponibilidad, acceso efectivo y uso de recursos.</p>
+<p><strong>Fase C · Nuevos datos.</strong> Recolectar historias de trayectorias, redes de cuidado, barreras de acceso y participación; evaluar diseños longitudinales, multinivel o mixtos según sus supuestos y factibilidad.</p>
+<p><strong>Fase D · Comunicación científica.</strong> Usar el tablero como conversación pública sobre incertidumbre, decisiones institucionales y futuros posibles, no como predicción individual.</p>
+<h2>6. Reproducibilidad y alcance de publicación</h2>
+<ul>
+<li>Datos en <a href="../data/indicadores_2025.csv"><code>data/indicadores_2025.csv</code></a>.</li>
+<li>Valores de interfaz en <a href="../data/territorios.js"><code>data/territorios.js</code></a>.</li>
+<li>Sitio estático sin rastreo, servidores, claves ni dependencias.</li>
+<li>Tests en <a href="../tests/data.test.cjs"><code>tests/data.test.cjs</code></a> para totales, porcentajes y coherencia de períodos.</li>
+<li>Producto independiente, no avalado por DANE, ICBF, Uniandes ni Unidad para las Víctimas.</li>
+</ul>
+<p><strong>Última edición del prototipo:</strong> 12 de noviembre de 2026. Las cifras están ancladas a productos DANE publicados en abril y mayo de 2026 y a la tabulación demográfica 2025 especificada.</p>
+<h2>7. Selección territorial, sismo y vivienda (actualización 2026)</h2>
+<p>Cuatro casos contrastantes fueron seleccionados con fines de demostración: Bogotá D. C. como referencia predominantemente urbana; Chocó y La Guajira por configuraciones territoriales y materiales diferentes; Vaupés como contexto amazónico de alta dispersión. No es una muestra representativa de departamentos. <strong>Los promedios esconden importantes diferencias municipales, urbano-rurales, de pertenencia étnica y de experiencia personal.</strong></p>
+<p>La <a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf">ECV 2025</a> reportó un déficit habitacional <strong>superior al 80 % en Chocó y Vaupés</strong>, frente al <strong>6,3 % de hogares en Bogotá</strong>. No se presenta como indicador cuantitativo principal del atlas ni se combina algebraicamente con los otros porcentajes.</p>
+<p>El <a href="https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx">Servicio Geológico Colombiano</a> registró un sismo de <strong>7,4 Mw</strong> el <strong>10 de agosto de 2026</strong>, con epicentro en <strong>San José del Palmar, Chocó</strong>. Ocurrió después de la medición ECV/FIES de 2025. <strong>No se pueden usar esas cifras para estimar sus efectos.</strong></p>
+<h2>8. Serie FIES 2023–2025</h2>
+<table>
+<thead>
+<tr>
+  <th>Territorio</th>
+  <th style="text-align:right">2023 (%)</th>
+  <th style="text-align:right">2024 (%)</th>
+  <th style="text-align:right">2025 (%)</th>
+  <th style="text-align:right">Cambio 2024–2025</th>
+  <th>¿Significativo en DANE 2025?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Chocó</td>
+  <td style="text-align:right">18,9</td>
+  <td style="text-align:right">36,3</td>
+  <td style="text-align:right">56,8</td>
+  <td style="text-align:right">+20,5 p.p.</td>
+  <td>Sí</td>
+</tr>
+<tr>
+  <td>La Guajira</td>
+  <td style="text-align:right">50,1</td>
+  <td style="text-align:right">52,4</td>
+  <td style="text-align:right">47,8</td>
+  <td style="text-align:right">−4,6 p.p.</td>
+  <td>Sí</td>
+</tr>
+<tr>
+  <td>Bogotá D. C.</td>
+  <td style="text-align:right">21,2</td>
+  <td style="text-align:right">13,9</td>
+  <td style="text-align:right">9,6</td>
+  <td style="text-align:right">−4,3 p.p.</td>
+  <td>Sí</td>
+</tr>
+<tr>
+  <td>Vaupés</td>
+  <td style="text-align:right">34,4</td>
+  <td style="text-align:right">46,1</td>
+  <td style="text-align:right">22,3</td>
+  <td style="text-align:right">−23,8 p.p.</td>
+  <td>Sí</td>
+</tr>
+</tbody>
+</table>
+<p>Fuente 2023–2024: DANE, <a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf#page=7">FIES 2024, gráfico 4</a>. Fuente 2024–2025: DANE, <a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6">FIES 2025, gráfico 4</a>. La significancia se refiere estrictamente al cambio 2024–2025 presentado en el boletín de 2025, no a una tendencia de tres años ni a diferencias entre departamentos. En particular, Vaupés muestra elevada variabilidad interanual; se requieren más mediciones y errores de estimación para interpretar dinámicas duraderas.</p>
+<h2>9. Versiones, citación y preservación</h2>
+<p>Repositorio público: <a href="https://github.com/agcarod/arquitecturas-de-lo-posible">https://github.com/agcarod/arquitecturas-de-lo-posible</a>. Sitio: <a href="https://agcarod.github.io/arquitecturas-de-lo-posible/">https://agcarod.github.io/arquitecturas-de-lo-posible/</a>. El DOI de Zenodo <strong>no está asignado</strong>. No se debe citar ninguno hasta completar la publicación del depósito en Zenodo. Se recomienda depositar una versión etiquetada (release) y verificar la integración GitHub–Zenodo.</p>
+</article></body></html>
