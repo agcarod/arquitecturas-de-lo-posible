@@ -1,0 +1,5 @@
+territorio,codigo,anio,poblacion_0_11,poblacion_12_17,poblacion_0_17,hogares_internet_pct,hogares_inseguridad_alimentaria_2024_pct,hogares_inseguridad_alimentaria_2025_pct,asistencia_educativa_17_21_pct,fuente_poblacion,fuente_internet,fuente_alimentaria,fuente_asistencia
+Chocó,choco,2025,154346,76907,231253,36.4,36.3,56.8,45.6,Telencuestas-proyecciones-DANE,DANE-ECV2025-p12,DANE-FIES2025-p6,DANE-ECV2025-p19
+La Guajira,guajira,2025,276983,140148,417131,52.6,52.4,47.8,47.9,Telencuestas-proyecciones-DANE,DANE-ECV2025-p12,DANE-FIES2025-p6,DANE-ECV2025-p19
+Bogotá D. C.,bogota,2025,1101730,640095,1741825,82.9,13.9,9.6,60.7,Telencuestas-proyecciones-DANE,DANE-ECV2025-p12,DANE-FIES2025-p6,DANE-ECV2025-p19
+Vaupés,vaupes,2025,14397,7600,21997,18.6,46.1,22.3,39.6,Telencuestas-proyecciones-DANE,DANE-ECV2025-p12,DANE-FIES2025-p6,DANE-ECV2025-p19
