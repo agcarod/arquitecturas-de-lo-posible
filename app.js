@@ -70,46 +70,34 @@
     $('compare').value=state.compare;displayTerritory();
   });
   function updateTrendText(t) {
-    const d = Math.round((t.metrics.food - t.metrics.foodPrevious) * 10) / 10;
-    $('trend-name').textContent = t.name;
-    $('trend-delta').textContent = (d>0?'+':'') + fmtP(d) + ' p.p.';
+    const d=Math.round((t.metrics.food-t.metrics.foodPrevious)*10)/10;
+    $('trend-name').textContent=t.name;
+    $('trend-delta').textContent=(d>0?'+':'')+fmtP(d)+' p.p. (2024–2025)';
     $('trend-delta').style.color=d>0?'#f4be8d':'#c5e9ae';
-    $('trend-statement').textContent = `Entre 2024 y 2025 pasó de ${fmtP(t.metrics.foodPrevious)}% a ${fmtP(t.metrics.food)}% de hogares. ${d>0?'Aumentó':'Disminuyó'} la prevalencia estimada, pero los datos agregados no identifican las causas del cambio.`;
+    $('trend-statement').textContent=`Serie 2023–2025: ${fmtP(t.metrics.food2023)}%, ${fmtP(t.metrics.foodPrevious)}% y ${fmtP(t.metrics.food)}% de hogares. DANE señala un cambio significativo entre 2024 y 2025, pero no demuestra una tendencia sostenida ni sus causas.`;
   }
   function renderTrend() {
     const root=$('trend-chart');
     const ns='http://www.w3.org/2000/svg';
     const svg=document.createElementNS(ns,'svg');
-    svg.setAttribute('viewBox','0 0 710 270');svg.setAttribute('role','img');
-    svg.setAttribute('aria-label','Cambios de inseguridad alimentaria 2024 a 2025: cuatro departamentos, DANE');
-    const add=(name,attrs,content)=>{let e=document.createElementNS(ns,name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(content!==undefined)e.textContent=content;svg.append(e);return e;};
-    const x0=92,x1=615,y0=213,yMax=58,yTo=v=>y0-(v/60)*170;
-    [0,20,40,60].forEach(n=>{
-      const y=yTo(n);add('line',{x1:x0,y1:y,x2:x1,y2:y,stroke:'#4d7575','stroke-dasharray':'4 6','stroke-width':1});
-      add('text',{x:65,y:y+4,fill:'#b2cac6','font-size':12,'text-anchor':'end'},n+'%');
-    });
-    add('text',{x:x0,y:241,fill:'#dbece7','font-size':14,'font-weight':700,'text-anchor':'middle'},'2024');
-    add('text',{x:x1,y:241,fill:'#dbece7','font-size':14,'font-weight':700,'text-anchor':'middle'},'2025');
-    const order=[...territories].sort((a,b)=>(a.id===state.territory?-1:0)-(b.id===state.territory?-1:0));
-    // Dibujar el territorio activo al final para que no se oculte.
-    order.sort((a,b)=> Number(a.id===state.territory)-Number(b.id===state.territory));
-    order.forEach(t=>{
+    svg.setAttribute('viewBox','0 0 710 285');
+    svg.setAttribute('role','img');
+    svg.setAttribute('aria-label','Serie de inseguridad alimentaria 2023, 2024 y 2025 para Chocó, La Guajira, Bogotá y Vaupés (DANE)');
+    const add=(name,attrs,content)=>{const e=document.createElementNS(ns,name);for(const [k,v] of Object.entries(attrs))e.setAttribute(k,String(v));if(content!==undefined)e.textContent=content;svg.append(e);return e;};
+    const xs=[95,350,610],y0=229,yTo=v=>y0-(v/60)*185;
+    [0,20,40,60].forEach(n=>{const y=yTo(n);add('line',{x1:xs[0],y1:y,x2:xs[2],y2:y,stroke:'#4d7575','stroke-dasharray':'4 6','stroke-width':1});add('text',{x:68,y:y+4,fill:'#b2cac6','font-size':12,'text-anchor':'end'},n+'%');});
+    [2023,2024,2025].forEach((year,i)=>add('text',{x:xs[i],y:262,fill:'#dbece7','font-size':14,'font-weight':700,'text-anchor':'middle'},year));
+    const ordered=[...territories].sort((a,b)=>Number(a.id===state.territory)-Number(b.id===state.territory));
+    ordered.forEach(t=>{
       const active=t.id===state.territory;
-      const yA=yTo(t.metrics.foodPrevious),yB=yTo(t.metrics.food);
-      add('path',{d:`M ${x0} ${yA} L ${x1} ${yB}`,stroke:colors[t.id],'stroke-width':active?5:2.5,opacity:active?1:.47,fill:'none','stroke-linecap':'round'});
-      for (const [x,y] of [[x0,yA],[x1,yB]])add('circle',{cx:x,cy:y,r:active?5.5:3.5,stroke:'#143f42','stroke-width':1.5,fill:colors[t.id],opacity:active?1:.65});
-      if(active){
-        const arrow=t.metrics.food>=t.metrics.foodPrevious?'↗':'↘';
-        add('text',{x:x1+13,y:yB+4,fill:'#ffffff','font-size':14,'font-weight':800},`${fmtP(t.metrics.food)}% ${arrow}`);
-      }
+      const ys=[t.metrics.food2023,t.metrics.foodPrevious,t.metrics.food].map(yTo);
+      add('path',{d:`M ${xs[0]} ${ys[0]} L ${xs[1]} ${ys[1]} L ${xs[2]} ${ys[2]}`,stroke:colors[t.id],'stroke-width':active?4.7:2.5,opacity:active?1:.5,fill:'none','stroke-linejoin':'round','stroke-linecap':'round'});
+      xs.forEach((x,i)=>add('circle',{cx:x,cy:ys[i],r:active?5:3.3,stroke:'#143f42','stroke-width':1.3,fill:colors[t.id],opacity:active?1:.68}));
+      if(active)add('text',{x:xs[2]+12,y:ys[2]-9,fill:'#ffffff','font-size':14,'font-weight':800},`${fmtP(t.metrics.food)}%`);
     });
     root.replaceChildren(svg);
     const legend=$('trend-legend');legend.replaceChildren();
-    territories.forEach(t=>{
-      const b=document.createElement('button');b.type='button';b.className='legend-button'+(t.id===state.territory?' current':'');b.setAttribute('aria-label','Mostrar '+t.name);
-      const circle=document.createElement('span');circle.className='legend-circle';circle.style.background=colors[t.id];
-      const label=document.createElement('span');label.textContent=t.name;b.append(circle,label);b.addEventListener('click',()=>changeTerritory(t.id));legend.append(b);
-    });
+    territories.forEach(t=>{const b=document.createElement('button');b.type='button';b.className='legend-button'+(t.id===state.territory?' current':'');b.setAttribute('aria-label','Mostrar '+t.name);const circle=document.createElement('span');circle.className='legend-circle';circle.style.background=colors[t.id];const label=document.createElement('span');label.textContent=t.name;b.append(circle,label);b.addEventListener('click',()=>changeTerritory(t.id));legend.append(b);});
   }
   const topics={
     internet:{label:'conectividad',question:'¿En qué condiciones la conexión disponible se convierte en oportunidades efectivas de aprendizaje, información y participación?',need:'Acceso individual, calidad de conexión, dispositivos, costos y capacidades de uso; indicadores actuales son de hogares.',study:'Encuestas a hogares + cartografía de acceso + comparación de establecimientos y territorios; seguimiento de uso efectivo.',challenge:'El aumento de conectividad no cambia la participación una vez consideradas las condiciones educativas y familiares.'},
@@ -150,7 +138,7 @@ ${t.challenge}
 
 NOTAS
 Ficha demostrativa: no es una hipótesis confirmada, un protocolo aprobado ni una evaluación causal.
-Fuentes y método: docs/FUENTES_Y_METODO.md
+Fuentes y método: metodologia.html
 `;
   }
   $('barrier').addEventListener('change',updateQuestion);$('mechanism').addEventListener('change',updateQuestion);
