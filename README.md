@@ -16,38 +16,18 @@ Demostración preparada para la **postulación a la convocatoria posdoctoral «F
 - **Cuatro territorios** para explorar: Chocó, La Guajira, Bogotá D. C. y Vaupés.
 - **Población 0–17 años** y desglose 0–11 / 12–17 (tabulaciones secundarias de proyecciones DANE 2025).
 - **Tres indicadores publicados por DANE para 2025**: hogares con acceso a internet; hogares con inseguridad alimentaria moderada o grave; asistencia a educación formal de jóvenes **17–21** (una transición posterior, no medida del total 0–17).
-- **Cambios 2024–2025** de inseguridad alimentaria, con resultados significativos documentados por DANE para los cuatro territorios.
+- **Serie 2023–2025** de inseguridad alimentaria, con variaciones 2024–2025 significativas documentadas por DANE en los cuatro casos.
 - **Generador de preguntas y diseños de investigación** para dar el paso de la descripción al contraste de mecanismos e hipótesis.
 - **Capa pendiente de violencia y protección**, con enlace a RUV pero sin atribuir una cifra no verificada.
 - Metodología, referencias, CSV descargable y archivos fuente editables.
 
 **Aviso científico:** los indicadores poseen **denominadores distintos**. No se suman, no se ponderan en un índice, no estiman riesgo individual ni prueban causalidad.
 
-## Publicar en GitHub Pages — sin instalar nada
+## Publicación verificada
 
-1. Inicia sesión en [GitHub](https://github.com/) y selecciona **New repository**.
-2. Crea un repositorio, por ejemplo `cuantas-puertas-se-abren`, con visibilidad **Public** si quieres que los jurados accedan sin autenticación.
-3. Sube **los archivos y carpetas que aparecen en este ZIP** a la **raíz del repositorio**. Debe existir `index.html` directamente en la raíz, no dentro de otra carpeta.
-4. Abre **Settings → Pages**, selecciona **Deploy from a branch**, rama `main` y carpeta `/ (root)`, y guarda la configuración.
-5. Una vez publicado, abre la URL que GitHub muestre en **Pages**. Habitualmente será `https://agcarod.github.io/arquitecturas-de-lo-posible/`, pero usa la URL exacta confirmada por GitHub.
-6. Prueba en una ventana privada que el enlace abre sin iniciar sesión. Ese será el enlace que podrás insertar en la carta.
-
-> No incluye ni requiere cuenta de GitHub, tokens, bases de datos privadas, paquetes npm, claves ni servicios de terceros. Todo el sitio funciona con archivos estáticos y **rutas relativas**, por lo que sirve tanto en la raíz de un dominio como en un subdirectorio de GitHub Pages.
-
-### Publicar mediante git (alternativa)
-
-```bash
-unzip Puertas_Abiertas_Colombia_GitHub.zip
-cd Puertas_Abiertas_Colombia_GitHub
-git init
-git add .
-git commit -m "Publicar prototipo: Cuántas puertas se abren"
-git branch -M main
-git remote add origin https://github.com/agcarod/arquitecturas-de-lo-posible.git
-git push -u origin main
-```
-
-Repositorio público de la autora: https://github.com/agcarod/arquitecturas-de-lo-posible .
+- **Web:** https://agcarod.github.io/arquitecturas-de-lo-posible/
+- **Repositorio:** https://github.com/agcarod/arquitecturas-de-lo-posible
+- **Ficha metodológica legible:** https://agcarod.github.io/arquitecturas-de-lo-posible/metodologia.html
 
 ## Probar antes de subir
 
@@ -75,7 +55,7 @@ app.js                             Interacciones y gráficos
 assets/favicon.svg                 Símbolo del sitio
 data/territorios.js                Datos integrados y enlaces
  data/indicadores_2025.csv         Datos tabulares reutilizables
- docs/FUENTES_Y_METODO.md          Trazabilidad científica y limitaciones
+ metodologia.html          Trazabilidad científica y limitaciones
  tests/data.test.cjs               Pruebas automáticas sin dependencias
  .nojekyll                         Publicación directa con GitHub Pages
  LICENSE                           Licencia del código
@@ -89,8 +69,10 @@ Los valores demográficos de esta versión proceden de tabulaciones secundarias 
 
 ### Atribución
 
-Datos: Departamento Administrativo Nacional de Estadística (DANE); proyecciones basadas en CNPV 2018; consultas de RUV de la Unidad para las Víctimas como fuente futura. Véase [FUENTES_Y_METODO.md](docs/FUENTES_Y_METODO.md) para las páginas exactas y los enlaces. El prototipo no representa posiciones institucionales del DANE, la Universidad de los Andes ni la Unidad para las Víctimas.
+Datos: Departamento Administrativo Nacional de Estadística (DANE); proyecciones basadas en CNPV 2018; consultas de RUV de la Unidad para las Víctimas como fuente futura. Véase [FUENTES_Y_METODO.md](metodologia.html) para las páginas exactas y los enlaces. El prototipo no representa posiciones institucionales del DANE, la Universidad de los Andes ni la Unidad para las Víctimas.
 
 ## Licencia
 
 Código del prototipo: MIT, incluido en [LICENSE](LICENSE). La licencia del código no altera las condiciones de reutilización de las fuentes de datos de terceros.
+
+**Preservación:** la integración Zenodo no está completada; no existe DOI atribuido a esta versión hasta que el depósito sea publicado.
