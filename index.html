@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d2e32">
+  <meta name="description" content="Prototipo académico de Ángela Gissette Caro-Delgado, Ph.D., desarrollado para su postulación posdoctoral a Futuros de las Ciencias Sociales de la Universidad de los Andes. Indicadores territoriales y límites explícitos.">
+  <meta property="og:title" content="¿Cuántas puertas se abren donde creces?">
+  <meta property="og:description" content="Un atlas experimental de oportunidades territoriales en Colombia. Propuesta académica de Ángela Gissette Caro-Delgado para la convocatoria posdoctoral Futuros de las Ciencias Sociales.">
+  <title>¿Cuántas puertas se abren donde creces? · Futuros en prueba</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="data/territorios.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#atlas" class="skip-link">Saltar al atlas</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <div class="brand"><span class="brand-mark" aria-hidden="true">◫</span><span>FUTUROS <i>EN PRUEBA</i></span></div>
+      <div class="header-meta">ARQUITECTURAS DE LO POSIBLE <span class="meta-dot">·</span> POSTULACIÓN POSDOCTORAL / 2026</div>
+      <a class="header-link" href="#metodo">Fuentes y método <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-square"></span> Una pregunta para las ciencias sociales</p>
+          <h1>¿Cuántas puertas<br><em>se abren</em><br>donde creces<span class="mark">?</span></h1>
+          <p class="hero-sub">El lugar donde crecemos no determina nuestro futuro. Pero sí condiciona las oportunidades y adversidades con las que lo construimos.</p>
+          <a class="primary-action" href="#atlas">Explorar cuatro territorios <span aria-hidden="true">↘</span></a>
+          <p class="hero-small">Un prototipo abierto para pensar desigualdad, infancia y trayectorias de vida. No es un índice de riesgo ni un sistema de predicción.</p>
+          <div class="author-credit" aria-label="Autoría y contexto de la propuesta">
+            <p class="author-kicker">PROPUESTA DE INVESTIGACIÓN DE</p>
+            <p class="author-name">Ángela Gissette Caro-Delgado <span>Ph.D.</span></p>
+            <p class="author-context">Prototipo desarrollado para la postulación al programa posdoctoral <em>Futuros de las Ciencias Sociales</em> · Universidad de los Andes · 2026.</p>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="arch arch-a"><span class="arch-number">01</span></div>
+          <div class="arch arch-b"><span class="arch-number">02</span></div>
+          <div class="arch arch-c"><span class="arch-number">03</span></div>
+          <div class="art-note">MISMO PAÍS<br>DISTINTOS PUNTOS DE PARTIDA</div>
+        </div>
+      </div>
+    </section>
+    <section class="introduction shell">
+      <div class="intro-kicker">UNA IDEA SENCILLA. UNA PREGUNTA COMPLEJA.</div>
+      <p>En Colombia, las oportunidades no se distribuyen de manera uniforme. <strong>Antes de explicar las trayectorias individuales, necesitamos observar las condiciones territoriales.</strong> Esta primera versión conecta datos oficiales de hogares y educación con estimaciones demográficas, y hace visibles sus límites.</p>
+    </section>
+    <section class="atlas shell" id="atlas" aria-labelledby="atlas-title">
+      <div class="section-top">
+        <div><p class="eyebrow light">01 / ATLAS TERRITORIAL</p><h2 id="atlas-title">Elige dónde comienza una vida.</h2></div>
+        <p>Cuatro territorios, tres indicadores de contexto y preguntas que todavía no tienen respuesta.</p>
+      </div>
+      <div class="selection-panel">
+        <label for="territory">Territorio</label>
+        <select id="territory"><option value="choco">Chocó</option><option value="guajira">La Guajira</option><option value="bogota">Bogotá D. C.</option><option value="vaupes">Vaupés</option></select>
+        <label for="compare">Comparar con</label>
+        <select id="compare"><option value="bogota">Bogotá D. C.</option><option value="choco">Chocó</option><option value="guajira">La Guajira</option><option value="vaupes">Vaupés</option></select>
+      </div>
+      <div class="population-band" aria-live="polite">
+        <div class="population-main"><span class="micro-label">PERSONAS ENTRE 0 Y 17 AÑOS · PROYECCIÓN 2025</span><strong id="population-total">—</strong><span class="population-location" id="population-place">—</span><small>Recuento de población, no número de niños expuestos a un mismo evento.</small><a id="population-source" class="population-source" target="_blank" rel="noopener noreferrer" href="https://telencuestas.com/censos-de-poblacion/colombia/2025/choco">Consultar fuente demográfica ↗</a></div>
+        <div class="population-breakdown">
+          <div class="life-amount"><span>Niñez · 0–11 años</span><strong id="pop-children">—</strong></div>
+          <div class="life-amount"><span>Adolescencia · 12–17 años</span><strong id="pop-adolescent">—</strong></div>
+          <div class="population-meter"><div class="population-meter-fill" id="population-child-share"></div></div>
+          <div class="population-caption">Composición de 0–17 años · no equivale a prevalencia de ninguna adversidad.</div>
+        </div>
+      </div>
+      <div class="indicators-head"><div><p class="eyebrow light">CONDICIONES DEL ENTORNO · 2025</p><h3>Puertas que se abren. Barreras que permanecen.</h3></div><span class="pill">Datos públicos · comparables por indicador</span></div>
+      <div class="indicator-grid">
+        <article class="indicator-card good"><div class="card-icon">↗</div><p class="indicator-type">RECURSO DEL HOGAR</p><h4>Conectividad a internet</h4><div class="indicator-number"><strong id="internet-val">—</strong><span>%</span></div><p class="card-description">Hogares con acceso a internet fijo o móvil. No mide el uso efectivo de cada menor de edad.</p><div class="meter"><div id="internet-meter" class="meter-fill"></div></div><p class="comparison" id="internet-compare">—</p><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=12" target="_blank" rel="noopener noreferrer" class="source-link">DANE · ECV 2025, p. 12 <span aria-hidden="true">↗</span></a></article>
+        <article class="indicator-card concern"><div class="card-icon">↘</div><p class="indicator-type">PRIVACIÓN EN EL HOGAR</p><h4>Inseguridad alimentaria</h4><div class="indicator-number"><strong id="food-val">—</strong><span>%</span></div><p class="card-description">Hogares con inseguridad alimentaria moderada o grave (escala FIES, últimos 12 meses).</p><div class="meter"><div id="food-meter" class="meter-fill"></div></div><p class="comparison" id="food-compare">—</p><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6" target="_blank" rel="noopener noreferrer" class="source-link">DANE · FIES 2025, p. 6 <span aria-hidden="true">↗</span></a></article>
+        <article class="indicator-card neutral"><div class="card-icon">◎</div><p class="indicator-type">TRANSICIÓN A LA VIDA ADULTA</p><h4>Asistencia educativa · 17–21 años</h4><div class="indicator-number"><strong id="education-val">—</strong><span>%</span></div><p class="card-description">Personas de 17–21 años que asisten a educación formal. <strong>No es una medida de asistencia de los 0–17.</strong></p><div class="meter"><div id="education-meter" class="meter-fill"></div></div><p class="comparison" id="education-compare">—</p><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=19" target="_blank" rel="noopener noreferrer" class="source-link">DANE · ECV 2025, p. 19 <span aria-hidden="true">↗</span></a></article>
+      </div>
+      <div class="data-alert"><div class="data-alert-icon">!</div><div><strong>Estos porcentajes no se pueden sumar ni restar entre sí.</strong><p>Internet y alimentación describen hogares. La asistencia educativa describe personas de 17 a 21 años. Son poblaciones y conceptos distintos; no permiten afirmar cuántos menores experimentaron las tres condiciones simultáneamente.</p></div></div>
+      <div class="pair-grid">
+        <article class="panel comparison-panel"><p class="eyebrow light">LECTURA TERRITORIAL</p><h3>Dos territorios, distintas condiciones</h3><p id="comparison-reading">—</p><div class="side-compare" id="side-compare"></div></article>
+        <article class="panel future-panel"><p class="eyebrow light">LA PREGUNTA QUE ABREN LOS DATOS</p><h3>Lo que todavía necesitamos explicar</h3><p id="territory-insight">—</p><div class="future-note">¿Qué combinaciones de relaciones, recursos, decisiones e instituciones transforman estas condiciones en trayectorias diferentes?</div></article>
+      </div>
+    </section>
+    <section class="time-section" id="cambios">
+      <div class="shell">
+        <div class="section-top"><div><p class="eyebrow">02 / EL TIEMPO IMPORTA</p><h2>Los territorios también cambian.</h2></div><p>Un indicador puede mejorar mientras otro sigue mostrando restricciones. No confundamos una fotografía con un destino.</p></div>
+        <div class="time-grid"><div class="time-graph panel-dark"><h3>Inseguridad alimentaria en hogares</h3><p>Prevalencia moderada o grave · 2024 frente a 2025</p><div id="trend-chart" role="img" aria-label="Gráfico de cambios de inseguridad alimentaria entre 2024 y 2025 para los cuatro territorios"></div><div class="trend-legend" id="trend-legend"></div></div><div class="time-reading"><p class="micro-label">TERRITORIO SELECCIONADO</p><h3 id="trend-name">—</h3><strong id="trend-delta">—</strong><p id="trend-statement">—</p><small>La variación aparece marcada como estadísticamente significativa en el boletín de DANE para estos cuatro territorios. El cambio observado no identifica por sí solo sus causas.</small><a class="light-source" target="_blank" rel="noopener noreferrer" href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6">Ver serie publicada por el DANE ↗</a></div></div>
+      </div>
+    </section>
+    <section class="shell questions" id="preguntas"><div class="section-top"><div><p class="eyebrow light">03 / DE LOS DATOS A LA INVESTIGACIÓN</p><h2>¿Y si cambiamos las reglas?</h2></div><p>Elige una barrera. En vez de prometer su efecto, formulamos la investigación necesaria para comprenderla.</p></div>
+      <div class="question-workbench"><div class="workbench-inputs"><label for="barrier">¿Qué condición investigarías primero?</label><select id="barrier"><option value="internet">Conectividad y uso digital</option><option value="food">Seguridad alimentaria y continuidad educativa</option><option value="education">Transiciones entre educación y futuro laboral</option><option value="violence">Violencia, desplazamiento y protección territorial</option></select><label for="mechanism">¿En qué nivel buscarías el mecanismo?</label><select id="mechanism"><option value="institution">Instituciones y reglas de acceso</option><option value="networks">Relaciones y redes de cuidado</option><option value="trajectory">Trayectorias de vida y tiempo</option></select><button type="button" id="copy-question" class="copy-btn">Copiar pregunta y diseño <span aria-hidden="true">⧉</span></button><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span></div><div class="workbench-result"><p class="eyebrow">PROTOCOLO / BORRADOR</p><h3 id="research-question">—</h3><dl><dt>Dato que falta</dt><dd id="missing-data">—</dd><dt>Diseño inicial</dt><dd id="study-design">—</dd><dt>Qué podría cuestionar la hipótesis</dt><dd id="falsification">—</dd></dl></div></div>
+    </section>
+    <section class="missing-section"><div class="shell missing-grid"><div><p class="eyebrow">04 / LO QUE LOS DATOS NO ALCANZAN A VER</p><h2>Un territorio no es una lista de carencias.</h2><p>Las estadísticas públicas no representan por sí solas las redes de cuidado, los saberes comunitarios, la pertenencia, las aspiraciones ni la capacidad de acción colectiva. Para comprender las trayectorias de vida necesitamos también escuchar a quienes habitan esos lugares.</p></div><div class="missing-cards"><div><span class="missing-symbol">↗</span><strong>Recursos comunitarios</strong><small>¿Qué prácticas y redes amplían posibilidades, aunque no aparezcan en bases administrativas?</small></div><div><span class="missing-symbol">◎</span><strong>Violencia y protección</strong><small>La evidencia del RUV requiere tabular hechos, años, lugar y ciclo vital antes de comparar territorios. Un dato pendiente no equivale a cero.</small><a href="https://datospaz.unidadvictimas.gov.co/registro-unico-de-victimas/" target="_blank" rel="noopener noreferrer">Consultar RUV ↗</a></div></div></div></section>
+    <section class="shell methods" id="metodo"><div class="section-top"><div><p class="eyebrow light">05 / TRANSPARENCIA METODOLÓGICA</p><h2>Qué muestra. Qué no demuestra.</h2></div><p>Un prototipo académico debe ser útil incluso cuando reconoce sus incertidumbres.</p></div>
+      <div class="method-grid"><div class="method-item"><span class="method-index">01</span><strong>Población</strong><p>Recuentos 2025 de niñas, niños y adolescentes 0–17 años. Tabulación secundaria a partir de proyecciones DANE, con referencia enlazada en cada territorio y pendiente de cotejo directo con su serie original.</p></div><div class="method-item"><span class="method-index">02</span><strong>Hogares ≠ personas</strong><p>Conectividad e inseguridad alimentaria corresponden a hogares, no a niños identificados. No puede estimarse exposición individual ni coincidencia entre indicadores a partir de porcentajes agregados.</p></div><div class="method-item"><span class="method-index">03</span><strong>Educación ≠ toda infancia</strong><p>La asistencia presentada es de 17–21 años y funciona como ventana a una transición posterior. No se atribuye a la población de 0–17 años.</p></div><div class="method-item"><span class="method-index">04</span><strong>Comparación ≠ causalidad</strong><p>Los departamentos no equivalen a observaciones individuales y no forman una muestra aleatoria. Diferencias descriptivas no identifican mecanismos ni permiten pronosticar destinos personales.</p></div></div>
+      <details class="sources-accordion"><summary>Fuentes originales, páginas y decisiones de análisis <span aria-hidden="true">＋</span></summary><div><ul><li><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=12" target="_blank" rel="noopener noreferrer">DANE, ECV 2025, p. 12</a>: conectividad de los hogares por departamento (Gráfico 12).</li><li><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=19" target="_blank" rel="noopener noreferrer">DANE, ECV 2025, p. 19</a>: asistencia educativa a los 17–21 años por departamento (Gráfico 18).</li><li><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6" target="_blank" rel="noopener noreferrer">DANE, FIES 2025, p. 6</a>: inseguridad alimentaria moderada o grave 2024–2025 y significancia (Gráfico 4).</li><li><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion" target="_blank" rel="noopener noreferrer">DANE, proyecciones de población</a> y <a href="https://portalsuin.icbf.gov.co/sites/suin/Pages/poblacion_ni%C3%B1os_ni%C3%B1as_Colombia.aspx" target="_blank" rel="noopener noreferrer">ICBF, tablero de niñez</a> para la fuente primaria de estimaciones demográficas; cifras agregadas exhibidas a partir de tablas secundarias citadas en la ficha de cada territorio.</li><li><a href="https://datospaz.unidadvictimas.gov.co/registro-unico-de-victimas/" target="_blank" rel="noopener noreferrer">RUV, Unidad para las Víctimas</a>: fuente futura de una capa de exposición registrada a violencia, no integrada como porcentaje en esta versión.</li></ul><p>Las tasas de encuesta pueden tener márgenes de error; esta demostración utiliza valores publicados y no reconstruye errores estándar. Se presentan valores redondeados a un decimal. Ver el <a href="docs/FUENTES_Y_METODO.md">documento metodológico</a> y <a href="data/indicadores_2025.csv">datos agregados reutilizados</a>.</p></div></details>
+      <div class="closing-note"><span>ARQUITECTURAS DE LO POSIBLE</span><p>La pregunta no es solo dónde se concentran las adversidades. Es <strong>qué instituciones, relaciones y decisiones pueden ampliar las posibilidades de una vida</strong>.</p></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="shell footer-inner"><div><span class="brand small"><span class="brand-mark">◫</span> FUTUROS EN PRUEBA</span><p>Ángela Gissette Caro-Delgado, Ph.D. · Prototipo para la convocatoria posdoctoral «Futuros de las Ciencias Sociales», Universidad de los Andes (2026).</p><p class="footer-disclaimer">Iniciativa académica independiente; no constituye un proyecto institucional aprobado ni una publicación oficial de la Universidad.</p></div><div><a href="docs/FUENTES_Y_METODO.md">Metodología</a><a href="data/indicadores_2025.csv">Datos CSV</a><a href="https://github.com/new" target="_blank" rel="noopener noreferrer">Publicar en GitHub ↗</a></div></div></footer>
+</body>
+</html>
