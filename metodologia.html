@@ -1,6 +1,6 @@
 <!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Trazabilidad, fuentes y límites del atlas de oportunidades territoriales"><title>Fuentes y método · Arquitecturas de lo posible</title><link rel="stylesheet" href="styles.css"><style>.method-document{max-width:970px;margin:3rem auto;padding:0 1.4rem 5rem;line-height:1.7;color:#183e3e}.method-document h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.2}.method-document h2{margin-top:2.8rem}.method-document table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%;font-size:.85rem}.method-document th,.method-document td{padding:.6rem;text-align:left;border:1px solid #cbdad6}.method-document th{background:#e8f1ed}.method-document a{color:#057267;text-decoration:underline}.method-document blockquote{border-left:3px solid teal;padding:1rem;background:#ecf3f1}.method-document p,.method-document li{font-size:1rem}.method-nav{padding:1.1rem 1.5rem;background:#113c3d;color:#f0f6ed}.method-nav a{color:#dcf8e8}</style></head><body><nav class="method-nav"><a href="index.html">← Volver al atlas interactivo</a> · <a href="data/indicadores_2025.csv">Descargar datos CSV</a> · <a href="https://github.com/agcarod/arquitecturas-de-lo-posible">Repositorio GitHub</a></nav><article class="method-document"><h1>Fuentes, definiciones y límites de inferencia</h1>
 <p><strong>Proyecto:</strong> ¿Cuántas puertas se abren donde creces?<br />
-<strong>Versión:</strong> 1.1 · 17 de noviembre de 2026<br />
+<strong>Versión:</strong> 1.2 · 24 de noviembre de 2026<br />
 <strong>Unidad geográfica:</strong> cuatro departamentos/distrito seleccionados de Colombia<br />
 <strong>Período de indicadores:</strong> 2025, con comparación 2023–2025 para FIES.</p>
 <h2>1. Pregunta que orienta el prototipo</h2>
@@ -151,11 +151,11 @@
 <li>El RUV registra victimización bajo reglas administrativas; no es una medida directa y completa de toda exposición a violencia, y el sitio deliberadamente no muestra cifras aún sin tabulación comparable.</li>
 <li>Los recuentos demográficos 2025 pueden diferir entre versiones de proyecciones; no mezclar bases con diferente corte y revisión.</li>
 </ol>
-<h2>5. Cómo se convertiría en investigación</h2>
-<p><strong>Fase A · Preparación territorial.</strong> Consolidar indicadores, calidad, cobertura, años y denominadores; integrar registros de violencia por grupo etario sin vulnerar confidencialidad.</p>
-<p><strong>Fase B · Preguntas rivales.</strong> Contrastar mecanismos individuales, relacionales e institucionales mediante preguntas claras y medidas diferenciadas de disponibilidad, acceso efectivo y uso de recursos.</p>
-<p><strong>Fase C · Nuevos datos.</strong> Recolectar historias de trayectorias, redes de cuidado, barreras de acceso y participación; evaluar diseños longitudinales, multinivel o mixtos según sus supuestos y factibilidad.</p>
-<p><strong>Fase D · Comunicación científica.</strong> Usar el tablero como conversación pública sobre incertidumbre, decisiones institucionales y futuros posibles, no como predicción individual.</p>
+<h2>5. Relación con la propuesta posdoctoral</h2>
+<p>Este tablero es un prototipo descriptivo de condiciones territoriales. Sus indicadores —educación, conectividad, inseguridad alimentaria y población— se conservan como primera capa de contexto; no son una escala de posibilidades de vida ni un instrumento que siga trayectorias individuales.</p>
+<p>La propuesta posdoctoral se centra en jóvenes de 18–28 años en Bogotá. Plantea una meta orientadora de 24 participantes en cuatro perfiles de transición educativa y laboral, dos entrevistas separadas por cuatro a cinco meses y mediciones exploratorias. La unidad de análisis será el encuentro situado entre promesas, condiciones institucionales y trayectorias.</p>
+<p>El estudio propuesto distinguirá futuros deseados, posibilidades percibidas y opciones documentables —acceso, costos, apoyos, seguridad material y tiempo—. Contrastará logros educativos y laborales con esas opciones y con experiencias de autonomía, competencia, vínculos, sentido y contribución. Las categorías estarán abiertas a revisión; no se combinarán en un índice ni se asumirán como una definición universal del bienestar.</p>
+<p>Los datos territoriales pueden ofrecer contexto, pero este atlas no aporta la muestra ni mide las experiencias de las personas participantes. Una graduación o un empleo no bastan para concluir que se ampliaron sus posibilidades; una interrupción tampoco demuestra por sí sola que se redujeron. El generador de preguntas del sitio es un ejercicio metodológico ilustrativo, no el protocolo de la propuesta.</p>
 <h2>6. Reproducibilidad y alcance de publicación</h2>
 <ul>
 <li>Datos en <a href="data/indicadores_2025.csv"><code>data/indicadores_2025.csv</code></a>.</li>
@@ -164,7 +164,7 @@
 <li>Tests en <a href="tests/data.test.cjs"><code>tests/data.test.cjs</code></a> para totales, porcentajes y coherencia de períodos.</li>
 <li>Producto independiente, no avalado por DANE, ICBF, Uniandes ni Unidad para las Víctimas.</li>
 </ul>
-<p><strong>Última edición del prototipo:</strong> 12 de noviembre de 2026. Las cifras están ancladas a productos DANE publicados en abril y mayo de 2026 y a la tabulación demográfica 2025 especificada.</p>
+<p><strong>Última edición del prototipo:</strong> 24 de noviembre de 2026. Las cifras están ancladas a productos DANE publicados en abril y mayo de 2026 y a la tabulación demográfica 2025 especificada.</p>
 <h2>7. Selección territorial, sismo y vivienda (actualización 2026)</h2>
 <p>Cuatro casos contrastantes fueron seleccionados con fines de demostración: Bogotá D. C. como referencia predominantemente urbana; Chocó y La Guajira por configuraciones territoriales y materiales diferentes; Vaupés como contexto amazónico de alta dispersión. No es una muestra representativa de departamentos. <strong>Los promedios esconden importantes diferencias municipales, urbano-rurales, de pertenencia étnica y de experiencia personal.</strong></p>
 <p>La <a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf">ECV 2025</a> reportó un déficit habitacional <strong>superior al 80 % en Chocó y Vaupés</strong>, frente al <strong>6,3 % de hogares en Bogotá</strong>. No se presenta como indicador cuantitativo principal del atlas ni se combina algebraicamente con los otros porcentajes.</p>
