@@ -118,7 +118,7 @@
     $('missing-data').textContent=t.need;
     $('study-design').textContent=`${t.study} Perspectiva seleccionada: ${lens.modifier}.`;
     $('falsification').textContent=t.challenge;
-    questionText=`¿CUÁNTAS PUERTAS SE ABREN DONDE CRECES? — FICHA DE HIPÓTESIS
+    questionText=`¿CUÁNTAS PUERTAS SE ABREN DONDE CRECES? — FICHA EXPLORATORIA DE PREGUNTA Y DISEÑO
 Territorio de referencia: ${selected.name}
 Tema: ${t.label}
 Perspectiva: ${lens.name}
@@ -137,7 +137,7 @@ CRITERIO DE REFUTACIÓN
 ${t.challenge}
 
 NOTAS
-Ficha demostrativa: no es una hipótesis confirmada, un protocolo aprobado ni una evaluación causal.
+Ejercicio metodológico ilustrativo: no es un protocolo aprobado, una evaluación causal ni el diseño empírico longitudinal de la propuesta posdoctoral.
 Fuentes y método: metodologia.html
 `;
   }
