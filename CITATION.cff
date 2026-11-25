@@ -1,23 +1,23 @@
 cff-version: 1.2.0
-message: "Cite esta versión del software y sus fuentes de datos; el DOI de Zenodo se incorporará cuando exista."
+message: "Cite esta versión del software y sus fuentes. No se ha asignado DOI de repositorio."
 type: software
-title: "¿Cuántas puertas se abren donde creces? Un atlas experimental de oportunidades territoriales en Colombia"
+title: "Arquitecturas de lo posible: juventudes y condiciones sociales del bienestar en un mundo en transición"
 authors:
   - family-names: "Caro-Delgado"
     given-names: "Ángela Gissette"
     orcid: "https://orcid.org/0000-0002-9825-8637"
 abstract: >-
-  Prototipo académico interactivo de Arquitecturas de lo posible, desarrollado
-  para la postulación a Futuros de las Ciencias Sociales de la Universidad de los
-  Andes (2026). Integra indicadores territoriales públicos con límites explícitos
-  de inferencia, documentación metodológica y preguntas para investigación.
+  Laboratorio académico independiente que integra un atlas territorial,
+  agregados del piloto ECV 2025, contrastes exploratorios, una demostración
+  metodológica y una agenda de investigación sobre juventudes y bienestar.
+  El procedimiento de campo sigue en desarrollo y no está validado.
 repository-code: "https://github.com/agcarod/arquitecturas-de-lo-posible"
 url: "https://agcarod.github.io/arquitecturas-de-lo-posible/"
 license: MIT
-version: "1.1.0"
+version: "2.0.0"
 keywords:
-  - "ciencias sociales"
-  - "desigualdad territorial"
-  - "infancia y adolescencia"
-  - "oportunidades"
+  - "juventudes"
+  - "bienestar"
+  - "capacidades"
+  - "posibilidades de vida"
   - "Colombia"

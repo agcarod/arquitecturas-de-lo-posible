@@ -1,0 +1,378 @@
+{
+  "title": "ECV 2025 · Jóvenes de 18 a 28 años",
+  "source": {
+    "agency": "DANE",
+    "catalog": "https://microdatos.dane.gov.co/index.php/catalog/905",
+    "dictionary": "https://microdatos.dane.gov.co/index.php/catalog/905/data-dictionary"
+  },
+  "population_age": [
+    18,
+    28
+  ],
+  "person_records": 35776,
+  "households": 27632,
+  "modules_integrated": 5,
+  "records_lost": 0,
+  "weighted_population_sum": 8769452.756,
+  "weight": "FEX_C",
+  "design": {
+    "strata": "ESTRATO2020",
+    "primary_sampling_unit": "SEGMENTO",
+    "strata_count": 356,
+    "segment_count": 8543,
+    "singleton_strata": 0,
+    "interval_note": "IC95% aproximados por linealización de primer orden dentro de estratos; en el contraste, estándar sexo×edad fijo."
+  },
+  "standardization": {
+    "variables": "sexo al nacer × edad",
+    "age_bands": [
+      "18–21",
+      "22–25",
+      "26–28"
+    ],
+    "reference": "Distribución FEX_C agrupada de ambos grupos (hogar y ocupación sin estudio).",
+    "comparison": "Oficios del hogar menos ocupados que no estudian"
+  },
+  "category_rule": {
+    "employment": "P6240=1 o Sí en P6250/P6260/P6270.",
+    "study": "P8586=1.",
+    "home": "Sin ocupación/estudio y P6240=4.",
+    "job_search": "Sin asignación anterior y P6280=1 (diligencia en últimas 4 semanas).",
+    "priority": [
+      "Ocupados que no estudian",
+      "Estudiantes sin ocupación",
+      "Estudian y trabajan",
+      "Oficios del hogar como actividad principal",
+      "Búsqueda reciente de empleo (resto)",
+      "Otras situaciones"
+    ],
+    "caveat": "Clasificación analítica excluyente; pueden coexistir actividades. Oficios del hogar sigue la actividad principal y puede incluir búsqueda simultánea. No identifica decisiones ni todo el cuidado no remunerado."
+  },
+  "groups": [
+    {
+      "id": "occupied_no_study",
+      "name": "Ocupados que no estudian",
+      "definition": "Ocupación derivada; P8586=No.",
+      "sample_n": 18189,
+      "weighted_share_pct": 51.26,
+      "outcomes": {
+        "life_satisfaction": {
+          "estimate": 8.273,
+          "ci95_approx": [
+            8.217,
+            8.329
+          ],
+          "unit": "mean_0_10"
+        },
+        "activities_worthwhile": {
+          "estimate": 8.595,
+          "ci95_approx": [
+            8.537,
+            8.653
+          ],
+          "unit": "mean_0_10"
+        },
+        "free_time_satisfaction": {
+          "estimate": 7.626,
+          "ci95_approx": [
+            7.558,
+            7.693
+          ],
+          "unit": "mean_0_10"
+        },
+        "household_income_reaches_minimum": {
+          "estimate": 69.203,
+          "ci95_approx": [
+            67.679,
+            70.728
+          ],
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "id": "study_no_occupation",
+      "name": "Estudiantes sin ocupación",
+      "definition": "P8586=Sí; sin ocupación derivada.",
+      "sample_n": 5612,
+      "weighted_share_pct": 17.93,
+      "outcomes": {
+        "life_satisfaction": {
+          "estimate": 8.448,
+          "ci95_approx": [
+            8.379,
+            8.517
+          ],
+          "unit": "mean_0_10"
+        },
+        "activities_worthwhile": {
+          "estimate": 8.702,
+          "ci95_approx": [
+            8.624,
+            8.78
+          ],
+          "unit": "mean_0_10"
+        },
+        "free_time_satisfaction": {
+          "estimate": 8.0,
+          "ci95_approx": [
+            7.914,
+            8.086
+          ],
+          "unit": "mean_0_10"
+        },
+        "household_income_reaches_minimum": {
+          "estimate": 74.384,
+          "ci95_approx": [
+            72.285,
+            76.483
+          ],
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "id": "study_and_work",
+      "name": "Estudian y trabajan",
+      "definition": "P8586=Sí y ocupación derivada.",
+      "sample_n": 2115,
+      "weighted_share_pct": 7.21,
+      "outcomes": {
+        "life_satisfaction": {
+          "estimate": 8.441,
+          "ci95_approx": [
+            8.333,
+            8.549
+          ],
+          "unit": "mean_0_10"
+        },
+        "activities_worthwhile": {
+          "estimate": 8.829,
+          "ci95_approx": [
+            8.714,
+            8.943
+          ],
+          "unit": "mean_0_10"
+        },
+        "free_time_satisfaction": {
+          "estimate": 7.666,
+          "ci95_approx": [
+            7.504,
+            7.828
+          ],
+          "unit": "mean_0_10"
+        },
+        "household_income_reaches_minimum": {
+          "estimate": 76.924,
+          "ci95_approx": [
+            73.827,
+            80.022
+          ],
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "id": "home_primary",
+      "name": "Oficios del hogar como actividad principal",
+      "definition": "P6240=oficios del hogar; no estudia ni está ocupada.",
+      "sample_n": 7205,
+      "weighted_share_pct": 15.53,
+      "outcomes": {
+        "life_satisfaction": {
+          "estimate": 8.113,
+          "ci95_approx": [
+            8.044,
+            8.181
+          ],
+          "unit": "mean_0_10"
+        },
+        "activities_worthwhile": {
+          "estimate": 8.448,
+          "ci95_approx": [
+            8.376,
+            8.521
+          ],
+          "unit": "mean_0_10"
+        },
+        "free_time_satisfaction": {
+          "estimate": 7.666,
+          "ci95_approx": [
+            7.581,
+            7.751
+          ],
+          "unit": "mean_0_10"
+        },
+        "household_income_reaches_minimum": {
+          "estimate": 53.627,
+          "ci95_approx": [
+            51.338,
+            55.916
+          ],
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "id": "searched_elsewhere",
+      "name": "Búsqueda reciente de empleo (resto)",
+      "definition": "P6280=Sí entre categorías no asignadas antes.",
+      "sample_n": 1955,
+      "weighted_share_pct": 6.44,
+      "outcomes": {
+        "life_satisfaction": {
+          "estimate": 7.86,
+          "ci95_approx": [
+            7.695,
+            8.026
+          ],
+          "unit": "mean_0_10"
+        },
+        "activities_worthwhile": {
+          "estimate": 8.245,
+          "ci95_approx": [
+            8.075,
+            8.415
+          ],
+          "unit": "mean_0_10"
+        },
+        "free_time_satisfaction": {
+          "estimate": 7.307,
+          "ci95_approx": [
+            7.104,
+            7.51
+          ],
+          "unit": "mean_0_10"
+        },
+        "household_income_reaches_minimum": {
+          "estimate": 57.541,
+          "ci95_approx": [
+            53.343,
+            61.74
+          ],
+          "unit": "percent"
+        }
+      }
+    },
+    {
+      "id": "other",
+      "name": "Otras situaciones",
+      "definition": "Resto de situaciones sin estudio ni ocupación derivada.",
+      "sample_n": 700,
+      "weighted_share_pct": 1.64,
+      "outcomes": {
+        "life_satisfaction": {
+          "estimate": 7.115,
+          "ci95_approx": [
+            6.724,
+            7.506
+          ],
+          "unit": "mean_0_10"
+        },
+        "activities_worthwhile": {
+          "estimate": 7.63,
+          "ci95_approx": [
+            7.305,
+            7.956
+          ],
+          "unit": "mean_0_10"
+        },
+        "free_time_satisfaction": {
+          "estimate": 7.101,
+          "ci95_approx": [
+            6.724,
+            7.478
+          ],
+          "unit": "mean_0_10"
+        },
+        "household_income_reaches_minimum": {
+          "estimate": 56.312,
+          "ci95_approx": [
+            49.292,
+            63.333
+          ],
+          "unit": "percent"
+        }
+      }
+    }
+  ],
+  "standardized_contrasts": {
+    "life_satisfaction": {
+      "home_primary": 8.176,
+      "occupied_no_study": 8.28,
+      "difference_home_minus_work": -0.104,
+      "ci95_approx": [
+        -0.257,
+        0.048
+      ],
+      "unit": "mean_0_10"
+    },
+    "activities_worthwhile": {
+      "home_primary": 8.41,
+      "occupied_no_study": 8.6,
+      "difference_home_minus_work": -0.189,
+      "ci95_approx": [
+        -0.348,
+        -0.03
+      ],
+      "unit": "mean_0_10"
+    },
+    "free_time_satisfaction": {
+      "home_primary": 7.833,
+      "occupied_no_study": 7.63,
+      "difference_home_minus_work": 0.203,
+      "ci95_approx": [
+        0.046,
+        0.36
+      ],
+      "unit": "mean_0_10"
+    },
+    "household_income_reaches_minimum": {
+      "home_primary": 53.102,
+      "occupied_no_study": 69.552,
+      "difference_home_minus_work": -16.45,
+      "ci95_approx": [
+        -20.758,
+        -12.141
+      ],
+      "unit": "percentage_points"
+    }
+  },
+  "joint_threshold_sensitivity": [
+    {
+      "threshold": 7,
+      "home_primary_pct": 38.657,
+      "occupied_no_study_pct": 50.708,
+      "difference_home_minus_work_pp": -12.051,
+      "ci95_approx_pp": [
+        -16.185,
+        -7.917
+      ]
+    },
+    {
+      "threshold": 8,
+      "home_primary_pct": 29.424,
+      "occupied_no_study_pct": 36.93,
+      "difference_home_minus_work_pp": -7.506,
+      "ci95_approx_pp": [
+        -11.457,
+        -3.554
+      ]
+    },
+    {
+      "threshold": 9,
+      "home_primary_pct": 17.106,
+      "occupied_no_study_pct": 17.064,
+      "difference_home_minus_work_pp": 0.042,
+      "ci95_approx_pp": [
+        -3.252,
+        3.337
+      ]
+    }
+  ],
+  "limitations": [
+    "Datos transversales: no identifican causalidad, decisiones o renuncias.",
+    "P9090 es una respuesta del hogar, no ingreso individual.",
+    "IC aproximados y condicionados al estándar común; resultados exploratorios, sin validación de escala ni equivalencia."
+  ]
+}

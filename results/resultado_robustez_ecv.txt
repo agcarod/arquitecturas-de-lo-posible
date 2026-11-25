@@ -1,0 +1,26 @@
+DBF-ECV-Caracteristicas_composicion_hogar-2025.zip (235350, 8)
+DBF-ECV-Fuerza_trabajo2025.zip (195074, 9)
+DBF-ECV-Educacion-2025(1).zip (221043, 4)
+DBF-ECV-Variables_diseno_muestral-2025(1).zip (235350, 6)
+DBF-ECV-Condiciones_vida_hogar_tenencia_bienes-2025.zip (87060, 7)
+H economic {2: 49069, 1: 33477, 3: 4514}
+merge {'both': 35776, 'left_only': 0, 'right_only': 0}
+merge {'both': 35776, 'left_only': 0, 'right_only': 0}
+merge {'both': 35776, 'left_only': 0, 'right_only': 0}
+merge {'both': 35776, 'left_only': 0, 'right_only': 0}
+coverage {'P8586': 0, 'P6240': 0, 'P1895': 0, 'P3175': 0, 'P1905': 0, 'P9090': 0}
+households 27632
+singleton 0
+STANDARD, cells: {'1_0': 0.1261557146181258, '1_1': 0.19179378839064104, '1_2': 0.1710841105817841, '2_0': 0.12906791488328634, '2_1': 0.2105779558112121, '2_2': 0.1713205157149505}
+P1895 home/work/diff/lo/hi 8.176 8.28 -0.104 -0.257 0.048
+P1905 home/work/diff/lo/hi 8.41 8.6 -0.189 -0.348 -0.03
+P3175 home/work/diff/lo/hi 7.833 7.63 0.203 0.046 0.36
+enough home/work/diff/lo/hi 53.102 69.552 -16.45 -20.758 -12.141
+all7 home/work/diff/lo/hi 68.191 70.225 -2.035 -6.057 1.988
+all8 home/work/diff/lo/hi 50.31 49.74 0.57 -3.754 4.895
+all9 home/work/diff/lo/hi 28.861 22.033 6.828 2.7 10.955
+joint7 home/work/diff/lo/hi 38.657 50.708 -12.051 -16.185 -7.917
+joint8 home/work/diff/lo/hi 29.424 36.93 -7.506 -11.457 -3.554
+joint9 home/work/diff/lo/hi 17.106 17.064 0.042 -3.252 3.337
+Kish overall: 10371.59719129319
+cells unweighted: {('home', '1_0'): 388, ('home', '1_1'): 195, ('home', '1_2'): 108, ('home', '2_0'): 2114, ('home', '2_1'): 2500, ('home', '2_2'): 1900, ('work', '1_0'): 3097, ('work', '1_1'): 4433, ('work', '1_2'): 3782, ('work', '2_0'): 1557, ('work', '2_1'): 2765, ('work', '2_2'): 2555}

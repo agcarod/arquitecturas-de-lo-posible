@@ -4,125 +4,347 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0d2e32">
-  <meta name="description" content="Prototipo académico de Ángela Gissette Caro-Delgado: comparación de condiciones territoriales agregadas y límites de los indicadores para comprender las posibilidades de vida.">
-  <meta property="og:title" content="¿Cuántas puertas se abren donde creces?">
-  <meta property="og:description" content="Un prototipo para comparar condiciones territoriales de acceso y privación, y mostrar qué no dicen sobre las posibilidades de vida. Propuesta académica de Ángela Gissette Caro-Delgado.">
-  <title>¿Cuántas puertas se abren donde creces? · Futuros en prueba</title>
+  <meta name="description" content="Arquitecturas de lo posible: laboratorio académico sobre juventudes y condiciones sociales del bienestar. Datos territoriales, análisis ECV 2025 y metodología en desarrollo.">
+  <meta property="og:title" content="Arquitecturas de lo posible">
+  <meta property="og:description" content="Juventudes y condiciones sociales del bienestar en un mundo en transición.">
+  <title>Arquitecturas de lo posible · Juventudes y bienestar</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
   <script src="data/territorios.js" defer></script>
+  <script src="data/demo_logic.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a href="#atlas" class="skip-link">Saltar al atlas</a>
+  <a href="#contenido" class="skip-link">Saltar al contenido</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <div class="brand"><span class="brand-mark" aria-hidden="true">◫</span><span>FUTUROS <i>EN PRUEBA</i></span></div>
-      <div class="header-meta">ARQUITECTURAS DE LO POSIBLE <span class="meta-dot">·</span> POSTULACIÓN POSDOCTORAL / 2026</div>
-      <a class="header-link" href="#metodo">Fuentes y método <span aria-hidden="true">↗</span></a>
+      <a class="brand" href="#inicio" aria-label="Arquitecturas de lo posible, inicio"><span class="brand-mark" aria-hidden="true">◫</span><span>ARQUITECTURAS <i>DE LO POSIBLE</i></span></a>
+      <nav class="chapter-nav" aria-label="Secciones del laboratorio">
+        <a href="#atlas">01 <span>Territorios</span></a>
+        <a href="#vidas">02 <span>Vidas actuales</span></a>
+        <a href="#renuncias">03 <span>Tensiones</span></a>
+        <a href="#protocolo">04 <span>Método</span></a>
+        <a href="#agenda">05 <span>Agenda</span></a>
+      </nav>
+      <a class="header-link" href="metodologia.html">Fuentes y método <span aria-hidden="true">↗</span></a>
     </div>
   </header>
-  <main>
-    <section class="hero">
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-square"></span> Una pregunta para las ciencias sociales</p>
-          <h1>¿Cuántas puertas<br><em>se abren</em><br>donde creces<span class="mark">?</span></h1>
-          <p class="hero-sub">El territorio condiciona los recursos y las barreras disponibles. Los indicadores permiten comparar algunas condiciones, pero no muestran por sí solos qué caminos se vuelven transitables para cada persona.</p>
-          <a class="primary-action" href="#atlas">Explorar cuatro territorios <span aria-hidden="true">↘</span></a>
-          <p class="hero-small">Un prototipo para explorar desigualdades territoriales y los límites de los indicadores agregados. No mide bienestar ni predice trayectorias individuales.</p>
-          <div class="author-credit" aria-label="Autoría y contexto de la propuesta">
-            <p class="author-kicker">PROPUESTA DE INVESTIGACIÓN DE</p>
-            <p class="author-name">Ángela Gissette Caro-Delgado <span>Ph.D.</span></p>
-            <p class="author-context">Prototipo desarrollado para la postulación al programa posdoctoral <em>Futuros de las Ciencias Sociales</em> · Universidad de los Andes · 2026.</p>
+          <p class="eyebrow"><span class="eyebrow-square"></span> Juventudes y condiciones sociales del bienestar en un mundo en transición</p>
+          <h1>Arquitecturas<br><em>de lo posible</em><span class="mark">.</span></h1>
+          <p class="hero-question">¿Qué arquitecturas sociales permiten a las juventudes construir, sostener y transformar vidas que consideran valiosas, y bajo qué condiciones podrían ampliarse equitativamente?</p>
+          <p class="hero-sub">Un laboratorio para conectar condiciones territoriales, configuraciones observables de vida y experiencias de bienestar, y para preguntar qué hace practicables distintas alternativas.</p>
+          <a class="primary-action" href="#atlas">Recorrer el laboratorio <span aria-hidden="true">↘</span></a>
+          <p class="hero-small">Datos públicos y resultados agregados. No es un modelo predictivo, una escala validada ni un proyecto institucional aprobado.</p>
+          <div class="author-credit">
+            <p class="author-kicker">INVESTIGACIÓN DE</p>
+            <p class="author-name">Ángela Gissette Caro-Delgado <span>Ph. D.</span></p>
+            <p class="author-context">Propuesta para el posdoctorado «Futuros de las Ciencias Sociales» · Universidad de los Andes · 2026.</p>
           </div>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="arch arch-a"><span class="arch-number">01</span></div>
           <div class="arch arch-b"><span class="arch-number">02</span></div>
           <div class="arch arch-c"><span class="arch-number">03</span></div>
-          <div class="art-note">MISMO PAÍS<br>DISTINTOS PUNTOS DE PARTIDA</div>
+          <div class="art-note">VIVIR · SOSTENER<br>TRANSFORMAR</div>
         </div>
       </div>
     </section>
-    <section class="introduction shell">
-      <div class="intro-kicker">UNA IDEA SENCILLA. UNA PREGUNTA COMPLEJA.</div>
-      <p>En Colombia, las condiciones de acceso y privación varían entre territorios. Este atlas compara indicadores agregados de hogares y educación junto con una estimación demográfica secundaria. <strong>Describe algunos puntos de partida; no revela qué futuros desean las personas, qué opciones perciben como posibles ni cuáles pueden sostener en su trayectoria.</strong></p>
-    </section>
-    <section class="atlas shell" id="atlas" aria-labelledby="atlas-title">
-      <div class="section-top">
-        <div><p class="eyebrow light">01 / ATLAS TERRITORIAL</p><h2 id="atlas-title">Elige dónde comienza una trayectoria.</h2></div>
-        <p>Cuatro territorios, tres indicadores de contexto y preguntas que todavía no tienen respuesta.</p>
-      </div>
 
-      <div class="rationale"><strong>¿Por qué estos cuatro territorios?</strong> Bogotá D. C. representa un contexto predominantemente urbano con mejores indicadores de conectividad; Chocó y La Guajira permiten examinar distintas configuraciones de privación y acceso; y Vaupés introduce un contexto amazónico de alta dispersión territorial. La selección es <em>ilustrativa, no probabilística</em>. Los promedios departamentales ocultan diferencias entre municipios, áreas rurales, pueblos y grupos de población; no describen por igual las vidas de sus habitantes.</div>
+    <section class="introduction shell" aria-label="Tesis de la propuesta">
+      <div class="intro-kicker">TESIS DE TRABAJO</div>
+      <p>Cuando las ciencias sociales confunden las instituciones que históricamente han sostenido el bienestar con el bienestar mismo, corren el riesgo de defender la continuidad de esas instituciones antes que las condiciones humanas que justificaron su existencia.</p>
+    </section>
+    <div class="transition-note shell"><span aria-hidden="true">↳</span><p>La pregunta no presupone que el empleo vaya a desaparecer ni pone en duda el valor de estudiar o trabajar. Indaga qué condiciones permiten realizar, combinar y transformar distintas posibilidades de vida.</p></div>
+
+    <section class="atlas shell" id="atlas" aria-labelledby="atlas-title">
+      <div class="chapter-heading">
+        <span class="chapter-number">01</span>
+        <div class="section-top">
+          <div><p class="eyebrow light">¿DÓNDE COMIENZAN NUESTRAS POSIBILIDADES?</p><h2 id="atlas-title">¿Cuántas puertas se abren donde creces?</h2></div>
+          <p>El territorio organiza recursos, costos y barreras. Sus promedios no nos dicen qué alternativas tiene una persona concreta.</p>
+        </div>
+      </div>
+      <div class="rationale"><strong>Cuatro puntos de entrada, no una muestra de Colombia.</strong> Bogotá D. C., Chocó, La Guajira y Vaupés ilustran contextos urbanos, costeros, fronterizos y amazónicos. La selección es intencional; los promedios departamentales esconden diferencias dentro de cada lugar y no describen por igual a quienes lo habitan.</div>
       <div class="selection-panel">
-        <label for="territory">Territorio</label>
+        <label for="territory">Explorar territorio</label>
         <select id="territory"><option value="choco">Chocó</option><option value="guajira">La Guajira</option><option value="bogota">Bogotá D. C.</option><option value="vaupes">Vaupés</option></select>
         <label for="compare">Comparar con</label>
         <select id="compare"><option value="bogota">Bogotá D. C.</option><option value="choco">Chocó</option><option value="guajira">La Guajira</option><option value="vaupes">Vaupés</option></select>
       </div>
       <div class="population-band" aria-live="polite">
-        <div class="population-main"><span class="micro-label">PERSONAS ENTRE 0 Y 17 AÑOS · ESTIMACIÓN SECUNDARIA 2025</span><strong id="population-total">231.253</strong><span class="population-location" id="population-place">Chocó</span><small>Estimación de una fuente secundaria (Telencuestas, atribuida a DANE). No mide menores expuestos a un evento ni certifica una versión oficial.</small><a id="population-source" class="population-source" target="_blank" rel="noopener noreferrer" href="https://telencuestas.com/censos-de-poblacion/colombia/2025/choco">Consultar fuente secundaria ↗</a></div>
+        <div class="population-main">
+          <span class="micro-label">PERSONAS ENTRE 0 Y 17 AÑOS · ESTIMACIÓN SECUNDARIA 2025</span>
+          <strong id="population-total">231.253</strong><span class="population-location" id="population-place">Chocó</span>
+          <small>Estimación de Telencuestas, que atribuye las cifras a proyecciones DANE. No es una tabulación oficial primaria cotejada para esta versión.</small>
+          <a id="population-source" class="population-source" target="_blank" rel="noopener noreferrer" href="https://telencuestas.com/censos-de-poblacion/colombia/2025/choco">Consultar fuente secundaria ↗</a>
+        </div>
         <div class="population-breakdown">
           <div class="life-amount"><span>Niñez · 0–11 años</span><strong id="pop-children">154.346</strong></div>
           <div class="life-amount"><span>Adolescencia · 12–17 años</span><strong id="pop-adolescent">76.907</strong></div>
-          <div class="population-meter"><div class="population-meter-fill" id="population-child-share"></div></div>
-          <div class="population-caption">Composición de 0–17 años · no equivale a prevalencia de ninguna adversidad.</div>
+          <div class="population-meter" role="img" aria-label="Proporción entre niñez y adolescencia"><div class="population-meter-fill" id="population-child-share"></div></div>
+          <div class="population-caption">Composición de 0–17 años; no equivale a prevalencia de adversidad.</div>
         </div>
       </div>
-      <div class="indicators-head"><div><p class="eyebrow light">CONDICIONES DEL ENTORNO · 2025</p><h3>Puertas que se abren. Barreras que permanecen.</h3></div><span class="pill">Datos públicos · comparables por indicador</span></div>
+      <div class="indicators-head"><div><p class="eyebrow light">CONDICIONES DEL ENTORNO · 2025</p><h3>Recursos y barreras que no forman un índice.</h3></div><span class="pill">Poblaciones de referencia distintas</span></div>
       <div class="indicator-grid">
-        <article class="indicator-card good"><div class="card-icon">↗</div><p class="indicator-type">RECURSO DEL HOGAR</p><h4>Conectividad a internet</h4><div class="indicator-number"><strong id="internet-val">36,4</strong><span>%</span></div><p class="card-description">Hogares con acceso a internet fijo o móvil. No mide el uso efectivo de cada menor de edad.</p><div class="meter"><div id="internet-meter" class="meter-fill"></div></div><p class="comparison" id="internet-compare">46,5 puntos porcentuales menos que Bogotá D. C.</p><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=12" target="_blank" rel="noopener noreferrer" class="source-link">DANE · ECV 2025, p. 12 <span aria-hidden="true">↗</span></a></article>
-        <article class="indicator-card concern"><div class="card-icon">↘</div><p class="indicator-type">PRIVACIÓN EN EL HOGAR</p><h4>Inseguridad alimentaria</h4><div class="indicator-number"><strong id="food-val">56,8</strong><span>%</span></div><p class="card-description">Hogares con inseguridad alimentaria moderada o grave (escala FIES, últimos 12 meses).</p><div class="meter"><div id="food-meter" class="meter-fill"></div></div><p class="comparison" id="food-compare">47,2 puntos porcentuales más que Bogotá D. C.</p><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6" target="_blank" rel="noopener noreferrer" class="source-link">DANE · FIES 2025, p. 6 <span aria-hidden="true">↗</span></a></article>
-        <article class="indicator-card neutral"><div class="card-icon">◎</div><p class="indicator-type">TRANSICIÓN A LA VIDA ADULTA</p><h4>Asistencia educativa · 17–21 años</h4><div class="indicator-number"><strong id="education-val">45,6</strong><span>%</span></div><p class="card-description">Personas de 17–21 años que asisten a educación formal. <strong>No es una medida de asistencia de los 0–17.</strong></p><div class="meter"><div id="education-meter" class="meter-fill"></div></div><p class="comparison" id="education-compare">15,1 puntos porcentuales menos que Bogotá D. C.</p><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=19" target="_blank" rel="noopener noreferrer" class="source-link">DANE · ECV 2025, p. 19 <span aria-hidden="true">↗</span></a></article>
+        <article class="indicator-card good"><div class="card-icon" aria-hidden="true">↗</div><p class="indicator-type">HOGARES</p><h4>Con acceso a internet</h4><div class="indicator-number"><strong id="internet-val">36,4</strong><span>%</span></div><p class="card-description">Acceso fijo o móvil. No mide uso efectivo, calidad ni acceso individual.</p><div class="meter"><div id="internet-meter" class="meter-fill"></div></div><p class="comparison" id="internet-compare">46,5 puntos porcentuales menos que Bogotá D. C.</p><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=12" target="_blank" rel="noopener noreferrer" class="source-link">DANE · ECV 2025, p. 12 ↗</a></article>
+        <article class="indicator-card concern"><div class="card-icon" aria-hidden="true">↘</div><p class="indicator-type">HOGARES · ÚLTIMOS 12 MESES</p><h4>Inseguridad alimentaria moderada o grave</h4><div class="indicator-number"><strong id="food-val">56,8</strong><span>%</span></div><p class="card-description">Experiencia alimentaria del hogar (escala FIES); no es una medida clínica individual.</p><div class="meter"><div id="food-meter" class="meter-fill"></div></div><p class="comparison" id="food-compare">47,2 puntos porcentuales más que Bogotá D. C.</p><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6" target="_blank" rel="noopener noreferrer" class="source-link">DANE · FIES 2025, p. 6 ↗</a></article>
+        <article class="indicator-card neutral"><div class="card-icon" aria-hidden="true">◎</div><p class="indicator-type">PERSONAS DE 17 A 21 AÑOS</p><h4>Asistencia a educación formal</h4><div class="indicator-number"><strong id="education-val">45,6</strong><span>%</span></div><p class="card-description">Ventana a una transición posterior; no es una tasa de asistencia para los 0–17 años.</p><div class="meter"><div id="education-meter" class="meter-fill"></div></div><p class="comparison" id="education-compare">15,1 puntos porcentuales menos que Bogotá D. C.</p><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=19" target="_blank" rel="noopener noreferrer" class="source-link">DANE · ECV 2025, p. 19 ↗</a></article>
       </div>
+      <div class="data-alert"><div class="data-alert-icon" aria-hidden="true">!</div><div><strong>Estos porcentajes no se suman ni se restan entre sí.</strong><p>Internet y FIES describen hogares; educación describe personas de 17–21 años. No siguen a las mismas personas ni permiten calcular cuántas viven las tres condiciones a la vez.</p></div></div>
 
       <section class="static-lookup" aria-labelledby="static-title">
-        <div class="static-heading"><div><p class="eyebrow light">DATOS VISIBLES SIN JAVASCRIPT</p><h3 id="static-title">Los cuatro territorios, en una tabla.</h3></div><p>Referencia accesible y descargable: si fallan los scripts, los números siguen aquí.</p></div>
-        <div class="table-scroller" tabindex="0" role="region" aria-label="Tabla accesible de indicadores por territorio">
-          <table class="fallback-table"><caption>Indicadores territoriales 2025, población 0–17 secundaria y serie FIES 2023–2025</caption><thead><tr><th scope="col">Territorio</th><th scope="col">0–17¹</th><th scope="col">Internet 2025²</th><th scope="col">FIES 2023³</th><th scope="col">FIES 2024³</th><th scope="col">FIES 2025³</th><th scope="col">Educación 17–21⁴</th></tr></thead><tbody>
+        <div class="static-heading"><div><p class="eyebrow light">DATOS VISIBLES SIN JAVASCRIPT</p><h3 id="static-title">Cuatro territorios, una tabla.</h3></div><p>Referencia accesible y descargable; los valores siguen disponibles aunque fallen los controles dinámicos.</p></div>
+        <div class="table-scroller" tabindex="0" role="region" aria-label="Tabla accesible de indicadores territoriales">
+          <table class="fallback-table"><caption>Indicadores territoriales 2025; población 0–17 secundaria; serie FIES 2023–2025</caption><thead><tr><th scope="col">Territorio</th><th scope="col">0–17¹</th><th scope="col">Internet hogares²</th><th scope="col">FIES 2023³</th><th scope="col">FIES 2024³</th><th scope="col">FIES 2025³</th><th scope="col">Educación 17–21⁴</th></tr></thead><tbody>
             <tr><th scope="row">Chocó</th><td>231.253</td><td>36,4 %</td><td>18,9 %</td><td>36,3 %</td><td>56,8 %</td><td>45,6 %</td></tr>
             <tr><th scope="row">La Guajira</th><td>417.131</td><td>52,6 %</td><td>50,1 %</td><td>52,4 %</td><td>47,8 %</td><td>47,9 %</td></tr>
             <tr><th scope="row">Bogotá D. C.</th><td>1.741.825</td><td>82,9 %</td><td>21,2 %</td><td>13,9 %</td><td>9,6 %</td><td>60,7 %</td></tr>
             <tr><th scope="row">Vaupés</th><td>21.997</td><td>18,6 %</td><td>34,4 %</td><td>46,1 %</td><td>22,3 %</td><td>39,6 %</td></tr>
           </tbody></table>
         </div>
-        <p class="table-note">¹ Personas proyectadas: cifras recogidas por Telencuestas y atribuidas a DANE, <strong>no contrastadas directamente con el anexo oficial vigente</strong>. ² % de hogares con internet. ³ % de hogares con inseguridad alimentaria moderada o grave. ⁴ % de personas de 17–21 años que asisten a educación formal. Los denominadores son distintos. Fuentes y limitaciones en <a href="metodologia.html">Metodología</a>.</p>
-        <noscript><p class="js-note">Tu navegador tiene JavaScript desactivado. La tabla anterior es la alternativa completa; los controles dinámicos no se actualizarán.</p></noscript>
+        <p class="table-note">¹ Recuentos de fuente secundaria que atribuye sus datos a proyecciones DANE; no se cotejaron con el anexo oficial vigente. ² % de hogares. ³ % de hogares con inseguridad alimentaria moderada o grave. ⁴ % de personas de 17–21 años que asisten. Los denominadores son distintos. Ver <a href="metodologia.html">ficha metodológica</a>.</p>
       </section>
-      <div class="data-alert"><div class="data-alert-icon">!</div><div><strong>Estos porcentajes no se pueden sumar ni restar entre sí.</strong><p>Internet y alimentación describen hogares. La asistencia educativa describe personas de 17 a 21 años. Son poblaciones y conceptos distintos; no permiten afirmar cuántos menores experimentaron las tres condiciones simultáneamente.</p></div></div>
-      <div class="interpretive-layer" id="lectura" aria-labelledby="reading-title">
-        <div class="section-top"><div><p class="eyebrow light">02 / SEGUNDA CAPA · INTERPRETACIÓN</p><h2 id="reading-title">Las condiciones territoriales no son las posibilidades de vida.</h2></div><p>Conservamos los indicadores como punto de partida descriptivo. La pregunta de investigación comienza donde termina su alcance.</p></div>
-        <div class="pair-grid">
-          <article class="panel"><p class="eyebrow light">LO QUE EL ATLAS MUESTRA</p><h3>Condiciones agregadas</h3><p>La población estimada de 0–17 años, la conectividad y la inseguridad alimentaria de los hogares, y la asistencia educativa de personas de 17–21 años. Son fuentes y denominadores distintos; no siguen a las mismas personas.</p></article>
-          <article class="panel future-panel"><p class="eyebrow light">LO QUE LA INVESTIGACIÓN DEBE RECONSTRUIR</p><h3>Qué caminos son transitables</h3><p>Los futuros que jóvenes desean, las posibilidades que perciben y las opciones que pueden documentarse: acceso, costos, apoyos, seguridad material y tiempo. También cómo se sostienen autonomía, competencia, vínculos, sentido y contribución.</p></article>
-        </div>
-        <div class="data-alert"><div class="data-alert-icon">?</div><div><strong>El estudio posdoctoral propuesto se centra en transiciones entre educación y trabajo de jóvenes de 18–28 años en Bogotá.</strong><p>El tablero no es su muestra ni mide la experiencia de sus participantes. La investigación contrastaría logros educativos y laborales con opciones disponibles y experiencias de bienestar, sin asumir que graduarse o conseguir empleo equivale por sí solo a ampliar las posibilidades de vida. Estas dimensiones son exploratorias, no un índice.</p></div></div>
-      </div>
+
       <div class="pair-grid">
-        <article class="panel comparison-panel"><p class="eyebrow light">LECTURA TERRITORIAL</p><h3>Dos territorios, distintas condiciones</h3><p id="comparison-reading">La lectura de Chocó frente a Bogotá D. C. depende del indicador elegido y de su población de referencia. No existe una suma válida de «oportunidades buenas» y «malas».</p><div class="side-compare" id="side-compare"><p>Internet: 36,4 % · Alimentación: 56,8 % · Educación 17–21: 45,6 % (Chocó, 2025).</p></div></article>
-        <article class="panel future-panel"><p class="eyebrow light">LA PREGUNTA QUE ABREN LOS DATOS</p><h3>Lo que todavía necesitamos explicar</h3><p id="territory-insight">En Chocó, la inseguridad alimentaria de los hogares aumentó 20,5 puntos porcentuales entre 2024 y 2025.</p><div class="future-note">¿Qué combinaciones de relaciones, recursos, decisiones e instituciones transforman estas condiciones en trayectorias diferentes?</div></article>
-      </div>
-    </section>
-    <section class="time-section" id="cambios">
-      <div class="shell">
-        <div class="section-top"><div><p class="eyebrow">03 / EL TIEMPO IMPORTA</p><h2>Los territorios también cambian.</h2></div><p>Un indicador puede mejorar mientras otro sigue mostrando restricciones. No confundamos una fotografía con un destino.</p></div>
-        <div class="time-grid"><div class="time-graph panel-dark"><h3>Inseguridad alimentaria en hogares</h3><p>Prevalencia moderada o grave · 2023, 2024 y 2025</p><div id="trend-chart" role="img" aria-label="Gráfico de inseguridad alimentaria 2023 a 2025 para cuatro territorios"><p>Tabla de respaldo: Chocó 18,9 → 36,3 → 56,8 %; La Guajira 50,1 → 52,4 → 47,8 %; Bogotá 21,2 → 13,9 → 9,6 %; Vaupés 34,4 → 46,1 → 22,3 %.</p></div><div class="trend-legend" id="trend-legend"></div></div><div class="time-reading"><p class="micro-label">TERRITORIO SELECCIONADO</p><h3 id="trend-name">Chocó</h3><strong id="trend-delta">+20,5 p.p.</strong><p id="trend-statement">Chocó: 18,9 % (2023), 36,3 % (2024) y 56,8 % (2025). El cambio 2024–2025 fue significativo (DANE, 95 %); las tres estimaciones no permiten atribuir causas.</p><small>DANE marca como significativas al 95 % las variaciones de 2024 a 2025 en los cuatro territorios. La volatilidad —especialmente en Vaupés— impide interpretar dos puntos como una tendencia sostenida; no podemos inferir causas.</small><a class="light-source" target="_blank" rel="noopener noreferrer" href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6">Ver DANE 2024–2025 ↗</a> · <a class="light-source" target="_blank" rel="noopener noreferrer" href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf#page=7">DANE 2023–2024 ↗</a></div></div>
+        <article class="panel comparison-panel"><p class="eyebrow light">LECTURA TERRITORIAL</p><h3>Dos territorios, condiciones distintas</h3><p id="comparison-reading">La lectura de Chocó frente a Bogotá D. C. depende del indicador y su población de referencia.</p><div class="side-compare" id="side-compare" aria-label="Indicadores del territorio seleccionado"><p>Internet: 36,4 % · FIES: 56,8 % · Educación 17–21: 45,6 %.</p></div></article>
+        <article class="panel future-panel"><p class="eyebrow light">LO QUE EL ATLAS NO PUEDE DECIR</p><h3>El promedio no revela caminos transitables.</h3><p>El atlas ofrece contexto para formular preguntas; no mide lo que jóvenes desean, las alternativas que perciben ni las que pueden sostener.</p><div class="future-note" id="territory-insight">En Chocó, la inseguridad alimentaria de los hogares aumentó 20,5 puntos porcentuales entre 2024 y 2025.</div></article>
       </div>
     </section>
 
-        <div class="context-strip"><div><p class="eyebrow light">CONTEXTO POSTERIOR A LOS INDICADORES</p><h3>Una fecha también cambia lo que podemos afirmar.</h3><p>El <strong>10 de agosto de 2026</strong> ocurrió un sismo de magnitud <strong>7,4 Mw</strong> con epicentro en <strong>San José del Palmar, Chocó</strong>. Los indicadores de 2025 que ves aquí <strong>son anteriores al evento</strong>; no representan ni evalúan sus efectos. <a href="https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx" target="_blank" rel="noopener noreferrer">Servicio Geológico Colombiano ↗</a></p></div><div><p class="eyebrow light">OTRA DIMENSIÓN POR INCORPORAR</p><h3>La vivienda también condiciona oportunidades.</h3><p>La ECV 2025 reporta <strong>déficit habitacional superior al 80 %</strong> en Chocó y Vaupés, frente a <strong>6,3 % en Bogotá</strong>. Son porcentajes de hogares, no de NNAJ; los incorporamos como contexto, no como un índice compuesto. <a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf" target="_blank" rel="noopener noreferrer">Boletín ECV 2025 ↗</a></p></div></div>
-    <section class="shell questions" id="preguntas"><div class="section-top"><div><p class="eyebrow light">04 / PREGUNTAS PARA INVESTIGAR</p><h2>¿Y si cambiamos las reglas?</h2></div><p>El generador propone preguntas exploratorias sobre lo que estos datos no responden. No es el protocolo empírico de la propuesta ni estima efectos.</p></div>
-      <div class="question-workbench"><div class="workbench-inputs"><label for="barrier">¿Qué condición investigarías primero?</label><select id="barrier"><option value="internet">Conectividad y uso digital</option><option value="food">Seguridad alimentaria y continuidad educativa</option><option value="education">Transiciones entre educación y futuro laboral</option><option value="violence">Violencia, desplazamiento y protección territorial</option></select><label for="mechanism">¿En qué nivel buscarías el mecanismo?</label><select id="mechanism"><option value="institution">Instituciones y reglas de acceso</option><option value="networks">Relaciones y redes de cuidado</option><option value="trajectory">Trayectorias de vida y tiempo</option></select><button type="button" id="copy-question" class="copy-btn">Copiar pregunta y diseño <span aria-hidden="true">⧉</span></button><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span></div><div class="workbench-result"><p class="eyebrow">EJERCICIO EXPLORATORIO</p><h3 id="research-question">¿En qué condiciones la conexión disponible se convierte en oportunidades efectivas de aprendizaje, información y participación?</h3><dl><dt>Dato que falta</dt><dd id="missing-data">Acceso individual, calidad, dispositivos, costos y capacidades de uso: los datos actuales son de hogares.</dd><dt>Diseño inicial</dt><dd id="study-design">Encuestas a hogares, cartografía de acceso y comparación de establecimientos y territorios.</dd><dt>Qué podría cuestionar la hipótesis</dt><dd id="falsification">Que la conectividad no se asocie con la participación al considerar condiciones educativas y familiares.</dd></dl></div></div>
+    <section class="time-section" id="cambios" aria-labelledby="trend-title">
+      <div class="shell">
+        <div class="section-top"><div><p class="eyebrow">EL TIEMPO TAMBIÉN IMPORTA</p><h2 id="trend-title">Una condición cambia. El territorio no se vuelve un destino.</h2></div><p>Una serie corta permite describir variaciones; por sí sola no identifica qué las produjo ni si continuarán.</p></div>
+        <div class="time-grid"><div class="time-graph panel-dark"><h3>Inseguridad alimentaria en hogares</h3><p>Prevalencia moderada o grave · 2023, 2024 y 2025</p><div id="trend-chart" role="img" aria-label="Gráfico de inseguridad alimentaria de los hogares, 2023 a 2025"><p>Tabla de respaldo: Chocó 18,9 → 36,3 → 56,8 %; La Guajira 50,1 → 52,4 → 47,8 %; Bogotá 21,2 → 13,9 → 9,6 %; Vaupés 34,4 → 46,1 → 22,3 %.</p></div><div class="trend-legend" id="trend-legend"></div></div><div class="time-reading"><p class="micro-label">TERRITORIO SELECCIONADO</p><h3 id="trend-name">Chocó</h3><strong id="trend-delta">+20,5 p.p.</strong><p id="trend-statement">Serie 2023–2025. DANE señala un cambio significativo entre 2024 y 2025, pero no demuestra una tendencia sostenida ni sus causas.</p><small>DANE reporta cambios significativos al 95 % entre 2024 y 2025 en los cuatro casos. La volatilidad impide tratar dos variaciones como una tendencia sostenida.</small><a class="light-source" target="_blank" rel="noopener noreferrer" href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6">DANE · FIES 2025 ↗</a> · <a class="light-source" target="_blank" rel="noopener noreferrer" href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf#page=7">FIES 2024 ↗</a></div></div>
+        <div class="context-strip"><div><p class="eyebrow light">CONTEXTO, FUERA DE LA SERIE</p><h3>Una fecha cambia lo que se puede afirmar.</h3><p>El sismo del <strong>10 de agosto de 2026</strong>, de magnitud <strong>7,4 Mw</strong>, tuvo epicentro en <strong>San José del Palmar, Chocó</strong>. Los datos presentados son de 2025, anteriores al evento; no evalúan sus efectos. <a href="https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx" target="_blank" rel="noopener noreferrer">Servicio Geológico Colombiano ↗</a></p></div><div><p class="eyebrow light">OTRA CONDICIÓN ESTRUCTURAL</p><h3>La vivienda también forma parte del contexto.</h3><p>La ECV 2025 reporta déficit habitacional superior al 80 % en Chocó y Vaupés, frente a 6,3 % en Bogotá. Son porcentajes de hogares; se presentan como contexto, no dentro de un índice ni como tasas de NNAJ. <a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf" target="_blank" rel="noopener noreferrer">DANE · boletín ECV 2025 ↗</a></p></div></div>
+      </div>
     </section>
-    <section class="missing-section"><div class="shell missing-grid"><div><p class="eyebrow">04 / LO QUE LOS DATOS NO ALCANZAN A VER</p><h2>Un territorio no es una lista de carencias.</h2><p>Las estadísticas públicas no representan por sí solas las redes de cuidado, los saberes comunitarios, la pertenencia, las aspiraciones ni la capacidad de acción colectiva. Para comprender las trayectorias de vida necesitamos también escuchar a quienes habitan esos lugares.</p></div><div class="missing-cards"><div><span class="missing-symbol">↗</span><strong>Recursos comunitarios</strong><small>¿Qué prácticas y redes amplían posibilidades, aunque no aparezcan en bases administrativas?</small></div><div><span class="missing-symbol">◎</span><strong>Violencia y protección</strong><small>La evidencia del RUV requiere tabular hechos, años, lugar y ciclo vital antes de comparar territorios. Un dato pendiente no equivale a cero.</small><a href="https://datospaz.unidadvictimas.gov.co/registro-unico-de-victimas/" target="_blank" rel="noopener noreferrer">Consultar RUV ↗</a></div></div></div></section>
-    <section class="shell methods" id="metodo"><div class="section-top"><div><p class="eyebrow light">05 / TRANSPARENCIA METODOLÓGICA</p><h2>Qué muestra. Qué no demuestra.</h2></div><p>Un prototipo académico debe ser útil incluso cuando reconoce sus incertidumbres.</p></div>
-      <div class="method-grid"><div class="method-item"><span class="method-index">01</span><strong>Población</strong><p>Recuentos 2025 de niñas, niños y adolescentes 0–17 años. Estimaciones de una compilación secundaria de Telencuestas, que las atribuye a proyecciones DANE. No equivalen a una tabulación primaria certificada; consultar la procedencia y las revisiones demográficas en la metodología.</p></div><div class="method-item"><span class="method-index">02</span><strong>Hogares ≠ personas</strong><p>Conectividad e inseguridad alimentaria corresponden a hogares, no a niños identificados. No puede estimarse exposición individual ni coincidencia entre indicadores a partir de porcentajes agregados.</p></div><div class="method-item"><span class="method-index">03</span><strong>Educación ≠ toda infancia</strong><p>La asistencia presentada es de 17–21 años y funciona como ventana a una transición posterior. No se atribuye a la población de 0–17 años.</p></div><div class="method-item"><span class="method-index">04</span><strong>Comparación ≠ causalidad</strong><p>Los departamentos no equivalen a observaciones individuales y no forman una muestra aleatoria. Diferencias descriptivas no identifican mecanismos ni permiten pronosticar destinos personales.</p></div></div>
-      <details class="sources-accordion"><summary>Fuentes originales, páginas y decisiones de análisis <span aria-hidden="true">＋</span></summary><div><ul><li><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=12" target="_blank" rel="noopener noreferrer">DANE, ECV 2025, p. 12</a>: conectividad de los hogares por departamento (Gráfico 12).</li><li><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=19" target="_blank" rel="noopener noreferrer">DANE, ECV 2025, p. 19</a>: asistencia educativa a los 17–21 años por departamento (Gráfico 18).</li><li><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf#page=7" target="_blank" rel="noopener noreferrer">DANE, FIES 2024, p. 7</a>: inseguridad alimentaria de 2023 y 2024 y significancia de ese intervalo.</li><li><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6" target="_blank" rel="noopener noreferrer">DANE, FIES 2025, p. 6</a>: inseguridad alimentaria moderada o grave 2024–2025 y significancia (Gráfico 4).</li><li><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion" target="_blank" rel="noopener noreferrer">DANE, proyecciones de población</a> y <a href="https://portalsuin.icbf.gov.co/sites/suin/Pages/poblacion_ni%C3%B1os_ni%C3%B1as_Colombia.aspx" target="_blank" rel="noopener noreferrer">ICBF, tablero de niñez</a> para la fuente primaria de estimaciones demográficas; cifras agregadas exhibidas a partir de tablas secundarias citadas en la ficha de cada territorio.</li><li><a href="https://datospaz.unidadvictimas.gov.co/registro-unico-de-victimas/" target="_blank" rel="noopener noreferrer">RUV, Unidad para las Víctimas</a>: fuente futura de una capa de exposición registrada a violencia, no integrada como porcentaje en esta versión.</li></ul><p>Los cuatro casos se escogieron para ilustrar contrastes, no representan el país; sus promedios esconden heterogeneidad municipal, rural e intraterritorial. Las tasas de encuesta pueden tener márgenes de error; esta demostración utiliza valores publicados y no reconstruye errores estándar. Se presentan valores redondeados a un decimal. Ver el <a href="metodologia.html">documento metodológico</a> y <a href="data/indicadores_2025.csv">datos agregados reutilizados</a>.</p></div></details>
-      <div class="closing-note"><span>ARQUITECTURAS DE LO POSIBLE</span><p>La pregunta no es solo dónde se concentran las adversidades. Es <strong>qué instituciones, relaciones y decisiones pueden ampliar las posibilidades de una vida</strong>.</p></div>
+
+    <section class="life-section shell" id="vidas" aria-labelledby="life-title">
+      <div class="chapter-heading">
+        <span class="chapter-number">02</span>
+        <div class="section-top"><div><p class="eyebrow light">¿CÓMO VIVIMOS ACTUALMENTE?</p><h2 id="life-title">Una fotografía nacional de seis configuraciones.</h2></div><p>El piloto de la ECV 2025 conecta actividades, bienestar subjetivo y suficiencia económica declarada por el hogar.</p></div>
+      </div>
+      <div class="sample-banner">
+        <div><span class="micro-label">PERSONAS DE 18–28 AÑOS</span><strong>35.776</strong><small>registros analizados</small></div>
+        <div><span class="micro-label">HOGARES</span><strong>27.632</strong><small>sin pérdida al integrar cinco módulos</small></div>
+        <div><span class="micro-label">COBERTURA</span><strong>100 %</strong><small>de registros elegibles quedó enlazado</small></div>
+      </div>
+      <div class="life-intro"><p>Las configuraciones describen la semana y la actividad principal recogidas por la encuesta. Son categorías analíticas mutuamente excluyentes, no clases sociales, elecciones personales ni trayectorias estables.</p><p>Las participaciones se estiman con <strong>FEX_C</strong>. La columna <strong>n</strong> es frecuencia muestral sin ponderar; el porcentaje es una estimación ponderada de la población de 18–28 años en el universo de la ECV.</p></div>
+      <div class="group-explorer">
+        <div class="group-visual panel">
+          <div class="chart-head"><div><p class="eyebrow light">COMPOSICIÓN PONDERADA</p><h3>Seis configuraciones observables</h3></div><a href="data/ecv2025_groups.csv" download>Descargar tabla CSV ↧</a></div>
+          <div id="config-plot" class="config-plot" role="group" aria-label="Barras de participación ponderada de seis configuraciones de vida"><p>Ocupados sin estudiar 51,26 %; estudiantes sin ocupación 17,93 %; estudian y trabajan 7,21 %; oficios del hogar 15,53 %; búsqueda reciente de empleo restante 6,44 %; otras situaciones 1,64 %.</p></div>
+          <p class="visual-note">Las barras muestran participación ponderada entre jóvenes de 18–28. Las frecuencias muestrales pueden consultarse en la tabla accesible.</p>
+        </div>
+        <div class="group-detail panel" aria-live="polite">
+          <label for="group-select">Explorar una configuración</label>
+          <select id="group-select">
+            <option value="occupied_no_study">Ocupados que no estudian</option>
+            <option value="study_no_occupation">Estudiantes sin ocupación</option>
+            <option value="study_and_work">Estudian y trabajan</option>
+            <option value="home_primary">Oficios del hogar como actividad principal</option>
+            <option value="searched_elsewhere">Búsqueda reciente de empleo (resto)</option>
+            <option value="other">Otras situaciones</option>
+          </select>
+          <p class="detail-share"><strong id="group-share">51,26 %</strong><span id="group-n">n = 18.189</span></p>
+          <dl class="outcome-list">
+            <div><dt>Satisfacción vital</dt><dd><strong id="group-life">8,27</strong><span>/ 10</span></dd></div>
+            <div><dt>Las cosas que hace valen la pena</dt><dd><strong id="group-meaning">8,59</strong><span>/ 10</span></dd></div>
+            <div><dt>Satisfacción con tiempo libre</dt><dd><strong id="group-time">7,63</strong><span>/ 10</span></dd></div>
+            <div><dt>Ingreso del hogar alcanza gastos mínimos o más</dt><dd><strong id="group-income">69,20 %</strong></dd></div>
+          </dl>
+          <p class="group-definition" id="group-definition">Ocupación observada/derivada; no estudia.</p>
+        </div>
+      </div>
+      <div class="table-scroller" tabindex="0" role="region" aria-label="Resultados por configuración de vida">
+        <table class="fallback-table"><caption>ECV 2025, población de 18–28 años; n sin ponderar y resultados ponderados</caption><thead><tr><th scope="col">Configuración</th><th scope="col">n</th><th scope="col">Población %</th><th scope="col">Satisfacción vital</th><th scope="col">Actividad vale la pena</th><th scope="col">Tiempo libre</th><th scope="col">Ingresos cubren mínimos %</th></tr></thead><tbody>
+          <tr><th scope="row">Ocupados que no estudian</th><td>18.189</td><td>51,26</td><td>8,273</td><td>8,595</td><td>7,626</td><td>69,203</td></tr>
+          <tr><th scope="row">Estudiantes sin ocupación</th><td>5.612</td><td>17,93</td><td>8,448</td><td>8,702</td><td>8,000</td><td>74,384</td></tr>
+          <tr><th scope="row">Estudian y trabajan</th><td>2.115</td><td>7,21</td><td>8,441</td><td>8,829</td><td>7,666</td><td>76,924</td></tr>
+          <tr><th scope="row">Oficios del hogar como actividad principal</th><td>7.205</td><td>15,53</td><td>8,113</td><td>8,448</td><td>7,666</td><td>53,627</td></tr>
+          <tr><th scope="row">Búsqueda reciente de empleo (resto)</th><td>1.955</td><td>6,44</td><td>7,860</td><td>8,245</td><td>7,307</td><td>57,541</td></tr>
+          <tr><th scope="row">Otras situaciones</th><td>700</td><td>1,64</td><td>7,115</td><td>7,630</td><td>7,101</td><td>56,312</td></tr>
+        </tbody></table>
+      </div>
+      <p class="table-note">“Las cosas que hace valen la pena” corresponde a P1905. La suficiencia es la respuesta del hogar a P9090; no es el ingreso individual de la persona. Consulta <a href="https://microdatos.dane.gov.co/index.php/catalog/905/data-dictionary/F9?file_name=Caracteristicas+y+composicion+del+hogar" target="_blank" rel="noopener noreferrer">diccionario de bienestar DANE</a>, <a href="https://microdatos.dane.gov.co/index.php/catalog/905/data-dictionary/F51" target="_blank" rel="noopener noreferrer">P9090</a> y la <a href="metodologia.html#ecv">ficha de reproducción</a>.</p>
+      <div class="data-alert"><div class="data-alert-icon" aria-hidden="true">i</div><div><strong>La lectura no parte de una idea única de bienestar.</strong><p>Las medias describen respuestas separadas en una escala 0–10; no son un índice. La configuración tampoco implica una decisión, un motivo de cuidado ni una renuncia.</p></div></div>
+      <div class="download-row"><a class="download-link" href="data/ecv2025_groups.csv" download>Descargar agregados CSV ↧</a><a class="download-link" href="data/ecv2025_summary.json" download>Descargar estimaciones y método JSON ↧</a><a class="download-link" href="scripts/build_ecv2025_dashboard.py" download>Código para reproducir agregados ↧</a></div>
+    </section>
+
+    <section class="renunciation-section" id="renuncias" aria-labelledby="renuncia-title">
+      <div class="shell">
+        <div class="chapter-heading">
+          <span class="chapter-number">03</span>
+          <div class="section-top"><div><p class="eyebrow">¿A QUÉ RENUNCIAMOS PARA SOSTENER NUESTRAS VIDAS?</p><h2 id="renuncia-title">Bienestar parecido no significa condiciones iguales.</h2></div><p>Un contraste exploratorio entre quienes hacen oficios del hogar como actividad principal y quienes están ocupados sin estudiar.</p></div>
+        </div>
+        <p class="renunciation-lede">¿Experimentar bienestar significa disponer de las mismas condiciones para sostenerlo y transformar nuestra vida?</p>
+        <div class="comparison-table-wrap">
+          <table class="contrast-table">
+            <caption>ECV 2025 · estimaciones estandarizadas por sexo y grupo de edad</caption>
+            <thead><tr><th scope="col">Indicador</th><th scope="col">Ocupados sin estudiar</th><th scope="col">Oficios del hogar</th><th scope="col">Diferencia (hogar − ocupación), IC 95 % aprox.</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Satisfacción vital, media 0–10</th><td>8,28</td><td>8,18</td><td>−0,10 <small>(−0,26; 0,05)</small></td></tr>
+              <tr><th scope="row">Las cosas que hace valen la pena, media 0–10</th><td>8,60</td><td>8,41</td><td>−0,19 <small>(−0,35; −0,03)</small></td></tr>
+              <tr><th scope="row">Satisfacción con tiempo libre, media 0–10</th><td>7,63</td><td>7,83</td><td>+0,20 <small>(+0,05; +0,36)</small></td></tr>
+              <tr><th scope="row">Ingreso del hogar alcanza gastos mínimos o más, %</th><td>69,55 %</td><td>53,10 %</td><td>−16,45 p. p. <small>(−20,76; −12,14)</small></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="threshold-panel">
+          <div class="threshold-intro"><p class="eyebrow light">SENSIBILIDAD AL UMBRAL</p><h3>La respuesta cambia cuando cambia el corte.</h3><p>Indicador conjunto: cada una de las tres valoraciones llega al umbral y el hogar declara que sus ingresos alcanzan los gastos mínimos o los cubren por encima.</p></div>
+          <div class="table-scroller" tabindex="0" role="region" aria-label="Sensibilidad del indicador conjunto a umbrales de 7, 8 y 9">
+            <table class="fallback-table threshold-table"><thead><tr><th scope="col">Umbral (todas las escalas)</th><th scope="col">Oficios del hogar</th><th scope="col">Ocupados sin estudiar</th><th scope="col">Diferencia, IC 95 % aprox.</th></tr></thead><tbody>
+              <tr><th scope="row">≥ 7</th><td>38,66 %</td><td>50,71 %</td><td>−12,05 p. p. (−16,19; −7,92)</td></tr>
+              <tr><th scope="row">≥ 8</th><td>29,42 %</td><td>36,93 %</td><td>−7,51 p. p. (−11,46; −3,55)</td></tr>
+              <tr><th scope="row">≥ 9</th><td>17,11 %</td><td>17,06 %</td><td>+0,04 p. p. (−3,25; +3,34)</td></tr>
+            </tbody></table>
+          </div>
+          <p class="table-note">En el umbral ≥9 el intervalo incluye cero. Esto no demuestra equivalencia; muestra que con este corte no se detecta una diferencia distinta de cero en el contraste analizado. No se construye un índice global.</p>
+        </div>
+        <div class="interpretation-grid">
+          <article><span>01</span><h3>Las valoraciones no se mueven juntas.</h3><p>El grupo de oficios del hogar registra mayor satisfacción con el tiempo libre y una suficiencia económica del hogar menor. El indicador conjunto oculta esos componentes si se informa sin desglosarlos.</p></article>
+          <article><span>02</span><h3>¿Qué cuesta preservar cada alternativa?</h3><p>¿Qué estructuras permitirían sostener distintas dimensiones del bienestar sin sacrificar innecesariamente unas para alcanzar otras?</p></article>
+        </div>
+        <aside class="causal-caveat"><strong>Lo que estos datos no identifican</strong><p>La ECV es transversal. No permite observar renuncias, decisiones, libertad efectiva, razones para dedicarse a oficios del hogar ni causalidad. La pregunta sobre renunciar es una pregunta de investigación, no un resultado del piloto. Los intervalos son aproximados y condicionados a una distribución estándar común fija por sexo y edad.</p></aside>
+      </div>
+    </section>
+
+    <section class="methodology-section shell" id="protocolo" aria-labelledby="method-title">
+      <div class="chapter-heading">
+        <span class="chapter-number">04</span>
+        <div class="section-top"><div><p class="eyebrow light">¿CÓMO RECONSTRUIR LAS ARQUITECTURAS DE LO POSIBLE?</p><h2 id="method-title">Del estado observado a las alternativas concretas.</h2></div><p>El marco es un desarrollo científico en construcción. La ECV prueba que una primera cartografía poblacional es factible; no valida el protocolo de campo.</p></div>
+      </div>
+      <div class="concept-map" aria-label="Niveles conceptuales propuestos">
+        <article><span>01</span><h3>Configuraciones de vida</h3><p>Lo que las personas hacen actualmente, medido con cautela según el momento que registra cada fuente.</p></article>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <article><span>02</span><h3>Bienestar experimentado</h3><p>Cómo evalúan y sienten su vida: satisfacción, sentido, vínculos y otras dimensiones relevantes.</p></article>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <article><span>03</span><h3>Posibilidades de vida</h3><p>Alternativas específicas que una persona valora y que podrían realizarse, no solo imaginarse.</p></article>
+        <div class="concept-arrow" aria-hidden="true">→</div>
+        <article class="concept-highlight"><span>04</span><h3>Arquitecturas de lo posible</h3><p>Condiciones materiales, institucionales, culturales y relacionales que permiten realizarlas, sostenerlas y transformarlas.</p></article>
+      </div>
+      <div class="properties-heading"><p class="eyebrow light">CUATRO PROPIEDADES ANALÍTICAS PROPUESTAS</p><p>No se suman en una escala. Cada juicio requiere requisitos definidos con la persona y evidencia trazable en un momento concreto.</p></div>
+      <div class="property-grid">
+        <article class="property-card"><span>A</span><h3>Accesibilidad</h3><p>¿Qué alternativas están al alcance? Identificar requisitos y compatibilidad documentada de tiempo, dinero, elegibilidad, movilidad, salud, cuidado y apoyos.</p></article>
+        <article class="property-card"><span>C</span><h3>Compatibilidad</h3><p>¿Cuáles alternativas pueden realizarse a la vez? Hacer explícitos los presupuestos de tiempo y recursos; solo contar simultaneidades con evidencia.</p></article>
+        <article class="property-card"><span>S</span><h3>Sostenimiento</h3><p>¿Qué condiciones permiten conservar o cambiar una posibilidad? Registrar duración, renovación, contingencias, control de recursos y quién asume costos.</p></article>
+        <article class="property-card"><span>Am</span><h3>Ampliabilidad</h3><p>¿Puede hacerse disponible a otras personas sin reproducir desigualdades ni trasladarles injustamente los costos? Identificar responsables, derechos y recursos.</p></article>
+      </div>
+
+      <div class="demo-panel">
+        <div class="demo-heading"><div><p class="eyebrow">DEMOSTRACIÓN METODOLÓGICA · CASO HIPOTÉTICO</p><h3>¿Qué cambia cuando cambian las condiciones?</h3></div><p>Elige estados documentales para una posibilidad hipotética. La herramienta organiza preguntas; no estima probabilidades ni representa a participantes reales.</p></div>
+        <div class="demo-warning" role="note"><strong>Ejemplo conceptual, no evidencia empírica ni modelo predictivo.</strong> C = compatible/documentado · R = restricción documentada · U = información indeterminada. Los criterios se revisan con cada persona y alternativa.</div>
+        <div class="demo-controls">
+          <div class="workbench-inputs">
+            <label for="life-option">Alternativa hipotética</label>
+            <select id="life-option"><option value="study_care">Continuar formación y cuidar vínculos importantes</option><option value="work_study">Combinar un empleo con formación</option><option value="creative_work">Desarrollar una actividad creativa remunerada</option></select>
+            <label for="economy-state">Dinero, costos y recursos necesarios</label>
+            <select id="economy-state"><option value="U">U · no está documentado</option><option value="C">C · compatible</option><option value="R">R · hay una restricción</option></select>
+            <label for="institution-state">Reglas institucionales y apoyos de acceso</label>
+            <select id="institution-state"><option value="U">U · no está documentado</option><option value="C">C · compatible</option><option value="R">R · hay una restricción</option></select>
+            <label for="time-state">Compatibilidad de horarios y cargas de tiempo</label>
+            <select id="time-state"><option value="U">U · no está documentado</option><option value="C">C · compatible</option><option value="R">R · hay una restricción</option></select>
+            <label for="continuity-state">Continuidad de recursos, apoyo y condiciones</label>
+            <select id="continuity-state"><option value="U">U · no está documentado</option><option value="C">C · compatible</option><option value="R">R · hay una restricción</option></select>
+            <label for="family-state">Apoyos y responsabilidades familiares o comunitarias</label>
+            <select id="family-state"><option value="U">U · no está documentado</option><option value="C">C · compatible</option><option value="R">R · hay una restricción</option></select>
+            <label for="cost-state">Costos que se trasladan a otras personas</label>
+            <select id="cost-state"><option value="U">U · falta información</option><option value="C">C · no se documenta un traslado injusto</option><option value="R">R · hay un costo injusto</option></select>
+            <label for="rights-state">Compatibilidad con derechos</label>
+            <select id="rights-state"><option value="U">U · falta información</option><option value="C">C · compatible</option><option value="R">R · hay una restricción de derechos</option></select>
+            <label for="equity-state">Efecto sobre la equidad entre personas</label>
+            <select id="equity-state"><option value="U">U · falta información</option><option value="C">C · compatible</option><option value="R">R · reproduce desigualdad</option></select>
+          </div>
+          <div class="demo-results" aria-live="polite">
+            <p class="micro-label">LECTURA DEL EJEMPLO</p><h4 id="demo-option">Continuar formación y cuidar vínculos importantes</h4>
+            <div class="result-line"><span>Accesibilidad</span><strong id="demo-access">Indeterminada</strong></div>
+            <div class="result-line"><span>Compatibilidad</span><strong id="demo-compatible">Indeterminada</strong></div>
+            <div class="result-line"><span>Sostenimiento</span><strong id="demo-sustain">Indeterminada</strong></div>
+            <div class="result-line"><span>Estado del ejemplo</span><strong id="demo-overall">No se puede concluir todavía</strong></div>
+            <div class="result-line"><span>Ampliabilidad</span><strong id="demo-expand">Indeterminada</strong></div>
+            <p id="demo-explanation" class="demo-explanation">Información todavía insuficiente para describir esta posibilidad. Indeterminación no significa imposibilidad.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="precedents-grid">
+        <article class="panel"><p class="eyebrow light">ANTECEDENTES QUE ACOTAN LA NOVEDAD</p><h3>La propuesta conversa con métodos consolidados.</h3><p>El enfoque de capacidades y los factores de conversión; las combinaciones de tiempo e ingreso; la seguridad de las oportunidades; las aspiraciones y la navegación de trayectorias; y la identificación participativa de dominios de vida tienen antecedentes. No se reclama novedad absoluta por esos componentes.</p><p>La contribución potencial —aún por probar— es un procedimiento situado que conecta alternativas valoradas, restricciones conjuntas, evidencia fechada, cambios documentados y experiencia psicológica, para elaborar hipótesis institucionales.</p><ul class="reference-list">
+          <li><a href="https://doi.org/10.1177/0961463X10369754" target="_blank" rel="noopener noreferrer">Burchardt (2010)</a> · tiempo, ingreso y libertad sustantiva.</li>
+          <li><a href="https://doi.org/10.1080/19452829.2011.541790" target="_blank" rel="noopener noreferrer">Burchardt y Vizard (2011)</a> · medición de capacidades basada en derechos.</li>
+          <li><a href="https://doi.org/10.1177/13607804211024273" target="_blank" rel="noopener noreferrer">Marzi (2022)</a> · jóvenes colombianos que navegan futuros inciertos.</li>
+          <li><a href="https://doi.org/10.1007/s11205-024-03414-8" target="_blank" rel="noopener noreferrer">Bucheli (2024)</a> · dominios de calidad de vida con jóvenes en Bogotá.</li>
+          <li><a href="https://doi.org/10.1080/19452829.2026.2699231" target="_blank" rel="noopener noreferrer">Gonon, Nadai y Böhme (2026)</a> · estabilidad y cambio de capacidades y logros.</li>
+          <li><a href="https://doi.org/10.1111/jedm.12000" target="_blank" rel="noopener noreferrer">Kane (2013)</a> · argumento de validez e inferencias trazables.</li>
+        </ul></article>
+        <article class="panel case-panel"><p class="eyebrow light">EJEMPLOS PUBLICADOS · NO ES VALIDACIÓN</p><h3>Qué evidencia falta para sostener un juicio.</h3><p>En el seguimiento descrito por Marzi (2022), Miguel no pudo confirmar por internet su beca artística; James pausó estudios al perder el crédito y luego obtuvo otro empleo. Un análisis de capacidades ya identifica barreras importantes.</p><p>La ficha propuesta podría registrar alternativa, requisito y momento, pero estos relatos por sí solos no documentan el presupuesto de recursos, otras opciones compatibles o la accesibilidad actual. Esos campos permanecen indeterminados; no demuestran superioridad del protocolo.</p><a class="source-link" href="https://doi.org/10.1177/13607804211024273" target="_blank" rel="noopener noreferrer">Leer el artículo de Marzi ↗</a></article>
+      </div>
+
+      <div class="evaluation-panel">
+        <div class="section-top"><div><p class="eyebrow light">¿CÓMO EVALUAR EL VALOR AÑADIDO?</p><h3>Comparar contra un referente fuerte.</h3></div><p>La posible utilidad es una hipótesis. Si el procedimiento no añade información sustentada frente al comparador, se simplificará o se abandonará esa pretensión de innovación.</p></div>
+        <div class="table-scroller" tabindex="0" role="region" aria-label="Criterios para evaluar la contribución metodológica">
+          <table class="fallback-table"><thead><tr><th scope="col">Criterio</th><th scope="col">Cómo se contrastaría</th><th scope="col">Qué cuestionaría la contribución</th></tr></thead><tbody>
+            <tr><th scope="row">Trazabilidad</th><td>Auditar evidencia, fecha y fuente de cada afirmación decisiva.</td><td>Inferencias clave sin respaldo verificable.</td></tr>
+            <tr><th scope="row">Información incremental</th><td>Comparar con un análisis robusto de capacidades, factores de conversión, tiempo, recursos, aspiraciones y curso de vida.</td><td>Las mismas conclusiones aparecen con la misma evidencia.</td></tr>
+            <tr><th scope="row">Utilidad para hipótesis institucionales</th><td>Rúbrica congelada antes de codificar; revisión independiente y casos negativos.</td><td>Las recomendaciones siguen siendo generales o no comprobables.</td></tr>
+            <tr><th scope="row">Acuerdo y carga</th><td>Registrar discrepancias C/R/U, tiempo por caso y carga para jóvenes.</td><td>Mayor carga sin más hallazgos confiables.</td></tr>
+            <tr><th scope="row">Cambio observado</th><td>Contrastar expectativa, acceso y condiciones en momentos sucesivos.</td><td>Confundir no realización con falta de acceso o depender de recuerdos no corroborados.</td></tr>
+          </tbody></table>
+        </div>
+        <p class="table-note">En el año 3 se propone una comparación contrabalanceada en 8–12 casos de la cohorte, con evaluadores entrenados y registro de desacuerdos. Las métricas y criterios de continuidad deben definirse antes del trabajo de campo.</p>
+      </div>
+
+      <div class="consistency-note"><span>PRUEBA LÓGICA EJECUTADA</span><p>10 de 10 casos sintéticos y 27 de 27 combinaciones de estados C/R/U cumplen las reglas programadas. Esto demuestra consistencia interna de las reglas actuales; no valida su medición, utilidad, transferibilidad ni superioridad frente a metodologías existentes. <a href="results/resultado_prueba_logica.txt">Ver salida</a> · <a href="scripts/prueba_logica_arquitecturas.py">Ver código</a>.</p></div>
+
+      <section class="questions" id="preguntas" aria-labelledby="questions-title">
+        <div class="section-top"><div><p class="eyebrow light">GENERADOR DE PREGUNTAS · FUNCIÓN PRESERVADA</p><h3 id="questions-title">Cambiar el foco cambia lo que falta preguntar.</h3></div><p>Este ejercicio explora preguntas a partir del atlas. No representa el protocolo empírico posdoctoral ni calcula efectos.</p></div>
+        <div class="question-workbench">
+          <div class="workbench-inputs">
+            <label for="barrier">¿Qué condición investigarías primero?</label>
+            <select id="barrier"><option value="internet">Conectividad y uso digital</option><option value="food">Seguridad alimentaria y continuidad educativa</option><option value="education">Transiciones entre educación y futuro laboral</option><option value="violence">Violencia, desplazamiento y protección territorial</option></select>
+            <label for="mechanism">¿En qué nivel buscarías el mecanismo?</label>
+            <select id="mechanism"><option value="institution">Instituciones y reglas de acceso</option><option value="networks">Relaciones y redes de cuidado</option><option value="trajectory">Trayectorias de vida y tiempo</option></select>
+            <button type="button" id="copy-question" class="copy-btn">Copiar pregunta y diseño <span aria-hidden="true">⧉</span></button><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span>
+          </div>
+          <div class="workbench-result"><p class="eyebrow">EJERCICIO EXPLORATORIO</p><h4 id="research-question">¿En qué condiciones la conexión disponible se convierte en oportunidades efectivas de aprendizaje, información y participación?</h4><dl><dt>Dato que falta</dt><dd id="missing-data">Acceso individual, calidad, dispositivos, costos y capacidades de uso: las cifras existentes son de hogares.</dd><dt>Diseño inicial</dt><dd id="study-design">Encuestas a hogares, cartografía de acceso y comparación de establecimientos y territorios.</dd><dt>Qué podría cuestionar la hipótesis</dt><dd id="falsification">Que la conectividad no se asocie con la participación al considerar condiciones educativas y familiares.</dd></dl></div>
+        </div>
+      </section>
+    </section>
+
+    <section class="agenda-section" id="agenda" aria-labelledby="agenda-title">
+      <div class="shell">
+        <div class="chapter-heading">
+          <span class="chapter-number">05</span>
+          <div class="section-top"><div><p class="eyebrow">¿QUÉ SOCIEDADES PODRÍAMOS CONSTRUIR?</p><h2 id="agenda-title">Una agenda para investigar y transformar.</h2></div><p>Las transformaciones económicas, tecnológicas, ambientales, demográficas y culturales vuelven urgente preguntar por las condiciones humanas del bienestar, no anticipar un futuro único.</p></div>
+        </div>
+        <div class="commissions-note"><p>En diálogo crítico con la <a href="https://pubmed.ncbi.nlm.nih.gov/39147461/" target="_blank" rel="noopener noreferrer">Comisión de The Lancet Psychiatry sobre salud mental juvenil (2024)</a> y la <a href="https://pubmed.ncbi.nlm.nih.gov/40409329/" target="_blank" rel="noopener noreferrer">segunda Comisión de The Lancet sobre salud y bienestar adolescente (2025)</a>. Estas comisiones motivan el contexto; no son evidencia directa de la hipótesis ni del efecto de tecnologías, clima o precarización.</p></div>
+        <div class="timeline">
+          <article class="timeline-item"><span class="timeline-marker">01</span><div><p class="eyebrow light">AÑO 1 · CARTOGRAFIAR Y PREPARAR</p><h3>Una base poblacional y un protocolo preliminar</h3><p>Analizar datos abiertos; documentar y publicar el atlas; preparar la primera publicación; desarrollar el protocolo; solicitar revisión ética y, si se aprueba y existen recursos, hacer entrevistas cognitivas con 6–8 jóvenes.</p></div></article>
+          <article class="timeline-item"><span class="timeline-marker">02</span><div><p class="eyebrow light">AÑO 2 · SEGUIR ALTERNATIVAS</p><h3>Un estudio longitudinal situado en Bogotá</h3><p>Reclutar una muestra nueva de aproximadamente 24 jóvenes de 18–28 años, con variación en configuraciones y recursos. Tres encuentros en los meses 0, 4 y 8 para reconstruir alternativas concretas, requisitos y cambios observados. Ajustar muestra por poder informativo y registrar pérdidas.</p></div></article>
+          <article class="timeline-item"><span class="timeline-marker">03</span><div><p class="eyebrow light">AÑO 3 · CONTRASTAR Y REVISAR</p><h3>Evaluar qué añade el procedimiento</h3><p>Integrar resultados, contrastar el protocolo con un comparador fuerte, revisar casos negativos y formular principios preliminares de diseño institucional. Corregir o simplificar el marco si no aporta información sustentada.</p></div></article>
+        </div>
+        <p class="timeline-caveat">El horizonte previsto de la propuesta es 2027–2030; este esquema por años no sustituye el cronograma aprobado. Las renovaciones, financiación adicional, aprobación ética y apoyo para la codificación condicionan las fases posteriores al primer año y toda la investigación con participantes.</p>
+        <div class="long-agenda">
+          <div><p class="eyebrow">MÁS ALLÁ DEL POSDOCTORADO</p><h3>La agenda comienza aquí; no termina aquí.</h3></div>
+          <ul><li>Transferir y adaptar el protocolo con otras comunidades, territorios y poblaciones.</li><li>Estudiar cómo transformaciones sociales modifican las posibilidades humanas.</li><li>Codiseñar alternativas institucionales con jóvenes e interlocutores responsables.</li><li>Evaluar factibilidad, implementación, efectividad, sostenibilidad y equidad antes de escalar.</li></ul>
+        </div>
+        <div class="products-row" aria-label="Productos académicos propuestos"><span>Atlas poblacional</span><span>Repositorio abierto</span><span>Protocolos reproducibles</span><span>Publicaciones científicas</span><span>Recursos para docencia</span><span>Marco metodológico progresivo</span></div>
+        <div class="university-disclaimer"><strong>Iniciativa académica independiente.</strong> Este laboratorio se prepara para la postulación a la Universidad de los Andes. No constituye un proyecto institucional aprobado ni una publicación oficial de la Universidad.</div>
+      </div>
+    </section>
+
+    <section class="missing-section">
+      <div class="shell missing-grid"><div><p class="eyebrow">LO QUE LOS DATOS TODAVÍA NO ALCANZAN A VER</p><h2>Un territorio no es una lista de carencias.</h2><p>Las estadísticas no representan por sí solas redes de cuidado, saberes comunitarios, pertenencia, aspiraciones o acción colectiva. Para comprender trayectorias también hay que escuchar a quienes las viven, sin reducir sus relatos a variables.</p></div><div class="missing-cards"><div><span class="missing-symbol">↗</span><strong>Recursos y relaciones</strong><small>¿Qué redes, prácticas y vínculos abren posibilidades que no aparecen en los registros?</small></div><div><span class="missing-symbol">◎</span><strong>Violencia y protección</strong><small>Antes de comparar el RUV hay que verificar hecho, edad, lugar, período, cobertura y unidad de análisis. Un dato pendiente no significa cero.</small><a href="https://datospaz.unidadvictimas.gov.co/registro-unico-de-victimas/" target="_blank" rel="noopener noreferrer">Consultar Registro Único de Víctimas ↗</a></div></div></div>
     </section>
   </main>
-  <footer class="footer"><div class="shell footer-inner"><div><span class="brand small"><span class="brand-mark">◫</span> FUTUROS EN PRUEBA</span><p>Ángela Gissette Caro-Delgado, Ph.D. · Prototipo para la convocatoria posdoctoral «Futuros de las Ciencias Sociales», Universidad de los Andes (2026).</p><p class="footer-disclaimer">Iniciativa académica independiente; no constituye un proyecto institucional aprobado ni una publicación oficial de la Universidad.</p></div><div><a href="metodologia.html">Metodología</a><a href="data/indicadores_2025.csv">Datos CSV</a><a href="https://github.com/agcarod/arquitecturas-de-lo-posible" target="_blank" rel="noopener noreferrer">Repositorio ↗</a></div></div></footer>
+
+  <footer class="footer">
+    <div class="shell footer-inner"><div><span class="brand small"><span class="brand-mark" aria-hidden="true">◫</span> ARQUITECTURAS DE LO POSIBLE</span><p>Ángela Gissette Caro-Delgado, Ph. D. · Propuesta para el posdoctorado «Futuros de las Ciencias Sociales», Universidad de los Andes.</p><p class="footer-disclaimer">Iniciativa académica independiente; no constituye un proyecto institucional aprobado ni una publicación oficial de la Universidad.</p></div><div><a href="metodologia.html">Fuentes, método y resultados</a><a href="data/indicadores_2025.csv" download>Atlas territorial CSV</a><a href="data/ecv2025_groups.csv" download>ECV 2025 CSV</a><a href="scripts/">Código reproducible</a><a href="https://github.com/agcarod/arquitecturas-de-lo-posible" target="_blank" rel="noopener noreferrer">Repositorio ↗</a></div></div>
+  </footer>
 </body>
 </html>

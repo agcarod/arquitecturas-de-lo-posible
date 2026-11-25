@@ -1,0 +1,11 @@
+A: optimismo con barrera económica | restringida | OK
+B: pesimismo con requisitos documentados compatibles | plausible | OK
+C: información incompleta | indeterminada | OK
+D: dos opciones posibles por separado; juntas exceden tiempo | restringida | OK
+E: simultaneidad documentada | plausible | OK
+F: apoyo retirado en seguimiento | ('plausible', 'restringida') | OK
+G: traslado de carga injusto | requiere rediseño | OK
+H: sin datos de costos ni derechos | indeterminada | OK
+I: sin ventaja sobre comparador fuerte: ambos identifican misma barrera | restringida | OK
+J: no se han identificado requisitos | indeterminada | OK
+10/10 casos y 27 combinaciones lógicas superadas. No prueban validez, novedad ni confiabilidad entre evaluadores.

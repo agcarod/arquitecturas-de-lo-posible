@@ -1,222 +1,196 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Trazabilidad, fuentes y límites del atlas de oportunidades territoriales"><title>Fuentes y método · Arquitecturas de lo posible</title><link rel="stylesheet" href="styles.css"><style>.method-document{max-width:970px;margin:3rem auto;padding:0 1.4rem 5rem;line-height:1.7;color:#183e3e}.method-document h1{font-size:clamp(1.8rem,4vw,3rem);line-height:1.2}.method-document h2{margin-top:2.8rem}.method-document table{border-collapse:collapse;display:block;overflow-x:auto;max-width:100%;font-size:.85rem}.method-document th,.method-document td{padding:.6rem;text-align:left;border:1px solid #cbdad6}.method-document th{background:#e8f1ed}.method-document a{color:#057267;text-decoration:underline}.method-document blockquote{border-left:3px solid teal;padding:1rem;background:#ecf3f1}.method-document p,.method-document li{font-size:1rem}.method-nav{padding:1.1rem 1.5rem;background:#113c3d;color:#f0f6ed}.method-nav a{color:#dcf8e8}</style></head><body><nav class="method-nav"><a href="index.html">← Volver al atlas interactivo</a> · <a href="data/indicadores_2025.csv">Descargar datos CSV</a> · <a href="https://github.com/agcarod/arquitecturas-de-lo-posible">Repositorio GitHub</a></nav><article class="method-document"><h1>Fuentes, definiciones y límites de inferencia</h1>
-<p><strong>Proyecto:</strong> ¿Cuántas puertas se abren donde creces?<br />
-<strong>Versión:</strong> 1.2 · 24 de noviembre de 2026<br />
-<strong>Unidad geográfica:</strong> cuatro departamentos/distrito seleccionados de Colombia<br />
-<strong>Período de indicadores:</strong> 2025, con comparación 2023–2025 para FIES.</p>
-<h2>1. Pregunta que orienta el prototipo</h2>
-<p>¿Cómo se distribuyen algunas condiciones materiales, educativas y digitales en territorios donde crecen niñas, niños y adolescentes, y qué nuevas preguntas científicas surgen de esas diferencias?</p>
-<p><strong>Importante:</strong> no se está comparando la cantidad total de oportunidades buenas y malas. Las dimensiones no son aditivas, no comparten denominador, pueden estar simultáneamente presentes y sus relaciones con trayectorias futuras todavía no se han evaluado. Las adversidades territoriales no determinan resultados individuales.</p>
-<h2>2. Ficha de variables y procedencia</h2>
-<table>
-<thead>
-<tr>
-  <th>Variable</th>
-  <th>Unidad/denominador</th>
-  <th>Período</th>
-  <th>Fuente y lugar preciso</th>
-  <th>Lectura correcta</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Población de 0 a 11 años</td>
-  <td>Personas proyectadas</td>
-  <td>2025</td>
-  <td><a href="https://www.dane.gov.co/index.php/estadisticas-por-tema/demografia-y-poblacion/proyecciones-de-poblacion">Proyecciones DANE</a>; compilaciones <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/choco">Chocó</a>, <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/la-guajira">La Guajira</a>, <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/bogota/bogota">Bogotá</a>, <a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/vaupes">Vaupés</a></td>
-  <td>Recuentos estimados, no observaciones censales directas de 2025.</td>
-</tr>
-<tr>
-  <td>Población 12 a 17 años</td>
-  <td>Personas proyectadas</td>
-  <td>2025</td>
-  <td>Ídem</td>
-  <td>Recuentos estimados.</td>
-</tr>
-<tr>
-  <td>Población 0 a 17 años</td>
-  <td>Suma 0–11 + 12–17</td>
-  <td>2025</td>
-  <td>Elaboración a partir de las dos líneas anteriores</td>
-  <td>Población que habita un territorio, no población expuesta a una condición específica.</td>
-</tr>
-<tr>
-  <td>Internet del hogar</td>
-  <td>% de hogares con acceso a internet fijo o móvil</td>
-  <td>2025</td>
-  <td><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf">DANE ECV 2025</a>, pág. 12 (índice PDF 11), <strong>Gráfico 12</strong></td>
-  <td>Disponibilidad declarada en hogares; no uso o calidad de la conexión por parte de NNA.</td>
-</tr>
-<tr>
-  <td>Inseguridad alimentaria moderada o grave</td>
-  <td>% de hogares</td>
-  <td>2023, 2024, 2025</td>
-  <td><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf">DANE FIES 2025</a> y <a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf">FIES 2024</a>, pág. 6 (índice PDF 5), <strong>Gráfico 4</strong></td>
-  <td>Experiencia alimentaria del hogar en últimos 12 meses; no equivale a desnutrición clínica infantil.</td>
-</tr>
-<tr>
-  <td>Asistencia educativa 17–21</td>
-  <td>% de personas de <strong>17 a 21 años</strong> que asisten a educación formal</td>
-  <td>2025</td>
-  <td><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf">DANE ECV 2025</a>, pág. 19 (índice PDF 18), <strong>Gráfico 18</strong></td>
-  <td>Contexto de transición hacia la vida adulta; <strong>no aplica como tasa de asistencia de la población 0–17</strong>.</td>
-</tr>
-<tr>
-  <td>Victimización por conflicto</td>
-  <td>NO CARGADA</td>
-  <td>—</td>
-  <td><a href="https://datospaz.unidadvictimas.gov.co/registro-unico-de-victimas/">Unidad para las Víctimas, RUV</a></td>
-  <td>Se debe elegir unidad territorial, hecho victimizante, edad, período de ocurrencia/declaración y metodología antes de comparar.</td>
-</tr>
-</tbody>
-</table>
-<p>La población mostrada se obtuvo de una <strong>fuente secundaria</strong> que atribuye sus tablas a proyecciones DANE 2025. Antes de publicarla como serie demográfica de investigación definitiva debe cotejarse con el anexo oficial departamental por sexo y edad del DANE y documentarse la versión, ya que las proyecciones se actualizan. El <a href="https://portalsuin.icbf.gov.co/sites/suin/Pages/poblacion_ni%C3%B1os_ni%C3%B1as_Colombia.aspx">ICBF publica tableros y archivos por ciclo vital</a>.</p>
-<h2>3. Valores incorporados</h2>
-<table>
-<thead>
-<tr>
-  <th>Territorio</th>
-  <th style="text-align:right">0–11</th>
-  <th style="text-align:right">12–17</th>
-  <th style="text-align:right">0–17</th>
-  <th style="text-align:right">Internet 2025 %</th>
-  <th style="text-align:right">FIES 2023 %</th>
-  <th style="text-align:right">FIES 2024 %</th>
-  <th style="text-align:right">FIES 2025 %</th>
-  <th style="text-align:right">Asistencia 17–21 %</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Chocó</td>
-  <td style="text-align:right">154.346</td>
-  <td style="text-align:right">76.907</td>
-  <td style="text-align:right">231.253</td>
-  <td style="text-align:right">36,4</td>
-  <td style="text-align:right">18,9</td>
-  <td style="text-align:right">36,3</td>
-  <td style="text-align:right">56,8</td>
-  <td style="text-align:right">45,6</td>
-</tr>
-<tr>
-  <td>La Guajira</td>
-  <td style="text-align:right">276.983</td>
-  <td style="text-align:right">140.148</td>
-  <td style="text-align:right">417.131</td>
-  <td style="text-align:right">52,6</td>
-  <td style="text-align:right">50,1</td>
-  <td style="text-align:right">52,4</td>
-  <td style="text-align:right">47,8</td>
-  <td style="text-align:right">47,9</td>
-</tr>
-<tr>
-  <td>Bogotá D. C.</td>
-  <td style="text-align:right">1.101.730</td>
-  <td style="text-align:right">640.095</td>
-  <td style="text-align:right">1.741.825</td>
-  <td style="text-align:right">82,9</td>
-  <td style="text-align:right">21,2</td>
-  <td style="text-align:right">13,9</td>
-  <td style="text-align:right">9,6</td>
-  <td style="text-align:right">60,7</td>
-</tr>
-<tr>
-  <td>Vaupés</td>
-  <td style="text-align:right">14.397</td>
-  <td style="text-align:right">7.600</td>
-  <td style="text-align:right">21.997</td>
-  <td style="text-align:right">18,6</td>
-  <td style="text-align:right">34,4</td>
-  <td style="text-align:right">46,1</td>
-  <td style="text-align:right">22,3</td>
-  <td style="text-align:right">39,6</td>
-</tr>
-</tbody>
-</table>
-<h3>Variación FIES 2024 a 2025</h3>
-<ul>
-<li>Chocó: <strong>+20,5 puntos porcentuales</strong>.</li>
-<li>La Guajira: <strong>−4,6 puntos porcentuales</strong>.</li>
-<li>Bogotá D. C.: <strong>−4,3 puntos porcentuales</strong>.</li>
-<li>Vaupés: <strong>−23,8 puntos porcentuales</strong>.</li>
-</ul>
-<p>Las cuatro variaciones están marcadas como estadísticamente significativas al nivel indicado por DANE en el Gráfico 4. La significancia del cambio entre años <strong>no</strong> implica que todas las comparaciones entre territorios sean estadísticamente significativas. Las fuentes y medidas de precisión originales son necesarias para inferencias adicionales.</p>
-<h2>4. Lo que no puede inferirse</h2>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0d2e32">
+<meta name="description" content="Métodos, fuentes, estimaciones, límites y código reproducible de Arquitecturas de lo posible.">
+<title>Fuentes, método y resultados · Arquitecturas de lo posible</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+.method-document{max-width:1050px;margin:2.3rem auto 5rem;padding:0 1.35rem;line-height:1.7;color:#183e3e}
+.method-nav{padding:1.1rem 1.5rem;background:#113c3d;color:#f0f6ed}
+.method-nav a{color:#dcf8e8;text-decoration:underline;text-underline-offset:3px}
+.method-document h1{font-family:Georgia,serif;font-size:clamp(2.1rem,5vw,3.5rem);line-height:1.08;letter-spacing:-.05em;font-weight:500;margin:.7rem 0 1.1rem}
+.method-document h2{font-family:Georgia,serif;font-size:clamp(1.6rem,3vw,2.3rem);line-height:1.2;letter-spacing:-.035em;font-weight:500;margin:3rem 0 1rem}
+.method-document h3{font-size:1.1rem;margin:2rem 0 .6rem}
+.method-document p,.method-document li{font-size:.94rem}
+.method-document a{color:#087166;text-decoration:underline;text-underline-offset:3px}
+.method-document blockquote{margin:1.4rem 0;padding:1.1rem 1.3rem;background:#edf4e9;border-left:3px solid #288277;font-family:Georgia,serif;font-size:1.25rem;line-height:1.5}
+.method-document table{border-collapse:collapse;display:block;overflow-x:auto;width:100%;font-size:.82rem;margin:1rem 0}
+.method-document th,.method-document td{padding:.62rem .7rem;text-align:left;vertical-align:top;border:1px solid #cfddd6}
+.method-document th{background:#e8f1ed;white-space:nowrap}
+.method-document td{background:#fff}
+.method-document .doc-meta{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:1.5rem 0}
+.method-document .doc-meta div{background:#eef3ed;padding:12px 14px;border-radius:8px;font-size:.8rem}
+.method-document .doc-meta strong{display:block;color:#1c756c}
+.method-document .note{padding:13px 15px;background:#f4eee1;border:1px solid #e6d6bd;border-radius:8px;color:#68573f;font-size:.84rem}
+.method-document .download-box{display:flex;flex-wrap:wrap;gap:9px;padding:14px 0}
+.method-document .download-box a{display:inline-block;background:#164f4d;color:#f2f6e8;padding:9px 12px;border-radius:5px;text-decoration:none;font-size:.8rem;font-weight:750}
+.method-document .download-box a:hover{background:#117267}
+.method-document ol,.method-document ul{padding-left:1.35rem}
+.method-document li{margin:.42rem 0}
+.method-document .toc{display:flex;flex-wrap:wrap;gap:8px;margin:1.2rem 0 2rem}
+.method-document .toc a{font-size:.77rem;padding:7px 10px;border-radius:40px;background:#edf3ed;text-decoration:none}
+@media(max-width:600px){.method-document{margin:1.4rem auto 3rem;padding:0 1rem}.method-document .doc-meta{grid-template-columns:1fr}.method-document th,.method-document td{min-width:145px}.method-document .note{font-size:.79rem}}
+</style>
+</head>
+<body>
+<nav class="method-nav" aria-label="Navegación de documentación">
+<div class="shell"><a href="index.html">← Volver al laboratorio</a> · <a href="data/ecv2025_groups.csv" download>Agregados ECV CSV</a> · <a href="https://github.com/agcarod/arquitecturas-de-lo-posible" target="_blank" rel="noopener noreferrer">Repositorio GitHub ↗</a></div>
+</nav>
+<article class="method-document">
+<p class="eyebrow light">ARQUITECTURAS DE LO POSIBLE · DOCUMENTACIÓN PÚBLICA</p>
+<h1>Fuentes, métodos, resultados y límites de inferencia</h1>
+<p><strong>Autora:</strong> Ángela Gissette Caro-Delgado, Ph. D. · <strong>Versión:</strong> 2.0 · 25 de noviembre de 2026.</p>
+<div class="doc-meta">
+<div><strong>Propósito</strong>Laboratorio académico independiente para una propuesta posdoctoral.</div>
+<div><strong>Estado</strong>Factibilidad poblacional y consistencia lógica preliminares; metodología de campo en desarrollo.</div>
+<div><strong>Fuentes nuevas</strong>ECV 2025 del DANE; cinco módulos enlazados en registros agregados.</div>
+</div>
+<p>Esta ficha describe lo que los datos permiten afirmar y las pruebas que todavía requiere el programa de investigación. Las cifras ECV provienen de un análisis real reproducible de los microdatos oficiales, no de datos simulados. El sitio publica únicamente resúmenes agregados; no incluye registros individuales ni microdatos.</p>
+<div class="toc" aria-label="Contenido de esta ficha"><a href="#pregunta">Pregunta y alcance</a><a href="#atlas-metodo">Atlas territorial</a><a href="#ecv">ECV 2025</a><a href="#contraste">Contrastes y sensibilidad</a><a href="#protocolo">Protocolo en desarrollo</a><a href="#evaluacion">Evaluar valor añadido</a><a href="#agenda">Agenda 2027–2030</a><a href="#referencias">Referencias</a><a href="#reproducir">Reproducir</a></div>
+
+<h2 id="pregunta">1. Pregunta, tesis y alcance</h2>
+<p><strong>Pregunta central:</strong> ¿Qué arquitecturas sociales permiten a las juventudes construir, sostener y transformar vidas que consideran valiosas, y bajo qué condiciones podrían ampliarse equitativamente?</p>
+<blockquote>Cuando las ciencias sociales confunden las instituciones que históricamente han sostenido el bienestar con el bienestar mismo, corren el riesgo de defender la continuidad de esas instituciones antes que las condiciones humanas que justificaron su existencia.</blockquote>
+<p>Es una tesis de trabajo que debe discutirse y contrastarse, no una conclusión de los resultados ECV. La propuesta toma en serio las transformaciones económicas, tecnológicas, ambientales, demográficas y culturales, sin predecir una sociedad sin empleo ni cuestionar el valor humano de la educación o el trabajo. Pregunta qué condiciones permiten realizar, combinar, sostener y transformar posibilidades valiosas.</p>
+<p>El atlas territorial y el piloto ECV abren preguntas; no son una medida directa de libertad, capacidad o posibilidad individual. El estudio longitudinal propuesto se situaría en Bogotá con jóvenes de 18–28 años. Sus resultados no deben confundirse con los indicadores departamentales o con una submuestra identificable de la ECV.</p>
+
+<h2 id="atlas-metodo">2. Atlas territorial conservado</h2>
+<p>Se mantienen Bogotá D. C., Chocó, La Guajira y Vaupés como ejemplos intencionales, no como muestra representativa del país. El atlas muestra conectividad de hogares, inseguridad alimentaria moderada o grave de hogares, y asistencia educativa de personas de 17–21 años. Son universos distintos.</p>
+<table><thead><tr><th>Indicador</th><th>Unidad / denominador</th><th>Fuente</th><th>Límite principal</th></tr></thead><tbody>
+<tr><th>Conectividad a internet</th><td>% de hogares con internet fijo o móvil, 2025</td><td><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=12">DANE ECV 2025, gráfico 12</a></td><td>No mide uso, calidad o acceso individual de jóvenes.</td></tr>
+<tr><th>Inseguridad alimentaria</th><td>% de hogares con inseguridad moderada o grave, FIES, últimos 12 meses</td><td><a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6">DANE FIES 2025, gráfico 4</a>; <a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf#page=7">FIES 2024</a></td><td>Experiencia de hogar; no es diagnóstico clínico individual. Variaciones publicadas no identifican causas.</td></tr>
+<tr><th>Asistencia educativa</th><td>% de personas de 17–21 años, 2025</td><td><a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf#page=19">DANE ECV 2025, gráfico 18</a></td><td>Ventana de transición; no es asistencia de toda la población 0–17.</td></tr>
+<tr><th>Población 0–17</th><td>Recuentos proyectados secundarios para 2025</td><td><a href="https://telencuestas.com/censos-de-poblacion/colombia/2025/choco">Compilación Telencuestas atribuida a DANE</a>; ver enlaces por territorio en el atlas.</td><td>No se cotejó con el anexo oficial departamental vigente; no es población expuesta a una adversidad.</td></tr>
+</tbody></table>
+<p>Los promedios territoriales no describen por igual diferencias municipales, urbanas/rurales, étnicas y de género. Los indicadores no se suman y no se calcula un índice compuesto. El sismo de Chocó de agosto de 2026 se presenta solo como contexto posterior: la evidencia del atlas corresponde a 2025 y no evalúa sus efectos.</p>
+
+<h2 id="ecv">3. Piloto de prefactibilidad: ECV 2025</h2>
+<p>Se integraron cinco archivos de datos del catálogo oficial del <a href="https://microdatos.dane.gov.co/index.php/catalog/905">DANE, Encuesta Nacional de Calidad de Vida 2025</a> para personas de 18–28 años. La integración recuperó <strong>35.776 registros en 27.632 hogares sin pérdida de registros</strong>. Se verificaron llaves de persona y hogar, duplicados, cardinalidad de las uniones, cobertura y variables analíticas. Las variables analizadas no tuvieron valores faltantes en esta subpoblación. El archivo de diseño tuvo 356 estratos y 8.543 segmentos; no había estratos con un solo segmento en la tabla revisada.</p>
+<p>La ECV cubre la población civil no institucional residente en Colombia. El factor de expansión usado es <code>FEX_C</code>. La suma de pesos en este dominio fue 8.769.452,8; se reportan participaciones porcentuales ponderadas, no se interpreta el tamaño muestral como tamaño poblacional.</p>
+<div class="note">Fuentes del DANE: <a href="https://microdatos.dane.gov.co/index.php/catalog/905/related-materials">formulario, ficha metodológica y estructura de base</a>; <a href="https://microdatos.dane.gov.co/index.php/catalog/905/data-dictionary">diccionario de datos</a>; variables de <a href="https://microdatos.dane.gov.co/index.php/catalog/905/data-dictionary/F9?file_name=Caracteristicas+y+composicion+del+hogar">bienestar subjetivo</a>, <a href="https://microdatos.dane.gov.co/index.php/catalog/905/data-dictionary/F47">fuerza de trabajo</a> y <a href="https://microdatos.dane.gov.co/index.php/catalog/905/data-dictionary/F51">condiciones económicas del hogar</a>. La ficha metodológica del catálogo tuvo actualización V13 fechada 11/11/2026.</div>
+<h3>Configuraciones analíticas</h3>
+<table><thead><tr><th>Configuración</th><th>Regla de asignación resumida</th><th>n muestral</th><th>% ponderado</th></tr></thead><tbody>
+<tr><th>Ocupados que no estudian</th><td>Ocupación derivada; P8586=No.</td><td>18.189</td><td>51,26</td></tr>
+<tr><th>Estudiantes sin ocupación</th><td>P8586=Sí; sin ocupación derivada.</td><td>5.612</td><td>17,93</td></tr>
+<tr><th>Estudian y trabajan</th><td>P8586=Sí y ocupación derivada.</td><td>2.115</td><td>7,21</td></tr>
+<tr><th>Oficios del hogar como actividad principal</th><td>P6240=4; sin estudiar ni tener ocupación derivada.</td><td>7.205</td><td>15,53</td></tr>
+<tr><th>Búsqueda reciente de empleo (resto)</th><td>P6280=Sí entre las categorías no asignadas antes.</td><td>1.955</td><td>6,44</td></tr>
+<tr><th>Otras situaciones</th><td>Resto, sin estudio ni ocupación derivada.</td><td>700</td><td>1,64</td></tr>
+</tbody></table>
+<p><strong>Ocupación derivada:</strong> P6240=1 (“trabajando”) o “sí” en P6250, P6260 o P6270, según respuestas sobre trabajo pago, vínculo con trabajo/negocio y trabajo no remunerado en negocio. <strong>Estudio:</strong> P8586=1. P6240=4 corresponde a “oficios del hogar” como actividad principal. P6280 pregunta por diligencias para conseguir trabajo en las últimas cuatro semanas. La búsqueda de empleo se asigna solo entre quienes no entraron a categorías anteriores. Las actividades pueden coexistir; la clasificación usa precedencia. Una persona que declara oficios del hogar como actividad principal puede también haber buscado empleo. Esta regla no identifica elección, totalidad de las tareas de cuidado o causa de la configuración.</p>
+<p>Indicadores: P1895 satisfacción vital; P1905 valoración de si las cosas que hace en su vida valen la pena; P3175 satisfacción con el tiempo libre. Son respuestas distintas en escala 0–10. P9090 se responde por hogar: (1) ingresos no alcanzan a cubrir gastos mínimos; (2) alcanzan; (3) cubren más que mínimos. Para el indicador de suficiencia se agruparon las categorías 2 y 3; no es ingreso individual.</p>
+<table><thead><tr><th>Configuración</th><th>Vida (media)</th><th>Actividades valen la pena (media)</th><th>Tiempo libre (media)</th><th>Ingreso del hogar alcanza mínimo o más (%)</th></tr></thead><tbody>
+<tr><th>Ocupados que no estudian</th><td>8,273</td><td>8,595</td><td>7,626</td><td>69,203</td></tr>
+<tr><th>Estudiantes sin ocupación</th><td>8,448</td><td>8,702</td><td>8,000</td><td>74,384</td></tr>
+<tr><th>Estudian y trabajan</th><td>8,441</td><td>8,829</td><td>7,666</td><td>76,924</td></tr>
+<tr><th>Oficios del hogar como actividad principal</th><td>8,113</td><td>8,448</td><td>7,666</td><td>53,627</td></tr>
+<tr><th>Búsqueda reciente de empleo (resto)</th><td>7,860</td><td>8,245</td><td>7,307</td><td>57,541</td></tr>
+<tr><th>Otras situaciones</th><td>7,115</td><td>7,630</td><td>7,101</td><td>56,312</td></tr>
+</tbody></table>
+<p>El CSV agregado disponible separa el n no ponderado del porcentaje ponderado e incluye las cuatro estimaciones descritas. Las diferencias entre categorías son descriptivas y exploratorias; no se interpretan como efecto de estudiar, trabajar o hacer oficios del hogar.</p>
+
+<h2 id="contraste">4. Contraste estandarizado y sensibilidad</h2>
+<p>Se comparan quienes hacen oficios del hogar como actividad principal, sin estudiar ni estar ocupados, con personas ocupadas que no estudian. El estándar común se fija como la distribución conjunta ponderada por sexo y los grupos de edad 18–21, 22–25 y 26–28 en la unión de esos dos grupos. Se aplica estandarización directa; se usan los pesos <code>FEX_C</code>, estrato <code>ESTRATO2020</code> y segmento <code>SEGMENTO</code>. Los intervalos del 95 % son aproximaciones por linealización de primer orden y son condicionales al estándar fijado. No se hace ajuste por otras características ni se evalúa causalidad.</p>
+<table><thead><tr><th>Resultado</th><th>Ocupados sin estudiar</th><th>Oficios del hogar</th><th>Diferencia hogar − ocupación, IC 95 % aprox.</th></tr></thead><tbody>
+<tr><th>Satisfacción vital media 0–10</th><td>8,280</td><td>8,176</td><td>−0,104 (−0,257; 0,048)</td></tr>
+<tr><th>P1905: actividades valen la pena, media 0–10</th><td>8,600</td><td>8,410</td><td>−0,189 (−0,348; −0,030)</td></tr>
+<tr><th>Satisfacción con tiempo libre, media 0–10</th><td>7,630</td><td>7,833</td><td>+0,203 (+0,046; +0,360)</td></tr>
+<tr><th>Ingreso del hogar alcanza gastos mínimos o más</th><td>69,552 %</td><td>53,102 %</td><td>−16,450 puntos porcentuales (−20,758; −12,141)</td></tr>
+</tbody></table>
+<h3>Indicador conjunto: análisis de sensibilidad</h3>
+<p>Se considera que se cumple cuando P1895, P1905 y P3175 son todas iguales o superiores al umbral, y el hogar informa que sus ingresos alcanzan los gastos mínimos o los cubren por encima.</p>
+<table><thead><tr><th>Umbral en cada escala</th><th>Oficios del hogar</th><th>Ocupados sin estudiar</th><th>Diferencia hogar − ocupación, IC 95 % aprox.</th></tr></thead><tbody>
+<tr><th>≥7</th><td>38,657 %</td><td>50,708 %</td><td>−12,051 p. p. (−16,185; −7,917)</td></tr>
+<tr><th>≥8</th><td>29,424 %</td><td>36,930 %</td><td>−7,506 p. p. (−11,457; −3,554)</td></tr>
+<tr><th>≥9</th><td>17,106 %</td><td>17,064 %</td><td>+0,042 p. p. (−3,252; +3,337)</td></tr>
+</tbody></table>
+<p class="note">El contraste cambia con el umbral. En ≥9 el intervalo incluye cero, lo que no prueba equivalencia ni ausencia de diferencias. No se usa un índice total de bienestar. La estandarización reduce diferencias de composición por edad y sexo para este contraste, pero no identifica por qué las personas se encuentran en estas actividades ni los recursos individuales que controlan.</p>
+<p>La pregunta “¿a qué renunciamos?” orienta el trabajo futuro; no es una conclusión de la ECV. Un diseño transversal no identifica decisiones, libertad efectiva, renuncias, tareas de cuidado completas o relaciones causales.</p>
+
+<h2 id="protocolo">5. Protocolo metodológico en desarrollo</h2>
+<p>El marco distingue cuatro objetos analíticos que no deben colapsarse:</p>
 <ol>
-<li>Los datos son agregados. No puede afirmarse que una niña o niño que vive en cierto departamento experimente un indicador del hogar o una trayectoria educativa particular.</li>
-<li>Los porcentajes describen <strong>universos distintos</strong>. No puede estimarse la cantidad de personas que presentan ambas características sin microdatos apropiados, enlace de registros y supuestos explícitos.</li>
-<li>No es un índice compuesto ni una escala validada de «posibilidades»; no se clasifican territorios como buenos/malos.</li>
-<li>La comparación de 4 unidades territoriales no constituye un modelo multinivel estimable ni autoriza inferencia causal. El sitio prepara preguntas que requerirían diseños posteriores con tamaños de muestra, datos de precisión y estrategias de identificación adecuadas.</li>
-<li>La inseguridad alimentaria es una experiencia del hogar, <strong>no</strong> desnutrición clínica. No debe equipararse a tasas de desnutrición infantil del INS.</li>
-<li>Las variaciones temporales de FIES pueden verse afectadas por diseño, cambios materiales, composición y precisión. El sitio no adjudica mecanismos causales a las variaciones.</li>
-<li>El RUV registra victimización bajo reglas administrativas; no es una medida directa y completa de toda exposición a violencia, y el sitio deliberadamente no muestra cifras aún sin tabulación comparable.</li>
-<li>Los recuentos demográficos 2025 pueden diferir entre versiones de proyecciones; no mezclar bases con diferente corte y revisión.</li>
+<li><strong>Configuración de vida:</strong> actividades que la persona realiza en un período observado.</li>
+<li><strong>Bienestar experimentado:</strong> cómo valora y experimenta su vida, con medidas y relatos por separado.</li>
+<li><strong>Posibilidad de vida:</strong> alternativa concreta que la persona considera valiosa y que podría realizarse bajo condiciones identificables.</li>
+<li><strong>Arquitectura de lo posible:</strong> condiciones materiales, institucionales, culturales y relacionales que permiten realizar, sostener y transformar esa alternativa.</li>
 </ol>
-<h2>5. Relación con la propuesta posdoctoral</h2>
-<p>Este tablero es un prototipo descriptivo de condiciones territoriales. Sus indicadores —educación, conectividad, inseguridad alimentaria y población— se conservan como primera capa de contexto; no son una escala de posibilidades de vida ni un instrumento que siga trayectorias individuales.</p>
-<p>La propuesta posdoctoral se centra en jóvenes de 18–28 años en Bogotá. Plantea una meta orientadora de 24 participantes en cuatro perfiles de transición educativa y laboral, dos entrevistas separadas por cuatro a cinco meses y mediciones exploratorias. La unidad de análisis será el encuentro situado entre promesas, condiciones institucionales y trayectorias.</p>
-<p>El estudio propuesto distinguirá futuros deseados, posibilidades percibidas y opciones documentables —acceso, costos, apoyos, seguridad material y tiempo—. Contrastará logros educativos y laborales con esas opciones y con experiencias de autonomía, competencia, vínculos, sentido y contribución. Las categorías estarán abiertas a revisión; no se combinarán en un índice ni se asumirán como una definición universal del bienestar.</p>
-<p>Los datos territoriales pueden ofrecer contexto, pero este atlas no aporta la muestra ni mide las experiencias de las personas participantes. Una graduación o un empleo no bastan para concluir que se ampliaron sus posibilidades; una interrupción tampoco demuestra por sí sola que se redujeron. El generador de preguntas del sitio es un ejercicio metodológico ilustrativo, no el protocolo de la propuesta.</p>
-<h2>6. Reproducibilidad y alcance de publicación</h2>
 <ul>
-<li>Datos en <a href="data/indicadores_2025.csv"><code>data/indicadores_2025.csv</code></a>.</li>
-<li>Valores de interfaz en <a href="data/territorios.js"><code>data/territorios.js</code></a>.</li>
-<li>Sitio estático sin rastreo, servidores, claves ni dependencias.</li>
-<li>Tests en <a href="tests/data.test.cjs"><code>tests/data.test.cjs</code></a> para totales, porcentajes y coherencia de períodos.</li>
-<li>Producto independiente, no avalado por DANE, ICBF, Uniandes ni Unidad para las Víctimas.</li>
+<li><strong>Accesibilidad:</strong> alternativas efectivamente al alcance, con requisitos esenciales documentados. C = compatible; R = restricción documentada; U = indeterminado.</li>
+<li><strong>Compatibilidad:</strong> si actividades valoradas pueden realizarse simultáneamente. Elaborar presupuestos de tiempo y recursos; aceptar simultaneidad solo con evidencia.</li>
+<li><strong>Sostenimiento:</strong> duración, renovación, contingencias, control de recursos y quién asume costos. Registrar cambios ocurridos, no solo recuerdos.</li>
+<li><strong>Ampliabilidad:</strong> condiciones para hacer una alternativa accesible a otras personas sin reproducir desigualdad ni trasladar costos injustamente. Una “candidata” aún requiere estudio; no equivale a escalabilidad.</li>
 </ul>
-<p><strong>Última edición del prototipo:</strong> 24 de noviembre de 2026. Las cifras están ancladas a productos DANE publicados en abril y mayo de 2026 y a la tabulación demográfica 2025 especificada.</p>
-<h2>7. Selección territorial, sismo y vivienda (actualización 2026)</h2>
-<p>Cuatro casos contrastantes fueron seleccionados con fines de demostración: Bogotá D. C. como referencia predominantemente urbana; Chocó y La Guajira por configuraciones territoriales y materiales diferentes; Vaupés como contexto amazónico de alta dispersión. No es una muestra representativa de departamentos. <strong>Los promedios esconden importantes diferencias municipales, urbano-rurales, de pertenencia étnica y de experiencia personal.</strong></p>
-<p>La <a href="https://www.dane.gov.co/files/operaciones/ECV/bol-ECV-2025.pdf">ECV 2025</a> reportó un déficit habitacional <strong>superior al 80 % en Chocó y Vaupés</strong>, frente al <strong>6,3 % de hogares en Bogotá</strong>. No se presenta como indicador cuantitativo principal del atlas ni se combina algebraicamente con los otros porcentajes.</p>
-<p>El <a href="https://www2.sgc.gov.co/Noticias/Paginas/SGC-actualiza-la-informacion-sobre-el-sismo-ocurrido-en-San-Jose-del-Palmar-Choco.aspx">Servicio Geológico Colombiano</a> registró un sismo de <strong>7,4 Mw</strong> el <strong>10 de agosto de 2026</strong>, con epicentro en <strong>San José del Palmar, Chocó</strong>. Ocurrió después de la medición ECV/FIES de 2025. <strong>No se pueden usar esas cifras para estimar sus efectos.</strong></p>
-<h2>8. Serie FIES 2023–2025</h2>
-<table>
-<thead>
-<tr>
-  <th>Territorio</th>
-  <th style="text-align:right">2023 (%)</th>
-  <th style="text-align:right">2024 (%)</th>
-  <th style="text-align:right">2025 (%)</th>
-  <th style="text-align:right">Cambio 2024–2025</th>
-  <th>¿Significativo en DANE 2025?</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td>Chocó</td>
-  <td style="text-align:right">18,9</td>
-  <td style="text-align:right">36,3</td>
-  <td style="text-align:right">56,8</td>
-  <td style="text-align:right">+20,5 p.p.</td>
-  <td>Sí</td>
-</tr>
-<tr>
-  <td>La Guajira</td>
-  <td style="text-align:right">50,1</td>
-  <td style="text-align:right">52,4</td>
-  <td style="text-align:right">47,8</td>
-  <td style="text-align:right">−4,6 p.p.</td>
-  <td>Sí</td>
-</tr>
-<tr>
-  <td>Bogotá D. C.</td>
-  <td style="text-align:right">21,2</td>
-  <td style="text-align:right">13,9</td>
-  <td style="text-align:right">9,6</td>
-  <td style="text-align:right">−4,3 p.p.</td>
-  <td>Sí</td>
-</tr>
-<tr>
-  <td>Vaupés</td>
-  <td style="text-align:right">34,4</td>
-  <td style="text-align:right">46,1</td>
-  <td style="text-align:right">22,3</td>
-  <td style="text-align:right">−23,8 p.p.</td>
-  <td>Sí</td>
-</tr>
-</tbody>
-</table>
-<p>Fuente 2023–2024: DANE, <a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2024.pdf#page=7">FIES 2024, gráfico 4</a>. Fuente 2024–2025: DANE, <a href="https://www.dane.gov.co/files/operaciones/FIES/bol-FIES-2025.pdf#page=6">FIES 2025, gráfico 4</a>. La significancia se refiere estrictamente al cambio 2024–2025 presentado en el boletín de 2025, no a una tendencia de tres años ni a diferencias entre departamentos. En particular, Vaupés muestra elevada variabilidad interanual; se requieren más mediciones y errores de estimación para interpretar dinámicas duraderas.</p>
-<h2>9. Versiones, citación y preservación</h2>
-<p>Repositorio público: <a href="https://github.com/agcarod/arquitecturas-de-lo-posible">https://github.com/agcarod/arquitecturas-de-lo-posible</a>. Sitio: <a href="https://agcarod.github.io/arquitecturas-de-lo-posible/">https://agcarod.github.io/arquitecturas-de-lo-posible/</a>. El DOI de Zenodo <strong>no está asignado</strong>. No se debe citar ninguno hasta completar la publicación del depósito en Zenodo. Se recomienda depositar una versión etiquetada (release) y verificar la integración GitHub–Zenodo.</p>
-</article></body></html>
+<p>La demostración interactiva de la portada organiza estados C/R/U de un caso hipotético. Sus reglas no son un instrumento validado, no estiman probabilidad y no representan a personas reales. No se ha demostrado validez de campo, confiabilidad entre evaluadores, transferibilidad ni superioridad metodológica.</p>
+<p>En el año 1 se propone cartografía poblacional, análisis de datos abiertos, primera publicación y desarrollo preliminar del protocolo; preparar revisión ética y, si se autoriza y hay recursos, entrevistas cognitivas con 6–8 jóvenes. En el año 2, nueva muestra de alrededor de 24 jóvenes de Bogotá, con tres encuentros en los meses 0, 4 y 8 para reconstruir alternativas y cambios. En el año 3, integración, revisión de casos negativos y contraste de valor añadido. La muestra y las decisiones finales se revisarían por poder informativo, ética y factibilidad. No se enlazan personas encuestadas por DANE con participantes reclutados.</p>
+<p>Salvaguardas propuestas: consentimiento, reclutamiento sin relaciones de dependencia, datos pseudonimizados, opción de omitir documentos sensibles, manejo de malestar, rutas de atención, derecho a retirar participación y no publicar casos reidentificables. La participación y el protocolo requieren aprobación ética previa.</p>
+
+<h2 id="evaluacion">6. Cómo contrastar la contribución potencial</h2>
+<p>La literatura ya aporta capacidades y factores de conversión, conjuntos de oportunidades, combinaciones de tiempo e ingreso, aspiraciones, vida laboral y cambios longitudinales. La propuesta no reclama la novedad de esos conceptos ni asume que no existan métodos equivalentes.</p>
+<p>El comparador A sería un análisis sólido que incluya factores de conversión, recursos y oportunidades, tensiones de tiempo e ingreso, aspiraciones, seguridad de oportunidades y curso de vida. El comparador B usaría el mismo corpus más una ficha de alternativas concretas con evidencia fechada, compatibilidad y dependencias. La unidad de análisis sería persona × alternativa × momento.</p>
+<table><thead><tr><th>Criterio</th><th>Operación prevista</th><th>Resultado que pondría en duda el valor añadido</th></tr></thead><tbody>
+<tr><th>Trazabilidad</th><td>Auditar todas las afirmaciones decisivas de acceso, restricción y cambio.</td><td>Inferencias clave sin respaldo identificable.</td></tr>
+<tr><th>Información adicional</th><td>Contar hallazgos sustentados y relevantes, incluidos los exclusivos del comparador A y errores del protocolo.</td><td>Conclusiones iguales con la misma evidencia.</td></tr>
+<tr><th>Utilidad</th><td>Rúbrica previa 0–2 con revisores independientes, casos positivos y negativos.</td><td>Hipótesis institucionales siguen siendo inespecíficas o no comprobables.</td></tr>
+<tr><th>Acuerdo y costo</th><td>Acuerdo bruto, discrepancias C/R/U, tiempo de análisis y carga para participantes; kappa solo si la distribución lo permite.</td><td>Más carga sin hallazgos más sustentados o útiles.</td></tr>
+<tr><th>Cambio temporal</th><td>Separar expectativa, acceso documentado y realización posterior; indagar explicaciones rivales.</td><td>Tratar no realización como prueba de inaccesibilidad.</td></tr>
+<tr><th>Decisión</th><td>Contrastar 8–12 casos seleccionados de la cohorte en el año 3; congelar rúbrica, contrabalancear orden y registrar desacuerdos.</td><td>Simplificar o abandonar una pretensión de innovación si no supera al comparador fuerte.</td></tr>
+</tbody></table>
+<p>La prueba de consistencia del código actual pasó 10/10 casos sintéticos y 27/27 combinaciones de estados. Se trata de reglas diseñadas por la propia propuesta; la prueba no es independiente ni demuestra validez. En ejemplos publicados por Marzi (2022), una beca artística de Miguel se perdió al no poder confirmarse por internet y James pausó estudios tras perder su crédito antes de conseguir otro empleo. Un análisis de capacidades ya reconoce barreras en ambos casos; con la evidencia narrativa disponible, presupuestos y opciones compatibles permanecen indeterminados. Estos ejemplos sirven para plantear los datos que harían falta, no para reclamar ventaja del protocolo.</p>
+
+<h2 id="agenda">7. Posdoctorado y agenda científica</h2>
+<p>El horizonte postulado es <strong>2027–2030</strong>, con tres fases de investigación condicionadas a aprobación ética, renovación, financiación adicional y apoyo de codificación después del primer año. El esquema por años no sustituye el cronograma oficial de la convocatoria ni es una garantía de financiamiento.</p>
+<ul>
+<li><strong>Año 1:</strong> atlas y cartografía poblacional; datos abiertos; primera publicación; protocolo preliminar y preparación ética.</li>
+<li><strong>Año 2:</strong> seguimiento durante ocho meses, tres encuentros con aproximadamente 24 jóvenes de Bogotá de 18–28 años.</li>
+<li><strong>Año 3:</strong> integrar resultados, evaluar valor añadido y formular principios preliminares de diseño institucional.</li>
+</ul>
+<p>La agenda de largo plazo contempla transferencia responsable a otros territorios y poblaciones, análisis de transformaciones sociales, codiseño y evaluación de factibilidad, implementación, efectividad, sostenibilidad y equidad. El posdoctorado inicia la agenda y no la completa. Los productos previstos incluyen atlas poblacional, repositorio, código y protocolos reproducibles, publicaciones, recursos docentes e interlocución interdisciplinaria.</p>
+<p>Esta plataforma es una iniciativa académica independiente preparada para la postulación. No es un proyecto institucional aprobado por la Universidad de los Andes.</p>
+
+<h2 id="referencias">8. Referencias seleccionadas</h2>
+<p>Selección focalizada de antecedentes para delimitar preguntas y comparadores; no es una revisión sistemática, no tuvo doble cribado y no pretende exhaustividad.</p>
+<ul>
+<li><a href="https://global.oup.com/academic/product/development-as-freedom-9780198297581" target="_blank" rel="noopener noreferrer">Sen, A. (1999). <em>Development as Freedom</em>.</a> Oxford University Press.</li>
+<li><a href="https://gsdrc.org/document-library/the-capacity-to-aspire-culture-and-the-terms-of-recognition/" target="_blank" rel="noopener noreferrer">Appadurai, A. (2004). “The Capacity to Aspire: Culture and the Terms of Recognition”.</a> En <em>Culture and Public Action</em>.</li>
+<li><a href="https://www.ids.ac.uk/publications/sustainable-rural-livelihoods-a-framework-for-analysis/" target="_blank" rel="noopener noreferrer">Scoones, I. (1998). <em>Sustainable Rural Livelihoods: A Framework for Analysis</em>.</a> IDS Working Paper 72.</li>
+<li><a href="https://wellcomecollection.org/works/pqqbterv" target="_blank" rel="noopener noreferrer">Jahoda, M. (1982). <em>Employment and Unemployment: A Social-Psychological Analysis</em>.</a> Cambridge University Press.</li>
+<li><a href="https://doi.org/10.1037/0003-066X.55.1.68" target="_blank" rel="noopener noreferrer">Ryan, R. M., &amp; Deci, E. L. (2000). “Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being”.</a></li>
+<li><a href="https://doi.org/10.1146/annurev.psych.52.1.1" target="_blank" rel="noopener noreferrer">Bandura, A. (2001). “Social Cognitive Theory: An Agentic Perspective”.</a></li>
+<li><a href="https://doi.org/10.1023/A:1010417201918" target="_blank" rel="noopener noreferrer">Prilleltensky, I. (2001). “Value-Based Praxis in Community Psychology: Moving Toward Social Justice and Social Action”.</a></li>
+<li><a href="https://doi.org/10.1177/0961463X10369754" target="_blank" rel="noopener noreferrer">Burchardt, T. (2010). “Time, income and substantive freedom: A capability approach”.</a></li>
+<li><a href="https://doi.org/10.1080/19452829.2011.541790" target="_blank" rel="noopener noreferrer">Burchardt, T., &amp; Vizard, P. (2011). “‘Operationalizing’ the Capability Approach as a Basis for Equality and Human Rights Monitoring”.</a></li>
+<li><a href="https://academic.oup.com/book/5992" target="_blank" rel="noopener noreferrer">Wolff, J., &amp; de-Shalit, A. (2007). <em>Disadvantage</em>.</a> Oxford University Press.</li>
+<li><a href="https://doi.org/10.1177/13607804211024273" target="_blank" rel="noopener noreferrer">Marzi, S. (2022). “‘Having money is not the essential thing . . . but . . . it gets everything moving’: young Colombians navigating towards uncertain futures?”</a></li>
+<li><a href="https://doi.org/10.1007/s11205-024-03414-8" target="_blank" rel="noopener noreferrer">Bucheli, J. F. (2024). “Exploring Domains of Quality-of-Life with Vulnerable Young People in Bogotá: A Capability Approach Perspective”.</a></li>
+<li><a href="https://doi.org/10.1080/19452829.2026.2699231" target="_blank" rel="noopener noreferrer">Gonon, A., Nadai, E., &amp; Böhme, M. (2026). “Stuck in poverty? Stability and change of capabilities and functionings”.</a></li>
+<li><a href="https://doi.org/10.1111/jedm.12000" target="_blank" rel="noopener noreferrer">Kane, M. T. (2013). “Validating the Interpretations and Uses of Test Scores”.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/39147461/" target="_blank" rel="noopener noreferrer">McGorry, P. D., et al. (2024). <em>The Lancet Psychiatry Commission on youth mental health</em>.</a></li>
+<li><a href="https://pubmed.ncbi.nlm.nih.gov/40409329/" target="_blank" rel="noopener noreferrer">A call to action: the second Lancet Commission on adolescent health and wellbeing (2025).</a></li>
+</ul>
+<p>Los antecedentes se usan para explicitar solapamientos: las posibilidades, las aspiraciones, la experiencia psicosocial del empleo, el bienestar psicológico y los cambios longitudinales ya cuentan con teorías y aplicaciones. El supuesto de valor añadido está en la articulación y su utilidad comparativa, pendiente de evaluación.</p>
+
+<h2 id="reproducir">9. Reproducir y descargar</h2>
+<p>Descarga los cinco ZIP de microdatos desde el <a href="https://microdatos.dane.gov.co/index.php/catalog/905/get_microdata" target="_blank" rel="noopener noreferrer">catálogo ECV 2025 del DANE</a>. No se distribuyen aquí: el repositorio no contiene microdatos. Para generar el resumen estático, instala <code>pandas</code> y <code>numpy</code>, coloca los ZIP en una carpeta fuera del repositorio y ejecuta:</p>
+<pre><code>python scripts/build_ecv2025_dashboard.py /ruta/a/los/zip-dane</code></pre>
+<p>El programa valida las llaves y la cobertura, produce <code>data/ecv2025_summary.json</code> y <code>data/ecv2025_groups.csv</code>, y no escribe registros individuales. Los scripts de piloto y la prueba robusta se publican para rastrear los análisis:</p>
+<div class="download-box">
+<a href="data/ecv2025_groups.csv" download>Agregados ECV CSV ↧</a>
+<a href="data/ecv2025_summary.json" download>Resumen y estimaciones JSON ↧</a>
+<a href="scripts/build_ecv2025_dashboard.py" download>Generador reproducible ↧</a>
+<a href="scripts/piloto_ecv2025_arquitecturas.py" download>Piloto descriptivo ↧</a>
+<a href="scripts/piloto_ecv2025_soportes.py" download>Integración de cinco módulos ↧</a>
+<a href="scripts/prueba_robustez_ecv.py" download>Prueba de robustez ↧</a>
+<a href="scripts/prueba_logica_arquitecturas.py" download>Prueba lógica ↧</a>
+<a href="results/resultado_robustez_ecv.txt" download>Salida contraste ECV ↧</a>
+<a href="results/resultado_prueba_logica.txt" download>Salida reglas C/R/U ↧</a>
+</div>
+<p>Pruebas ejecutables del repositorio: <code>node --check app.js</code>, <code>node --test tests/data.test.cjs</code>, <code>python scripts/prueba_logica_arquitecturas.py</code> y, con microdatos DANE disponibles, <code>python scripts/build_ecv2025_dashboard.py /ruta/a/los/zip-dane</code>.</p>
+<div class="note">La ECV no enlaza personas con ENUT u otras encuestas aquí. Los archivos agregados son una instantánea de resultados reproducibles; si cambia la versión de archivos o metodología, se debe volver a generar y documentar el cambio.</div>
+<div class="download-box"><a href="index.html">Volver al laboratorio ↗</a><a href="https://github.com/agcarod/arquitecturas-de-lo-posible" target="_blank" rel="noopener noreferrer">Repositorio público ↗</a></div>
+</article>
+</body>
+</html>

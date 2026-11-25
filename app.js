@@ -154,3 +154,122 @@ Fuentes y método: metodologia.html
   $('territory').value=state.territory;$('compare').value=state.compare;
   displayTerritory();
 })();
+
+// La ECV se carga desde un archivo agregado reproducible. La tabla HTML sigue
+// disponible como alternativa si la petición o JavaScript no están activos.
+(async function () {
+  const byId = id => document.getElementById(id);
+  const fmt = (value, digits = 2) => Number(value).toLocaleString("es-CO", {
+    minimumFractionDigits: digits, maximumFractionDigits: digits
+  });
+  const groupSelect = byId("group-select");
+  if (groupSelect) {
+    try {
+      const response = await fetch("data/ecv2025_summary.json");
+      if (!response.ok) throw new Error("No se pudo cargar el agregado ECV");
+      const summary = await response.json();
+      const groupMap = new Map(summary.groups.map(group => [group.id, group]));
+      function showGroup(id) {
+        const group = groupMap.get(id);
+        if (!group) return;
+        byId("group-share").textContent = fmt(group.weighted_share_pct) + " %";
+        byId("group-n").textContent = "n = " + Number(group.sample_n).toLocaleString("es-CO");
+        byId("group-life").textContent = fmt(group.outcomes.life_satisfaction.estimate);
+        byId("group-meaning").textContent = fmt(group.outcomes.activities_worthwhile.estimate);
+        byId("group-time").textContent = fmt(group.outcomes.free_time_satisfaction.estimate);
+        byId("group-income").textContent = fmt(group.outcomes.household_income_reaches_minimum.estimate) + " %";
+        byId("group-definition").textContent = group.definition + " Participación ponderada: " + fmt(group.weighted_share_pct) + " %.";
+      }
+      groupSelect.addEventListener("change", () => showGroup(groupSelect.value));
+      showGroup(groupSelect.value);
+
+      const chart = byId("config-plot");
+      if (chart) {
+        chart.replaceChildren();
+        for (const group of summary.groups) {
+          const row = document.createElement("div");
+          row.className = "config-bar-row";
+          const label = document.createElement("span");
+          label.className = "config-bar-label";
+          label.textContent = group.name;
+          const track = document.createElement("span");
+          track.className = "config-bar-track";
+          const bar = document.createElement("span");
+          bar.className = "config-bar-fill";
+          bar.style.width = group.weighted_share_pct + "%";
+          bar.setAttribute("aria-hidden", "true");
+          track.append(bar);
+          const value = document.createElement("strong");
+          value.className = "config-bar-value";
+          value.textContent = fmt(group.weighted_share_pct) + " %";
+          row.append(label, track, value);
+          chart.append(row);
+        }
+      }
+    } catch (error) {
+      console.warn("Los datos agregados ECV no se cargaron; queda visible la tabla estática.", error);
+    }
+  }
+
+  const rules = window.ARCHITECTURES_RULES;
+  const option = byId("life-option");
+  if (!rules || !option) return;
+
+  const labels = {
+    C: "Compatible/documentado",
+    R: "Restricción documentada",
+    U: "Indeterminado"
+  };
+  const lifeLabels = {
+    C: "Compatible en este ejemplo",
+    R: "Restricción documentada",
+    U: "No se puede concluir todavía"
+  };
+  const expansionLabels = {
+    C: "Candidata a estudio",
+    R: "Requiere rediseño",
+    U: "Indeterminada"
+  };
+  function displayDemo() {
+    const result = rules.evaluate({
+      economy: byId("economy-state").value,
+      institution: byId("institution-state").value,
+      time: byId("time-state").value,
+      continuity: byId("continuity-state").value,
+      family: byId("family-state").value,
+      externalCost: byId("cost-state").value,
+      rights: byId("rights-state").value,
+      equity: byId("equity-state").value
+    });
+    byId("demo-option").textContent = option.options[option.selectedIndex].text;
+    for (const [id, state] of [
+      ["demo-access", result.accessibility],
+      ["demo-compatible", result.compatibility],
+      ["demo-sustain", result.sustainability]
+    ]) {
+      const el = byId(id);
+      el.textContent = labels[state];
+      el.dataset.state = state;
+    }
+    const overall = byId("demo-overall");
+    overall.textContent = lifeLabels[result.life];
+    overall.dataset.state = result.life;
+    const expand = byId("demo-expand");
+    expand.textContent = expansionLabels[result.expansion];
+    expand.dataset.state = result.expansion;
+    const explanation = byId("demo-explanation");
+    if (result.life === "R") {
+      explanation.textContent = "Al menos un requisito listado aparece restringido. El ejemplo invita a registrar cuál, para quién y en qué momento; no estima la probabilidad de realizar la alternativa.";
+    } else if (result.life === "U") {
+      explanation.textContent = "Falta información para evaluar uno o más requisitos. Indeterminación no significa imposibilidad.";
+    } else {
+      explanation.textContent = "Los requisitos incluidos aparecen compatibles en este caso hipotético. Las condiciones omitidas, la valoración personal y los cambios futuros siguen sin evaluarse.";
+    }
+    explanation.dataset.state = result.life;
+  }
+  for (const id of [
+    "life-option", "economy-state", "institution-state", "time-state",
+    "continuity-state", "family-state", "cost-state", "rights-state", "equity-state"
+  ]) byId(id).addEventListener("change", displayDemo);
+  displayDemo();
+})();

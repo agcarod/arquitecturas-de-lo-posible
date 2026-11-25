@@ -1,82 +1,64 @@
-# ¿Cuántas puertas se abren donde creces?
+# Arquitecturas de lo posible
 
-**Futuros en prueba · Arquitecturas de lo posible**  
-Prototipo interactivo para explorar desigualdades en condiciones territoriales de acceso y privación en Colombia. La comparación es descriptiva: no mide trayectorias individuales ni determina posibilidades de vida. Preparado como demostración académica de una agenda de investigación interdisciplinaria.
+**Juventudes y condiciones sociales del bienestar en un mundo en transición**  
+Autora: Ángela Gissette Caro-Delgado, Ph. D.
 
+Laboratorio digital académico para la propuesta posdoctoral «Futuros de las Ciencias Sociales» de la Universidad de los Andes. Reúne un atlas territorial, análisis agregado del piloto ECV 2025, contrastes exploratorios, una demostración metodológica y una agenda de investigación.
 
-**Propuesta académica de Ángela Gissette Caro-Delgado, Ph.D.**  
-Demostración preparada para la **postulación a la convocatoria posdoctoral «Futuros de las Ciencias Sociales» de la Facultad de Ciencias Sociales de la Universidad de los Andes (2026)**. Es una iniciativa independiente, no un proyecto institucional aprobado por la Universidad.
-
-![Estado](https://img.shields.io/badge/estado-prototipo_académico-246f69?style=flat-square) ![Tecnologías](https://img.shields.io/badge/tecnologías-HTML%20%2B%20CSS%20%2B%20JS-728e82?style=flat-square)
-
-> **Pregunta:** ¿Cómo se distribuyen algunas condiciones materiales, educativas y digitales en cuatro territorios, y qué queda fuera cuando se leen como promedios?
-
-## ¿Qué incluye?
-
-- **Cuatro territorios** para explorar: Chocó, La Guajira, Bogotá D. C. y Vaupés.
-- **Población 0–17 años** y desglose 0–11 / 12–17 (tabulaciones secundarias de proyecciones DANE 2025).
-- **Tres indicadores publicados por DANE para 2025**: hogares con acceso a internet; hogares con inseguridad alimentaria moderada o grave; asistencia a educación formal de jóvenes **17–21** (una transición posterior, no medida del total 0–17).
-- **Serie 2023–2025** de inseguridad alimentaria, con variaciones 2024–2025 significativas documentadas por DANE en los cuatro casos.
-- **Generador de preguntas exploratorias** sobre lo que los agregados no responden. Sus diseños son ejemplos metodológicos, no el protocolo empírico de la propuesta posdoctoral.
-- **Capa pendiente de violencia y protección**, con enlace a RUV pero sin atribuir una cifra no verificada.
-- Metodología, referencias, CSV descargable y archivos fuente editables.
-
-**Aviso científico:** los indicadores poseen **denominadores distintos**. No se suman, no se ponderan en un índice y no estiman riesgo individual ni prueban causalidad. Describen condiciones agregadas; no miden futuros deseados, posibilidades percibidas, opciones reales ni bienestar.
-
-## Publicación verificada
-
-- **Web:** https://agcarod.github.io/arquitecturas-de-lo-posible/
+- **Sitio público:** https://agcarod.github.io/arquitecturas-de-lo-posible/
+- **Fuentes, métodos y resultados:** https://agcarod.github.io/arquitecturas-de-lo-posible/metodologia.html
 - **Repositorio:** https://github.com/agcarod/arquitecturas-de-lo-posible
-- **Ficha metodológica legible:** https://agcarod.github.io/arquitecturas-de-lo-posible/metodologia.html
 
-## Probar antes de subir
+Es una iniciativa académica independiente; no constituye un proyecto institucional aprobado ni una publicación oficial de la Universidad de los Andes.
 
-Abre `index.html` directamente en tu navegador. También puedes servirlo localmente:
+## Cinco preguntas del laboratorio
+
+1. **¿Dónde comienzan nuestras posibilidades?** Atlas de Bogotá D. C., Chocó, La Guajira y Vaupés; conserva denominadores y límites de indicadores, y la serie FIES 2023–2025.
+2. **¿Cómo vivimos actualmente?** Cinco módulos ECV 2025 enlazados para 35.776 personas de 18–28 años en 27.632 hogares, sin pérdidas; seis configuraciones y estimaciones ponderadas.
+3. **¿A qué renunciamos para sostener nuestras vidas?** Contraste de oficios del hogar y ocupación sin estudio, estandarizado por sexo y edad, con intervalos aproximados y sensibilidad al umbral.
+4. **¿Cómo reconstruir las arquitecturas de lo posible?** Cuatro distinciones analíticas, demostración interactiva hipotética, antecedentes y un plan para evaluar valor añadido frente a un comparador fuerte.
+5. **¿Qué sociedades podríamos construir?** Agenda posdoctoral 2027–2030 condicionada por ética, renovaciones y financiación; productos académicos y líneas posteriores.
+
+## Resultados principales
+
+- Las valoraciones agregadas se presentan por separado: satisfacción vital, P1905 (qué tanto las cosas que se hacen valen la pena), satisfacción con tiempo libre y suficiencia económica percibida del hogar.
+- Oficios del hogar y ocupación sin estudio muestran valoraciones medias relativamente próximas en unos resultados y diferentes en otros; el grupo de oficios del hogar informa menor suficiencia económica del hogar y mayor satisfacción con el tiempo libre.
+- El porcentaje que supera el indicador conjunto depende del corte: al usar ≥7, ≥8 y ≥9 cambia la diferencia entre grupos; al corte ≥9 el IC aproximado incluye cero. Esto no demuestra equivalencia.
+- Los datos transversales no identifican renuncias, decisiones, libertad efectiva o causalidad. El resultado empírico abre preguntas y no prueba la hipótesis institucional.
+
+## Datos y código
+
+Los microdatos DANE no se publican en este repositorio. El portal del DANE incluye el [catálogo, documentación y diccionario de la ECV 2025](https://microdatos.dane.gov.co/index.php/catalog/905).
+
+- [CSV agregado por configuración](data/ecv2025_groups.csv)
+- [Resumen JSON con método y estimaciones](data/ecv2025_summary.json)
+- [Generar ambos desde los microdatos descargados](scripts/build_ecv2025_dashboard.py)
+- [Scripts de piloto y robustez](scripts/)
+- [Prueba de reglas C/R/U](scripts/prueba_logica_arquitecturas.py)
+- [Trazabilidad científica completa](docs/FUENTES_Y_METODO.md)
+
+Para regenerar los agregados con Python, pandas y numpy:
 
 ```bash
-python3 -m http.server 8000
+python scripts/build_ecv2025_dashboard.py /ruta/a/los/zip-dane
 ```
 
-Después visita `http://localhost:8000`.
+El programa valida unicidad, cardinalidad, cobertura y valores esperados. Escribe solo el resumen JSON y el CSV agregado; no exporta microdatos.
 
-Verificar sintaxis JavaScript y consistencia interna:
+## Alcance científico
+
+La capacidad, los factores de conversión, el tiempo e ingreso, las aspiraciones, el curso de vida, la experiencia psicológica del empleo y la seguridad de oportunidades tienen antecedentes. La posible aportación es desarrollar y contrastar un procedimiento que conecte alternativas de vida valoradas, requisitos documentados, compatibilidad, dependencia y experiencia psicológica. Su validez, utilidad adicional, confiabilidad, transferibilidad y superioridad siguen sin demostrarse. La búsqueda bibliográfica usada hasta ahora es focalizada, no una revisión sistemática.
+
+Las cifras territoriales son agregadas y no tienen una unidad común. El resumen ECV es transversal, no causal. El prototipo interactivo no predice trayectorias ni es una escala validada. La metodología de campo y cualquier recopilación con personas dependen de la aprobación ética y los recursos.
+
+## Reproducir y verificar
 
 ```bash
 node --check app.js
 node --test tests/data.test.cjs
+python scripts/prueba_logica_arquitecturas.py
 ```
 
-## Estructura del proyecto
+## Licencia y atribución
 
-```text
-index.html                         Página del sitio
-styles.css                         Estilos y diseño responsivo
-app.js                             Interacciones y gráficos
-assets/favicon.svg                 Símbolo del sitio
-data/territorios.js                Datos integrados y enlaces
- data/indicadores_2025.csv         Datos tabulares reutilizables
- metodologia.html          Trazabilidad científica y limitaciones
- tests/data.test.cjs               Pruebas automáticas sin dependencias
- .nojekyll                         Publicación directa con GitHub Pages
- LICENSE                           Licencia del código
-```
-
-## Alcance y ética
-
-Es un **prototipo académico**, no una plataforma de vigilancia clínica, una herramienta de focalización de menores o un diagnóstico territorial. Las cifras son agregadas. No almacena datos personales, no rastrea visitantes y no envía información a servidores. La herramienta que formula preguntas **no identifica efectos de intervenciones**.
-
-Los valores demográficos de esta versión proceden de tabulaciones secundarias de proyecciones DANE 2025 reproducidas por Telencuestas. La integración de la tabla original del DANE/ICBF y de estimaciones de precisión está identificada como un siguiente paso en la ficha metodológica. No mezclar series de población de distintas revisiones sin documentar el cambio de versión.
-
-## Relación con la propuesta posdoctoral
-
-El tablero conserva una primera capa de contexto territorial. La propuesta posdoctoral, en cambio, estudiaría transiciones entre educación y trabajo con jóvenes de 18–28 años en Bogotá. El tablero no es la muestra del estudio ni mide las trayectorias de sus participantes. La investigación propuesta contrastaría logros con futuros deseados, posibilidades percibidas y opciones documentables —acceso, costos, apoyos, seguridad y tiempo—, además de las experiencias de autonomía, competencia, vínculos, sentido y contribución. Estas categorías serían exploratorias, no un índice ni una definición universal de bienestar.
-
-### Atribución
-
-Datos: Departamento Administrativo Nacional de Estadística (DANE); proyecciones basadas en CNPV 2018; consultas de RUV de la Unidad para las Víctimas como fuente futura. Véase [FUENTES_Y_METODO.md](metodologia.html) para las páginas exactas y los enlaces. El prototipo no representa posiciones institucionales del DANE, la Universidad de los Andes ni la Unidad para las Víctimas.
-
-## Licencia
-
-Código del prototipo: MIT, incluido en [LICENSE](LICENSE). La licencia del código no altera las condiciones de reutilización de las fuentes de datos de terceros.
-
-**Preservación:** la integración Zenodo no está completada; no existe DOI atribuido a esta versión hasta que el depósito sea publicado.
+El código del prototipo se distribuye bajo la licencia MIT incluida en [LICENSE](LICENSE). El uso de datos de terceros sigue las condiciones definidas por DANE. El proyecto no representa posiciones institucionales del DANE, la Universidad de los Andes ni otras entidades.

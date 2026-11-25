@@ -1,0 +1,7 @@
+﻿id,configuracion,n_muestral,porcentaje_ponderado_18_28,satisfaccion_vital_media_0_10,sentido_actividad_media_0_10,satisfaccion_tiempo_libre_media_0_10,ingresos_hogar_alcanzan_gastos_minimos_pct
+occupied_no_study,Ocupados que no estudian,18189,51.26,8.273,8.595,7.626,69.203
+study_no_occupation,Estudiantes sin ocupación,5612,17.93,8.448,8.702,8.0,74.384
+study_and_work,Estudian y trabajan,2115,7.21,8.441,8.829,7.666,76.924
+home_primary,Oficios del hogar como actividad principal,7205,15.53,8.113,8.448,7.666,53.627
+searched_elsewhere,Búsqueda reciente de empleo (resto),1955,6.44,7.86,8.245,7.307,57.541
+other,Otras situaciones,700,1.64,7.115,7.63,7.101,56.312
