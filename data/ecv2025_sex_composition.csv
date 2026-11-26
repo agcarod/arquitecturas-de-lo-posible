@@ -1,0 +1,7 @@
+﻿id,configuracion,n_muestral,n_mujeres,n_hombres,mujeres_sexo_al_nacer_pct_ponderado,hombres_sexo_al_nacer_pct_ponderado
+study_and_work,Estudian y trabajan,2115,1063,1052,46.0443,53.9557
+study_no_occupation,Estudiantes sin ocupación,5612,3235,2377,54.1693,45.8307
+occupied_no_study,Ocupados sin estudiar,18189,6877,11312,39.1815,60.8185
+home_primary,Oficios del hogar como actividad principal,7205,6514,691,90.4126,9.5874
+searched_elsewhere,Búsqueda reciente de empleo (resto),1955,890,1065,41.95,58.05
+other,Otras situaciones,700,272,428,34.4526,65.5474

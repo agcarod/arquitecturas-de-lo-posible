@@ -4,7 +4,6 @@
   if (!app) throw new Error('No se encontró data/territorios.js');
   const $ = id => document.getElementById(id);
   const territories = app.territories;
-  const fmtN = number => Number(number).toLocaleString('es-CO');
   const fmtP = number => Number(number).toLocaleString('es-CO', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
   const byId = id => territories.find(item => item.id === id);
   const state = { territory: 'choco', compare: 'bogota' };
@@ -22,12 +21,6 @@
   }
   function displayTerritory() {
     const current = byId(state.territory), other = byId(state.compare);
-    $('population-total').textContent = fmtN(current.population.all);
-    $('population-place').textContent = current.name;
-    $('population-source').href = current.sources.population;
-    $('pop-children').textContent = fmtN(current.population.child);
-    $('pop-adolescent').textContent = fmtN(current.population.adolescent);
-    $('population-child-share').style.width = (100 * current.population.child / current.population.all).toFixed(2) + '%';
     setMetric('internet', current.metrics.internet, other.metrics.internet, other.name);
     setMetric('food', current.metrics.food, other.metrics.food, other.name);
     setMetric('education', current.metrics.education, other.metrics.education, other.name);
@@ -99,58 +92,6 @@
     const legend=$('trend-legend');legend.replaceChildren();
     territories.forEach(t=>{const b=document.createElement('button');b.type='button';b.className='legend-button'+(t.id===state.territory?' current':'');b.setAttribute('aria-label','Mostrar '+t.name);const circle=document.createElement('span');circle.className='legend-circle';circle.style.background=colors[t.id];const label=document.createElement('span');label.textContent=t.name;b.append(circle,label);b.addEventListener('click',()=>changeTerritory(t.id));legend.append(b);});
   }
-  const topics={
-    internet:{label:'conectividad',question:'¿En qué condiciones la conexión disponible se convierte en oportunidades efectivas de aprendizaje, información y participación?',need:'Acceso individual, calidad de conexión, dispositivos, costos y capacidades de uso; indicadores actuales son de hogares.',study:'Encuestas a hogares + cartografía de acceso + comparación de establecimientos y territorios; seguimiento de uso efectivo.',challenge:'El aumento de conectividad no cambia la participación una vez consideradas las condiciones educativas y familiares.'},
-    food:{label:'seguridad alimentaria',question:'¿Cómo se relacionan las privaciones alimentarias del hogar con las posibilidades educativas y de cuidado de niñas, niños y adolescentes?',need:'Microdatos adecuados o información individual sobre alimentación, asistencia, experiencias escolares y apoyos institucionales.',study:'Análisis multinivel con medidas vinculadas de hogares, escuelas y territorio; evaluación de factores de confusión y temporalidad.',challenge:'Las asociaciones se atenúan o revierten al incorporar ingresos, shocks familiares, apoyos y selección.'},
-    education:{label:'continuidad educativa',question:'¿Qué condiciones convierten la oferta educativa en posibilidades reales de continuidad, y quiénes quedan fuera de ese recorrido?',need:'Datos longitudinales sobre asistencia, interrupciones, transporte, costos, barreras administrativas y trayectorias educativas.',study:'Análisis por curso de vida con secuencias longitudinales, entrevistas de trayectorias e indicadores territoriales.',challenge:'Los indicadores de oferta y acceso no explican diferencias cuando se evalúan costos de oportunidad, condiciones familiares y transiciones.'},
-    violence:{label:'violencia y protección',question:'¿Cómo interactúan la exposición a violencia, las redes comunitarias y las capacidades institucionales en las trayectorias de niñas, niños y adolescentes?',need:'Hechos victimizantes desagregados por edad, lugar, período y registro; información sobre redes de protección y acceso a servicios.',study:'Primero auditabilidad y calidad de registros RUV; después triangulación con evidencia cualitativa y otras fuentes territoriales.',challenge:'Los patrones se explican principalmente por diferencias de registro y accesibilidad institucional, no por exposición real comparable.'}
-  };
-  const lenses={
-    institution:{name:'instituciones',modifier:'reglas, recursos y barreras institucionales'},
-    networks:{name:'redes de cuidado',modifier:'apoyos y relaciones comunitarias'},
-    trajectory:{name:'curso de vida',modifier:'acumulación de experiencias y cambios en el tiempo'}
-  };
-  let questionText='';
-  function updateQuestion(){
-    const t=topics[$('barrier').value],lens=lenses[$('mechanism').value];
-    const selected=byId(state.territory);
-    $('research-question').textContent=t.question;
-    $('missing-data').textContent=t.need;
-    $('study-design').textContent=`${t.study} Perspectiva seleccionada: ${lens.modifier}.`;
-    $('falsification').textContent=t.challenge;
-    questionText=`¿CUÁNTAS PUERTAS SE ABREN DONDE CRECES? — FICHA EXPLORATORIA DE PREGUNTA Y DISEÑO
-Territorio de referencia: ${selected.name}
-Tema: ${t.label}
-Perspectiva: ${lens.name}
-
-PREGUNTA
-${t.question}
-
-INFORMACIÓN QUE FALTA
-${t.need}
-
-DISEÑO INICIAL
-${t.study}
-Perspectiva: ${lens.modifier}
-
-CRITERIO DE REFUTACIÓN
-${t.challenge}
-
-NOTAS
-Ejercicio metodológico ilustrativo: no es un protocolo aprobado, una evaluación causal ni el diseño empírico longitudinal de la propuesta posdoctoral.
-Fuentes y método: metodologia.html
-`;
-  }
-  $('barrier').addEventListener('change',updateQuestion);$('mechanism').addEventListener('change',updateQuestion);
-  function download(name,text){const blob=new Blob([text],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-  $('copy-question').addEventListener('click',async()=>{
-    const status=$('copy-status');
-    try { if(!navigator.clipboard||!navigator.clipboard.writeText)throw new Error('Sin acceso al portapapeles');await navigator.clipboard.writeText(questionText);status.textContent='Pregunta copiada al portapapeles.';}
-    catch { download('pregunta_de_investigacion.txt',questionText);status.textContent='El navegador descargó la ficha en TXT.'; }
-  });
-  // Nota: cada cambio de territorio también actualiza la ficha con el territorio de referencia.
-  const old=displayTerritory;
-  displayTerritory=function(){old();updateQuestion();};
   $('territory').value=state.territory;$('compare').value=state.compare;
   displayTerritory();
 })();
@@ -210,6 +151,113 @@ Fuentes y método: metodologia.html
       console.warn("Los datos agregados ECV no se cargaron; queda visible la tabla estática.", error);
     }
   }
+
+  // Composición por sexo al nacer y vistas ponderadas por sexo.
+  (async function renderSexViews() {
+    const selector = document.getElementById("sex-view-select");
+    if (!selector) return;
+    const fmt = (value, digits = 2) => Number(value).toLocaleString("es-CO", {
+      minimumFractionDigits: digits, maximumFractionDigits: digits
+    });
+    const count = value => Number(value).toLocaleString("es-CO");
+    const outcomeSpecs = [
+      { key: "life_satisfaction", label: "Satisfacción vital", scale: 10, digits: 2, cls: "life" },
+      { key: "activities_worthwhile", label: "Actividades valen la pena", scale: 10, digits: 2, cls: "meaning" },
+      { key: "free_time_satisfaction", label: "Satisfacción con tiempo libre", scale: 10, digits: 2, cls: "leisure" },
+      { key: "household_income_sufficient_pct", label: "Hogar alcanza gastos mínimos o más", scale: 100, digits: 1, suffix: " %", cls: "income" }
+    ];
+    const descriptions = {
+      all: "Total de jóvenes de 18–28 años; categorías en el orden de clasificación. Participación y resultados ponderados con FEX_C.",
+      women: "Mujeres de 18–28 años según sexo al nacer (P6020=2). Estimaciones ponderadas con FEX_C, descriptivas y sin estandarizar por edad.",
+      men: "Hombres de 18–28 años según sexo al nacer (P6020=1). Estimaciones ponderadas con FEX_C, descriptivas y sin estandarizar por edad."
+    };
+    try {
+      const response = await fetch("data/ecv2025_sex.json");
+      if (!response.ok) throw new Error("No se pudo cargar el agregado por sexo");
+      const data = await response.json();
+
+      const composition = document.getElementById("sex-composition-chart");
+      if (composition) {
+        composition.replaceChildren();
+        for (const group of data.sex_at_birth.groups) {
+          const values = group.weighted_sex_at_birth_pct;
+          const row = document.createElement("div"); row.className = "sex-composition-row";
+          const label = document.createElement("div"); label.className = "sex-composition-label";
+          const name = document.createElement("strong"); name.textContent = group.name;
+          const n = document.createElement("span"); n.textContent = `n = ${count(group.sample_n)}`;
+          label.append(name, n);
+          const track = document.createElement("div"); track.className = "sex-stack"; track.setAttribute("aria-hidden", "true");
+          const women = document.createElement("span"); women.className = "sex-stack-women"; women.style.width = `${values.women_P6020_2}%`;
+          const men = document.createElement("span"); men.className = "sex-stack-men"; men.style.width = `${values.men_P6020_1}%`;
+          track.append(women, men);
+          const value = document.createElement("div"); value.className = "sex-composition-value";
+          value.textContent = `M ${fmt(values.women_P6020_2, 1)} % · H ${fmt(values.men_P6020_1, 1)} %`;
+          row.append(label, track, value); composition.append(row);
+        }
+      }
+
+      const chartRoot = document.getElementById("sex-outcome-panels");
+      const tableBody = document.getElementById("sex-results-body");
+      const tableCaption = document.getElementById("sex-results-caption");
+      const description = document.getElementById("sex-view-description");
+      const headingNames = { all: "Total de 18–28 años", women: "Mujeres (P6020=2)", men: "Hombres (P6020=1)" };
+      function render(viewName) {
+        const rows = data.views[viewName] || [];
+        if (description) description.textContent = descriptions[viewName];
+        if (tableCaption) tableCaption.textContent = `ECV 2025 · ${headingNames[viewName]} · n sin ponderar; porcentajes y medias ponderados`;
+        if (chartRoot) {
+          chartRoot.replaceChildren();
+          for (const spec of outcomeSpecs) {
+            const panel = document.createElement("section"); panel.className = `sex-outcome-card ${spec.cls}`;
+            const title = document.createElement("h5"); title.textContent = spec.label;
+            const unit = document.createElement("p"); unit.className = "sex-outcome-unit";
+            unit.textContent = spec.scale === 10 ? "Media en escala 0–10" : "Porcentaje de respuestas del hogar";
+            const list = document.createElement("div"); list.className = "sex-outcome-rows";
+            for (const rowData of rows) {
+              const row = document.createElement("div"); row.className = "sex-outcome-row";
+              const label = document.createElement("span"); label.className = "sex-outcome-label";
+              label.textContent = `${rowData.name} · n=${count(rowData.sample_n)}`;
+              const track = document.createElement("span"); track.className = "sex-outcome-track"; track.setAttribute("aria-hidden", "true");
+              const bar = document.createElement("span"); bar.className = "sex-outcome-bar";
+              const metric = rowData.outcomes && rowData.outcomes[spec.key];
+              if (metric) {
+                bar.style.width = `${Math.max(0, Math.min(100, metric.estimate / spec.scale * 100))}%`;
+                const value = document.createElement("strong"); value.className = "sex-outcome-value";
+                value.textContent = fmt(metric.estimate, spec.digits) + (spec.suffix || "");
+                track.append(bar); row.append(label, track, value);
+              } else {
+                label.textContent += " · soporte insuficiente";
+                const suppressed = document.createElement("span"); suppressed.className = "sex-outcome-suppressed"; suppressed.textContent = "n < 50";
+                row.append(label, suppressed);
+              }
+              list.append(row);
+            }
+            panel.append(title, unit, list); chartRoot.append(panel);
+          }
+        }
+        if (tableBody) {
+          tableBody.replaceChildren();
+          for (const item of rows) {
+            const tr = document.createElement("tr");
+            const th = document.createElement("th"); th.scope = "row"; th.textContent = item.name; tr.append(th);
+            const n = document.createElement("td"); n.textContent = count(item.sample_n); tr.append(n);
+            const share = document.createElement("td"); share.textContent = fmt(item.weighted_share_pct); tr.append(share);
+            for (const spec of outcomeSpecs) {
+              const td = document.createElement("td");
+              const metric = item.outcomes && item.outcomes[spec.key];
+              td.textContent = metric ? fmt(metric.estimate, spec.digits) + (spec.suffix || "") : "No se informa (n < 50)";
+              tr.append(td);
+            }
+            tableBody.append(tr);
+          }
+        }
+      }
+      selector.addEventListener("change", () => render(selector.value));
+      render(selector.value);
+    } catch (error) {
+      console.warn("Las vistas por sexo no se cargaron; queda visible la tabla estática.", error);
+    }
+  })();
 
   const rules = window.ARCHITECTURES_RULES;
   const option = byId("life-option");

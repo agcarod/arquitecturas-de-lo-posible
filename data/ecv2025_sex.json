@@ -1,0 +1,948 @@
+{
+  "title": "ECV 2025 · jóvenes de 18 a 28 años",
+  "source_modules": [
+    "Características y composición del hogar",
+    "Condiciones de vida del hogar y tenencia de bienes",
+    "Educación",
+    "Fuerza de trabajo",
+    "Variables de diseño muestral"
+  ],
+  "sample_design": {
+    "weight": "FEX_C",
+    "strata": "ESTRATO2020",
+    "primary_sampling_unit": "SEGMENTO",
+    "strata_count": 356,
+    "segment_count": 8160,
+    "ci_method": "Linealización de Taylor de primer orden, con estratos y segmentos."
+  },
+  "sex_at_birth": {
+    "title": "Composición por sexo al nacer dentro de cada configuración",
+    "variable": "P6020",
+    "label": "sexo al nacer (no identidad de género)",
+    "groups": [
+      {
+        "id": "study_and_work",
+        "name": "Estudian y trabajan",
+        "sample_n": 2115,
+        "sample_n_women": 1063,
+        "sample_n_men": 1052,
+        "weighted_sex_at_birth_pct": {
+          "women_P6020_2": 46.0443,
+          "men_P6020_1": 53.9557
+        }
+      },
+      {
+        "id": "study_no_occupation",
+        "name": "Estudiantes sin ocupación",
+        "sample_n": 5612,
+        "sample_n_women": 3235,
+        "sample_n_men": 2377,
+        "weighted_sex_at_birth_pct": {
+          "women_P6020_2": 54.1693,
+          "men_P6020_1": 45.8307
+        }
+      },
+      {
+        "id": "occupied_no_study",
+        "name": "Ocupados sin estudiar",
+        "sample_n": 18189,
+        "sample_n_women": 6877,
+        "sample_n_men": 11312,
+        "weighted_sex_at_birth_pct": {
+          "women_P6020_2": 39.1815,
+          "men_P6020_1": 60.8185
+        }
+      },
+      {
+        "id": "home_primary",
+        "name": "Oficios del hogar como actividad principal",
+        "sample_n": 7205,
+        "sample_n_women": 6514,
+        "sample_n_men": 691,
+        "weighted_sex_at_birth_pct": {
+          "women_P6020_2": 90.4126,
+          "men_P6020_1": 9.5874
+        }
+      },
+      {
+        "id": "searched_elsewhere",
+        "name": "Búsqueda reciente de empleo (resto)",
+        "sample_n": 1955,
+        "sample_n_women": 890,
+        "sample_n_men": 1065,
+        "weighted_sex_at_birth_pct": {
+          "women_P6020_2": 41.95,
+          "men_P6020_1": 58.05
+        }
+      },
+      {
+        "id": "other",
+        "name": "Otras situaciones",
+        "sample_n": 700,
+        "sample_n_women": 272,
+        "sample_n_men": 428,
+        "weighted_sex_at_birth_pct": {
+          "women_P6020_2": 34.4526,
+          "men_P6020_1": 65.5474
+        }
+      }
+    ]
+  },
+  "minimum_unweighted_n_for_interactive_outcomes": 50,
+  "views": {
+    "all": [
+      {
+        "id": "study_and_work",
+        "name": "Estudian y trabajan",
+        "sample_n": 2115,
+        "weighted_share_pct": 7.2065,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.4407,
+            "ci95_approx": [
+              8.3327,
+              8.5487
+            ],
+            "n": 2115
+          },
+          "activities_worthwhile": {
+            "estimate": 8.8288,
+            "ci95_approx": [
+              8.7142,
+              8.9433
+            ],
+            "n": 2115
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.6664,
+            "ci95_approx": [
+              7.5045,
+              7.8283
+            ],
+            "n": 2115
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 76.9241,
+            "ci95_approx": [
+              73.8277,
+              80.0206
+            ],
+            "n": 2115
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "study_no_occupation",
+        "name": "Estudiantes sin ocupación",
+        "sample_n": 5612,
+        "weighted_share_pct": 17.9276,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.4482,
+            "ci95_approx": [
+              8.3793,
+              8.5171
+            ],
+            "n": 5612
+          },
+          "activities_worthwhile": {
+            "estimate": 8.702,
+            "ci95_approx": [
+              8.6245,
+              8.7796
+            ],
+            "n": 5612
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.9998,
+            "ci95_approx": [
+              7.9142,
+              8.0853
+            ],
+            "n": 5612
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 74.384,
+            "ci95_approx": [
+              72.2864,
+              76.4816
+            ],
+            "n": 5612
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "occupied_no_study",
+        "name": "Ocupados sin estudiar",
+        "sample_n": 18189,
+        "weighted_share_pct": 51.256,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.273,
+            "ci95_approx": [
+              8.2173,
+              8.3286
+            ],
+            "n": 18189
+          },
+          "activities_worthwhile": {
+            "estimate": 8.5947,
+            "ci95_approx": [
+              8.5368,
+              8.6525
+            ],
+            "n": 18189
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.6257,
+            "ci95_approx": [
+              7.5585,
+              7.6929
+            ],
+            "n": 18189
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 69.2032,
+            "ci95_approx": [
+              67.6817,
+              70.7248
+            ],
+            "n": 18189
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "home_primary",
+        "name": "Oficios del hogar como actividad principal",
+        "sample_n": 7205,
+        "weighted_share_pct": 15.5337,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.1127,
+            "ci95_approx": [
+              8.0441,
+              8.1814
+            ],
+            "n": 7205
+          },
+          "activities_worthwhile": {
+            "estimate": 8.4482,
+            "ci95_approx": [
+              8.3758,
+              8.5206
+            ],
+            "n": 7205
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.6659,
+            "ci95_approx": [
+              7.5809,
+              7.7508
+            ],
+            "n": 7205
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 53.6268,
+            "ci95_approx": [
+              51.3396,
+              55.914
+            ],
+            "n": 7205
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "searched_elsewhere",
+        "name": "Búsqueda reciente de empleo (resto)",
+        "sample_n": 1955,
+        "weighted_share_pct": 6.4376,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 7.8603,
+            "ci95_approx": [
+              7.6946,
+              8.026
+            ],
+            "n": 1955
+          },
+          "activities_worthwhile": {
+            "estimate": 8.2453,
+            "ci95_approx": [
+              8.0753,
+              8.4153
+            ],
+            "n": 1955
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.3067,
+            "ci95_approx": [
+              7.1036,
+              7.5098
+            ],
+            "n": 1955
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 57.5413,
+            "ci95_approx": [
+              53.3436,
+              61.739
+            ],
+            "n": 1955
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "other",
+        "name": "Otras situaciones",
+        "sample_n": 700,
+        "weighted_share_pct": 1.6387,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 7.1146,
+            "ci95_approx": [
+              6.7237,
+              7.5055
+            ],
+            "n": 700
+          },
+          "activities_worthwhile": {
+            "estimate": 7.6303,
+            "ci95_approx": [
+              7.3048,
+              7.9558
+            ],
+            "n": 700
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.101,
+            "ci95_approx": [
+              6.7238,
+              7.4783
+            ],
+            "n": 700
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 56.3122,
+            "ci95_approx": [
+              49.2951,
+              63.3292
+            ],
+            "n": 700
+          }
+        },
+        "below_minimum_n": false
+      }
+    ],
+    "women": [
+      {
+        "id": "study_and_work",
+        "name": "Estudian y trabajan",
+        "sample_n": 1063,
+        "weighted_share_pct": 6.5808,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.4877,
+            "ci95_approx": [
+              8.3358,
+              8.6396
+            ],
+            "n": 1063
+          },
+          "activities_worthwhile": {
+            "estimate": 8.8869,
+            "ci95_approx": [
+              8.7367,
+              9.0371
+            ],
+            "n": 1063
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.6823,
+            "ci95_approx": [
+              7.4509,
+              7.9138
+            ],
+            "n": 1063
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 76.5466,
+            "ci95_approx": [
+              72.0512,
+              81.0419
+            ],
+            "n": 1063
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "study_no_occupation",
+        "name": "Estudiantes sin ocupación",
+        "sample_n": 3235,
+        "weighted_share_pct": 19.26,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.447,
+            "ci95_approx": [
+              8.3628,
+              8.5312
+            ],
+            "n": 3235
+          },
+          "activities_worthwhile": {
+            "estimate": 8.735,
+            "ci95_approx": [
+              8.6356,
+              8.8344
+            ],
+            "n": 3235
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.9836,
+            "ci95_approx": [
+              7.8807,
+              8.0865
+            ],
+            "n": 3235
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 72.8944,
+            "ci95_approx": [
+              70.104,
+              75.6849
+            ],
+            "n": 3235
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "occupied_no_study",
+        "name": "Ocupados sin estudiar",
+        "sample_n": 6877,
+        "weighted_share_pct": 39.8297,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.3117,
+            "ci95_approx": [
+              8.2356,
+              8.3879
+            ],
+            "n": 6877
+          },
+          "activities_worthwhile": {
+            "estimate": 8.6393,
+            "ci95_approx": [
+              8.5616,
+              8.7169
+            ],
+            "n": 6877
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.6537,
+            "ci95_approx": [
+              7.5626,
+              7.7447
+            ],
+            "n": 6877
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 72.2575,
+            "ci95_approx": [
+              70.3057,
+              74.2093
+            ],
+            "n": 6877
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "home_primary",
+        "name": "Oficios del hogar como actividad principal",
+        "sample_n": 6514,
+        "weighted_share_pct": 27.8539,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.1093,
+            "ci95_approx": [
+              8.0385,
+              8.18
+            ],
+            "n": 6514
+          },
+          "activities_worthwhile": {
+            "estimate": 8.4612,
+            "ci95_approx": [
+              8.3852,
+              8.5372
+            ],
+            "n": 6514
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.642,
+            "ci95_approx": [
+              7.555,
+              7.729
+            ],
+            "n": 6514
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 54.0289,
+            "ci95_approx": [
+              51.6499,
+              56.408
+            ],
+            "n": 6514
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "searched_elsewhere",
+        "name": "Búsqueda reciente de empleo (resto)",
+        "sample_n": 890,
+        "weighted_share_pct": 5.3559,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 7.8672,
+            "ci95_approx": [
+              7.6258,
+              8.1087
+            ],
+            "n": 890
+          },
+          "activities_worthwhile": {
+            "estimate": 8.3061,
+            "ci95_approx": [
+              8.0907,
+              8.5214
+            ],
+            "n": 890
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.3968,
+            "ci95_approx": [
+              7.1325,
+              7.6611
+            ],
+            "n": 890
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 56.0703,
+            "ci95_approx": [
+              49.8281,
+              62.3124
+            ],
+            "n": 890
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "other",
+        "name": "Otras situaciones",
+        "sample_n": 272,
+        "weighted_share_pct": 1.1197,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 7.3666,
+            "ci95_approx": [
+              6.5578,
+              8.1754
+            ],
+            "n": 272
+          },
+          "activities_worthwhile": {
+            "estimate": 8.0209,
+            "ci95_approx": [
+              7.3765,
+              8.6654
+            ],
+            "n": 272
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.1057,
+            "ci95_approx": [
+              6.3391,
+              7.8722
+            ],
+            "n": 272
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 66.9274,
+            "ci95_approx": [
+              55.6707,
+              78.1841
+            ],
+            "n": 272
+          }
+        },
+        "below_minimum_n": false
+      }
+    ],
+    "men": [
+      {
+        "id": "study_and_work",
+        "name": "Estudian y trabajan",
+        "sample_n": 1052,
+        "weighted_share_pct": 7.8428,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.4006,
+            "ci95_approx": [
+              8.2626,
+              8.5385
+            ],
+            "n": 1052
+          },
+          "activities_worthwhile": {
+            "estimate": 8.7791,
+            "ci95_approx": [
+              8.6204,
+              8.9379
+            ],
+            "n": 1052
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.6528,
+            "ci95_approx": [
+              7.4278,
+              7.8778
+            ],
+            "n": 1052
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 77.2463,
+            "ci95_approx": [
+              73.0289,
+              81.4637
+            ],
+            "n": 1052
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "study_no_occupation",
+        "name": "Estudiantes sin ocupación",
+        "sample_n": 2377,
+        "weighted_share_pct": 16.5725,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.4495,
+            "ci95_approx": [
+              8.351,
+              8.548
+            ],
+            "n": 2377
+          },
+          "activities_worthwhile": {
+            "estimate": 8.6631,
+            "ci95_approx": [
+              8.5552,
+              8.7709
+            ],
+            "n": 2377
+          },
+          "free_time_satisfaction": {
+            "estimate": 8.0189,
+            "ci95_approx": [
+              7.8927,
+              8.1451
+            ],
+            "n": 2377
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 76.1446,
+            "ci95_approx": [
+              73.313,
+              78.9762
+            ],
+            "n": 2377
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "occupied_no_study",
+        "name": "Ocupados sin estudiar",
+        "sample_n": 11312,
+        "weighted_share_pct": 62.8767,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.248,
+            "ci95_approx": [
+              8.1844,
+              8.3116
+            ],
+            "n": 11312
+          },
+          "activities_worthwhile": {
+            "estimate": 8.5659,
+            "ci95_approx": [
+              8.4999,
+              8.632
+            ],
+            "n": 11312
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.6077,
+            "ci95_approx": [
+              7.5267,
+              7.6886
+            ],
+            "n": 11312
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 67.2356,
+            "ci95_approx": [
+              65.3772,
+              69.0939
+            ],
+            "n": 11312
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "home_primary",
+        "name": "Oficios del hogar como actividad principal",
+        "sample_n": 691,
+        "weighted_share_pct": 3.0039,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 8.1453,
+            "ci95_approx": [
+              7.904,
+              8.3866
+            ],
+            "n": 691
+          },
+          "activities_worthwhile": {
+            "estimate": 8.3252,
+            "ci95_approx": [
+              8.0798,
+              8.5706
+            ],
+            "n": 691
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.8909,
+            "ci95_approx": [
+              7.6171,
+              8.1646
+            ],
+            "n": 691
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 49.8345,
+            "ci95_approx": [
+              42.3547,
+              57.3142
+            ],
+            "n": 691
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "searched_elsewhere",
+        "name": "Búsqueda reciente de empleo (resto)",
+        "sample_n": 1065,
+        "weighted_share_pct": 7.5376,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 7.8553,
+            "ci95_approx": [
+              7.6466,
+              8.0639
+            ],
+            "n": 1065
+          },
+          "activities_worthwhile": {
+            "estimate": 8.2013,
+            "ci95_approx": [
+              7.9818,
+              8.4209
+            ],
+            "n": 1065
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.2416,
+            "ci95_approx": [
+              6.9725,
+              7.5106
+            ],
+            "n": 1065
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 58.6043,
+            "ci95_approx": [
+              53.1334,
+              64.0753
+            ],
+            "n": 1065
+          }
+        },
+        "below_minimum_n": false
+      },
+      {
+        "id": "other",
+        "name": "Otras situaciones",
+        "sample_n": 428,
+        "weighted_share_pct": 2.1665,
+        "outcomes": {
+          "life_satisfaction": {
+            "estimate": 6.9821,
+            "ci95_approx": [
+              6.5792,
+              7.385
+            ],
+            "n": 428
+          },
+          "activities_worthwhile": {
+            "estimate": 7.425,
+            "ci95_approx": [
+              7.0984,
+              7.7516
+            ],
+            "n": 428
+          },
+          "free_time_satisfaction": {
+            "estimate": 7.0986,
+            "ci95_approx": [
+              6.7192,
+              7.4781
+            ],
+            "n": 428
+          },
+          "household_income_sufficient_pct": {
+            "estimate": 50.7327,
+            "ci95_approx": [
+              42.6362,
+              58.8292
+            ],
+            "n": 428
+          }
+        },
+        "below_minimum_n": false
+      }
+    ]
+  },
+  "women_only_age_standardized_sensitivity": {
+    "sex_label": "sexo al nacer (P6020=2; mujeres)",
+    "sample_n": {
+      "occupied_no_study": 6877,
+      "home_primary": 6514
+    },
+    "age_bands": [
+      "18–21",
+      "22–25",
+      "26–28"
+    ],
+    "standard_reference": {
+      "18–21": 0.25259571,
+      "22–25": 0.41211704,
+      "26–28": 0.33528725
+    },
+    "estimates": {
+      "occupied_no_study": {
+        "P1895": {
+          "estimate": 8.3121
+        },
+        "P1905": {
+          "estimate": 8.6331
+        },
+        "P3175": {
+          "estimate": 7.6511
+        },
+        "income_sufficient": {
+          "estimate": 71.8826
+        }
+      },
+      "home_primary": {
+        "P1895": {
+          "estimate": 8.1152
+        },
+        "P1905": {
+          "estimate": 8.4693
+        },
+        "P3175": {
+          "estimate": 7.6301
+        },
+        "income_sufficient": {
+          "estimate": 54.6411
+        }
+      }
+    },
+    "contrasts": {
+      "P1895": {
+        "occupied_no_study": 8.3121,
+        "home_primary": 8.1152,
+        "difference_occupied_minus_home": 0.1969,
+        "ci95_approx": [
+          0.0976,
+          0.2962
+        ],
+        "unit": "mean_0_10"
+      },
+      "P1905": {
+        "occupied_no_study": 8.6331,
+        "home_primary": 8.4693,
+        "difference_occupied_minus_home": 0.1638,
+        "ci95_approx": [
+          0.0601,
+          0.2675
+        ],
+        "unit": "mean_0_10"
+      },
+      "P3175": {
+        "occupied_no_study": 7.6511,
+        "home_primary": 7.6301,
+        "difference_occupied_minus_home": 0.021,
+        "ci95_approx": [
+          -0.1014,
+          0.1434
+        ],
+        "unit": "mean_0_10"
+      },
+      "income_sufficient": {
+        "occupied_no_study": 71.8826,
+        "home_primary": 54.6411,
+        "difference_occupied_minus_home": 17.2415,
+        "ci95_approx": [
+          14.2377,
+          20.2453
+        ],
+        "unit": "percentage_points"
+      }
+    },
+    "ci_note": "IC aproximados por linealización de Taylor por estrato y segmento; distribución estándar FEX_C fija, condicionada al estándar."
+  },
+  "classification": {
+    "employment": "P6240=1 o Sí en P6250/P6260/P6270.",
+    "study": "P8586=1.",
+    "home_primary": "Sin estudio ni ocupación derivada y P6240=4.",
+    "priority": [
+      "study_and_work",
+      "study_no_occupation",
+      "occupied_no_study",
+      "home_primary",
+      "searched_elsewhere",
+      "other"
+    ],
+    "sex": "Sexo al nacer, variable original del DANE P6020; P6020=2 mujeres y P6020=1 hombres. No mide identidad de género."
+  },
+  "limitations": [
+    "ECV transversal: no identifica causalidad, decisiones, preferencias ni trayectorias.",
+    "P9090 es suficiencia económica declarada por el hogar, no ingreso individual.",
+    "Las estimaciones de bienestar son medias o proporciones separadas, sin índice ni ranking.",
+    "Los IC son aproximados por linealización y, en la sensibilidad estandarizada, condicionados a la distribución común por edad fijada."
+  ]
+}
