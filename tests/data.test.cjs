@@ -113,6 +113,8 @@ test('La carta y el sitio comparten el diseño del piloto del año 1',()=>{
   assert.ok(html.includes('AÑO 3 · INTEGRAR Y FORMULAR ALTERNATIVAS'));
   assert.ok(!html.includes('entrevistas cognitivas'));
   assert.ok(!html.includes('AÑO 3 · CONTRASTAR Y REVISAR'));
+  assert.ok(!html.includes('En el año 3 se propone una comparación contrabalanceada'));
+  assert.ok(method.includes('Durante el piloto del año 1 se compararán dos análisis independientes'));
 });
 test('La portada ya no publica el generador ni presenta el test lógico como evidencia',()=>{
   const html=fs.readFileSync(path.join(__dirname,'..','index.html'),'utf8');

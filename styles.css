@@ -29,8 +29,8 @@ button,select{font:inherit}button{cursor:pointer}
 .sex-analysis-heading h3,.women-sensitivity-heading h3{font-family:var(--serif);font-weight:500;font-size:clamp(1.5rem,2.7vw,2.15rem);line-height:1.15;letter-spacing:-.035em;margin:0}
 .sex-analysis-heading>p{font-size:.82rem;line-height:1.55;color:#bdd0c8;margin:0}
 .sex-analysis-heading strong{color:#e4f2d3}
-.sex-analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.sex-composition-panel,.sex-view-panel{padding:23px;background:#12383b;color:#f1f5e9;border:1px solid #ffffff16}
+.sex-analysis-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px;min-width:0}
+.sex-composition-panel,.sex-view-panel{min-width:0;padding:23px;background:#12383b;color:#f1f5e9;border:1px solid #ffffff16}
 .sex-composition-panel .chart-head h4,.sex-view-control h4{font-family:var(--serif);font-weight:500;font-size:1.35rem;line-height:1.17;letter-spacing:-.025em;margin:0}
 .sex-composition-panel .chart-head a{color:#d9edc0;font-size:.72rem}
 .sex-composition-chart{display:grid;gap:13px;margin:23px 0 14px}
